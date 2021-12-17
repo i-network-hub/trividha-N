@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Trividha | Raw Herbs</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <%- include("include/_header") %>
+    <link
+      rel="stylesheet"
+      href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      .affix {
+        top: 0;
+        width: 100%;
+        z-index: 9999 !important;
+      }
+
+      .affix + .container-fluid {
+        padding-top: 70px;
+      }
+      #fp-nav {
+        display: none;
+      }
+      .herb-all {
+        margin-top: 80px;
+      }
+
+      .maxLines {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- Social Links  -->
+      <%- include("include/_social_links") %>
+
+      <div id="main">
+        <section
+          class="container-fluid header nopadding vertical-scrolling b-img"
+        >
+          <!-- header top-fix navbar  -->
+          <%- include("include/_navbar") %>
+
+          <!-- header top-fix side navbar  -->
+          <%- include("include/_side_navbar") %>
+
+          <img
+            src="/public_img/bannerherbs.png"
+            class="img-responsive mt-120"
+          />
+        </section>
+
+        <%for(let i=0; i < raw_herbs.length; i++){%>
+        <section class="container-fluid herb-section">
+          <div class="herb-all">
+            <div class="row">
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <a
+                  href="/raw_herb_product?id=<%=raw_herbs[i]._id%>"
+                  target="blank"
+                >
+                  <img
+                    src="../<%=raw_herbs[i].image[0]%>"
+                    class="img-responsive"
+                /></a>
+              </div>
+
+              <div class="col-md-8 col-sm-8 col-xs-12">
+                <h3 class="text-center">
+                  <a href="" target="blank" style="color: #000"
+                    ><%=raw_herbs[i].name%></a
+                  >
+                </h3>
+
+                <p class="maxLines">
+                  <strong>Botanical Name :</strong>
+                  <%=raw_herbs[i].botanicalName%>
+                </p>
+
+                <p class="maxLines">
+                  <strong> Family Name :</strong> <%=raw_herbs[i].familyName%>
+                </p>
+                <p class="maxLines">
+                  <strong>Common Name:</strong> <%=raw_herbs[i].commonName%>
+                </p>
+
+                <p class="maxLines">
+                  <strong>Part Used :</strong> <%=raw_herbs[i].partUsed%>
+                </p>
+
+                <p class="maxLines">
+                  <strong>Habitat :</strong> <%=raw_herbs[i].habitat%>
+                </p>
+
+                <p>
+                  <strong>Curing Diseases:</strong>
+
+                  <%=raw_herbs[i].benefits%>
+                </p>
+
+                <div class="row">
+                  <button
+                    class="btn di-sec4-btf get_quote"
+                    data-toggle="modal"
+                    data-target="#myModal"
+                    data-herbs="<%=raw_herbs[i].name%>"
+                  >
+                    Get Quote
+                  </button>
+                  <a
+                    class="btn btn-herb"
+                    target="_blank"
+                    href="/raw_herb_product?id=<%=raw_herbs[i]._id%>"
+                  >
+                    View
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <%}%>
+
+        <!-- <section class="container-fluid herb-section">
+          <div class="herb-all">
+            <div class="row">
+              <div class="col-md-8 col-sm-8 col-xs-12">
+                <h3 class="text-center">
+                  <a href="" target="blank" style="color: #000">PASHANBHED </a>
+                </h3>
+
+                <p><strong>Botanical Name :</strong> Asparagus racemosus</p>
+
+                <p><strong> Family Name :</strong> Asparagus Family</p>
+                <p>
+                  <strong>Common Name:</strong> Satavar, Shatavari, Shatamull,
+                  Shatawari,
+                </p>
+
+                <p><strong>Part Used :</strong> Rhizome</p>
+
+                <p><strong>Habitat :</strong> Cultivated in india</p>
+                <p><strong>Curing Diseases:</strong></p>
+
+                <p>
+                  1. Improving female reproductive health . 2. Reducing symptoms
+                  of menopause .3. Antioxidant effects . 4. Anti-anxiety effects
+                  5. Breast-feeding and pregnancy 6. It has antioxidant
+                  properties .7. It has anti-inflammatory properties 8. It may
+                  help boost your immune system. 9. It may help relieve cough
+                  10. It may help treat diarrhea. 11.It may act as a diuretic
+                  12. It may help treat ulcers13. It may help treat kidney
+                  stones14. It may help maintain blood sugar 15 It may be
+                  anti-aging 16. It may help treat depression
+                </p>
+
+                <div class="row">
+                  <button
+                    class="btn di-sec4-btf"
+                    data-toggle="modal"
+                    data-target="#myModal"
+                  >
+                    Get Quote
+                  </button>
+                  <a class="btn btn-herb" target="_blank" href="/pashanbhed">
+                    View
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <a href="" target="_blank">
+                  <img src="/public_img/Pas.png" class="img-responsive"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </section> -->
+
+        <!-- <section class="container-fluid herb-section">
+          <div class="herb-all">
+            <div class="row">
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <a href="" target="_blank"
+                  ><img src="/public_img/tej.png" class="img-responsive"
+                /></a>
+              </div>
+
+              <div class="col-md-8 col-sm-8 col-xs-12">
+                <h3 class="text-center">
+                  <a href="" target="blank" style="color: #000">TEJPATTA </a>
+                </h3>
+
+                <p><strong>Botanical Name :</strong> Asparagus racemosus</p>
+
+                <p><strong> Family Name :</strong> Asparagus Family</p>
+                <p>
+                  <strong>Common Name:</strong> Satavar, Shatavari, Shatamull,
+                  Shatawari,
+                </p>
+
+                <p><strong>Part Used :</strong> Rhizome</p>
+
+                <p><strong>Habitat :</strong> Cultivated in india</p>
+                <p><strong>Curing Diseases:</strong></p>
+
+                <p>
+                  1. Improving female reproductive health . 2. Reducing symptoms
+                  of menopause .3. Antioxidant effects . 4. Anti-anxiety effects
+                  5. Breast-feeding and pregnancy 6. It has antioxidant
+                  properties .7. It has anti-inflammatory properties 8. It may
+                  help boost your immune system. 9. It may help relieve cough
+                  10. It may help treat diarrhea. 11.It may act as a diuretic
+                  12. It may help treat ulcers13. It may help treat kidney
+                  stones14. It may help maintain blood sugar 15 It may be
+                  anti-aging 16. It may help treat depression
+                </p>
+
+                <div class="row">
+                  <button
+                    class="btn di-sec4-btf"
+                    data-toggle="modal"
+                    data-target="#myModal"
+                  >
+                    Get Quote
+                  </button>
+                  <a class="btn btn-herb" target="_blank" href="/tejpatta">
+                    View
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section> -->
+
+        <!-- <section class="container-fluid herb-section">
+          <div class="herb-all">
+            <div class="row">
+              <div class="col-md-8 col-sm-8 col-xs-12">
+                <h3 class="text-center">
+                  <a href="" target="blank" style="color: #000">DALCHINI </a>
+                </h3>
+
+                <p><strong>Botanical Name :</strong> Asparagus racemosus</p>
+
+                <p><strong> Family Name :</strong> Asparagus Family</p>
+                <p>
+                  <strong>Common Name:</strong> Satavar, Shatavari, Shatamull,
+                  Shatawari,
+                </p>
+
+                <p><strong>Part Used :</strong> Rhizome</p>
+
+                <p><strong>Habitat :</strong> Cultivated in india</p>
+                <p><strong>Curing Diseases:</strong></p>
+
+                <p>
+                  1. Improving female reproductive health . 2. Reducing symptoms
+                  of menopause .3. Antioxidant effects . 4. Anti-anxiety effects
+                  5. Breast-feeding and pregnancy 6. It has antioxidant
+                  properties .7. It has anti-inflammatory properties 8. It may
+                  help boost your immune system. 9. It may help relieve cough
+                  10. It may help treat diarrhea. 11.It may act as a diuretic
+                  12. It may help treat ulcers13. It may help treat kidney
+                  stones14. It may help maintain blood sugar 15 It may be
+                  anti-aging 16. It may help treat depression
+                </p>
+
+                <div class="row">
+                  <button
+                    class="btn di-sec4-btf"
+                    data-toggle="modal"
+                    data-target="#myModal"
+                  >
+                    Get Quote
+                  </button>
+                  <a class="btn btn-herb" target="_blank" href="/dalchini">
+                    View
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <a href="" target="_blank"
+                  ><img src="/public_img/dal.png" class="img-responsive"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </section> -->
+
+        <!-- <section class="container-fluid herb-section">
+          <div class="herb-all">
+            <div class="row">
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <a href="" target="_blank">
+                  <img src="/public_img/Tagar.png" class="img-responsive"
+                /></a>
+              </div>
+              <div class="col-md-8 col-sm-8 col-xs-12">
+                <h3 class="text-center">
+                  <a href="" target="blank" style="color: #000">TAGAR GANTH </a>
+                </h3>
+
+                <p><strong>Botanical Name :</strong> Asparagus racemosus</p>
+
+                <p><strong> Family Name :</strong> Asparagus Family</p>
+                <p>
+                  <strong>Common Name:</strong> Satavar, Shatavari, Shatamull,
+                  Shatawari,
+                </p>
+
+                <p><strong>Part Used :</strong> Rhizome</p>
+
+                <p><strong>Habitat :</strong> Cultivated in india</p>
+                <p><strong>Curing Diseases:</strong></p>
+
+                <p>
+                  1. Improving female reproductive health . 2. Reducing symptoms
+                  of menopause .3. Antioxidant effects . 4. Anti-anxiety effects
+                  5. Breast-feeding and pregnancy 6. It has antioxidant
+                  properties .7. It has anti-inflammatory properties 8. It may
+                  help boost your immune system. 9. It may help relieve cough
+                  10. It may help treat diarrhea. 11.It may act as a diuretic
+                  12. It may help treat ulcers13. It may help treat kidney
+                  stones14. It may help maintain blood sugar 15 It may be
+                  anti-aging 16. It may help treat depression
+                </p>
+
+                <div class="row">
+                  <button
+                    class="btn di-sec4-btf"
+                    data-toggle="modal"
+                    data-target="#myModal"
+                  >
+                    Get Quote
+                  </button>
+                  <a class="btn btn-herb" target="_blank" href="/tagar_ganth">
+                    View
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section> -->
+
+        <!-- <section class="container-fluid herb-section">
+          <div class="herb-all">
+            <div class="row">
+              <div class="col-md-8 col-sm-8 col-xs-12">
+                <h3 class="text-center">
+                  <a href="" target="blank" style="color: #000">CHHADILA </a>
+                </h3>
+
+                <p><strong>Botanical Name :</strong> Asparagus racemosus</p>
+
+                <p><strong> Family Name :</strong> Asparagus Family</p>
+                <p>
+                  <strong>Common Name:</strong> Satavar, Shatavari, Shatamull,
+                  Shatawari,
+                </p>
+
+                <p><strong>Part Used :</strong> Rhizome</p>
+
+                <p><strong>Habitat :</strong> Cultivated in india</p>
+                <p><strong>Curing Diseases:</strong></p>
+
+                <p>
+                  1. Improving female reproductive health . 2. Reducing symptoms
+                  of menopause .3. Antioxidant effects . 4. Anti-anxiety effects
+                  5. Breast-feeding and pregnancy 6. It has antioxidant
+                  properties .7. It has anti-inflammatory properties 8. It may
+                  help boost your immune system. 9. It may help relieve cough
+                  10. It may help treat diarrhea. 11.It may act as a diuretic
+                  12. It may help treat ulcers13. It may help treat kidney
+                  stones14. It may help maintain blood sugar 15 It may be
+                  anti-aging 16. It may help treat depression
+                </p>
+
+                <div class="row">
+                  <button
+                    class="btn di-sec4-btf"
+                    data-toggle="modal"
+                    data-target="#myModal"
+                  >
+                    Get Quote
+                  </button>
+                  <a class="btn btn-herb" target="_blank" href="/chhadila">
+                    View
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <a href="" target="_blank">
+                  <img src="/public_img/Chhadila.png" class="img-responsive"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </section> -->
+
+        <!-- <section class="container-fluid herb-section">
+          <div class="herb-all">
+            <div class="row">
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <a href="" target="_blank">
+                  <img src="/public_img/Dagad.png" class="img-responsive"
+                /></a>
+              </div>
+              <div class="col-md-8 col-sm-8 col-xs-12">
+                <h3 class="text-center">
+                  <a href="" target="blank" style="color: #000">DAGAD PHOOL </a>
+                </h3>
+
+                <p><strong>Botanical Name :</strong> Asparagus racemosus</p>
+
+                <p><strong> Family Name :</strong> Asparagus Family</p>
+                <p>
+                  <strong>Common Name:</strong> Satavar, Shatavari, Shatamull,
+                  Shatawari,
+                </p>
+
+                <p><strong>Part Used :</strong> Rhizome</p>
+
+                <p><strong>Habitat :</strong> Cultivated in india</p>
+                <p><strong>Curing Diseases:</strong></p>
+
+                <p>
+                  1. Improving female reproductive health . 2. Reducing symptoms
+                  of menopause .3. Antioxidant effects . 4. Anti-anxiety effects
+                  5. Breast-feeding and pregnancy 6. It has antioxidant
+                  properties .7. It has anti-inflammatory properties 8. It may
+                  help boost your immune system. 9. It may help relieve cough
+                  10. It may help treat diarrhea. 11.It may act as a diuretic
+                  12. It may help treat ulcers13. It may help treat kidney
+                  stones14. It may help maintain blood sugar 15 It may be
+                  anti-aging 16. It may help treat depression
+                </p>
+
+                <div class="row">
+                  <button
+                    class="btn di-sec4-btf"
+                    data-toggle="modal"
+                    data-target="#myModal"
+                  >
+                    Get Quote
+                  </button>
+                  <a class="btn btn-herb" target="_blank" href="dagad_phool">
+                    View
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section> -->
+
+        <!-- <section class="container-fluid herb-section">
+          <div class="herb-all">
+            <div class="row">
+              <div class="col-md-8 col-sm-8 col-xs-12">
+                <h3 class="text-center">
+                  <a href="" target="blank" style="color: #000">REETHA </a>
+                </h3>
+
+                <p><strong>Botanical Name :</strong> Asparagus racemosus</p>
+
+                <p><strong> Family Name :</strong> Asparagus Family</p>
+                <p>
+                  <strong>Common Name:</strong> Satavar, Shatavari, Shatamull,
+                  Shatawari,
+                </p>
+
+                <p><strong>Part Used :</strong> Rhizome</p>
+
+                <p><strong>Habitat :</strong> Cultivated in india</p>
+                <p><strong>Curing Diseases:</strong></p>
+
+                <p>
+                  1. Improving female reproductive health . 2. Reducing symptoms
+                  of menopause .3. Antioxidant effects . 4. Anti-anxiety effects
+                  5. Breast-feeding and pregnancy 6. It has antioxidant
+                  properties .7. It has anti-inflammatory properties 8. It may
+                  help boost your immune system. 9. It may help relieve cough
+                  10. It may help treat diarrhea. 11.It may act as a diuretic
+                  12. It may help treat ulcers13. It may help treat kidney
+                  stones14. It may help maintain blood sugar 15 It may be
+                  anti-aging 16. It may help treat depression
+                </p>
+
+                <div class="row">
+                  <button
+                    class="btn di-sec4-btf"
+                    data-toggle="modal"
+                    data-target="#myModal"
+                  >
+                    Get Quote
+                  </button>
+                  <a class="btn btn-herb" target="_blank" href="/reetha">
+                    View
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <a href="" target="_blank">
+                  <img src="/public_img/Reetha.png" class="img-responsive"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </section> -->
+
+        <!-- <section class="container-fluid herb-section">
+          <div class="herb-all">
+            <div class="row">
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <a href="" target="_blank">
+                  <img src="/public_img/Shikakai.png" class="img-responsive"
+                /></a>
+              </div>
+              <div class="col-md-8 col-sm-8 col-xs-12">
+                <h3 class="text-center">
+                  <a href="" target="blank" style="color: #000">SHIKAKAI </a>
+                </h3>
+
+                <p><strong>Botanical Name :</strong> Asparagus racemosus</p>
+
+                <p><strong> Family Name :</strong> Asparagus Family</p>
+                <p>
+                  <strong>Common Name:</strong> Satavar, Shatavari, Shatamull,
+                  Shatawari,
+                </p>
+
+                <p><strong>Part Used :</strong> Rhizome</p>
+
+                <p><strong>Habitat :</strong> Cultivated in india</p>
+                <p><strong>Curing Diseases:</strong></p>
+
+                <p>
+                  1. Improving female reproductive health . 2. Reducing symptoms
+                  of menopause .3. Antioxidant effects . 4. Anti-anxiety effects
+                  5. Breast-feeding and pregnancy 6. It has antioxidant
+                  properties .7. It has anti-inflammatory properties 8. It may
+                  help boost your immune system. 9. It may help relieve cough
+                  10. It may help treat diarrhea. 11.It may act as a diuretic
+                  12. It may help treat ulcers13. It may help treat kidney
+                  stones14. It may help maintain blood sugar 15 It may be
+                  anti-aging 16. It may help treat depression
+                </p>
+
+                <div class="row">
+                  <button
+                    class="btn di-sec4-btf"
+                    data-toggle="modal"
+                    data-target="#myModal"
+                  >
+                    Get Quote
+                  </button>
+                  <a class="btn btn-herb" target="_blank" href="/shikakai">
+                    View
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section> -->
+
+        <!-- <section class="container-fluid herb-section">
+          <div class="herb-all">
+            <div class="row">
+              <div class="col-md-8 col-sm-8 col-xs-12">
+                <h3 class="text-center">
+                  <a href="" target="blank" style="color: #000">CURRY PATTA </a>
+                </h3>
+
+                <p><strong>Botanical Name :</strong> Asparagus racemosus</p>
+
+                <p><strong> Family Name :</strong> Asparagus Family</p>
+                <p>
+                  <strong>Common Name:</strong> Satavar, Shatavari, Shatamull,
+                  Shatawari,
+                </p>
+
+                <p><strong>Part Used :</strong> Rhizome</p>
+
+                <p><strong>Habitat :</strong> Cultivated in india</p>
+                <p><strong>Curing Diseases:</strong></p>
+
+                <p>
+                  1. Improving female reproductive health . 2. Reducing symptoms
+                  of menopause .3. Antioxidant effects . 4. Anti-anxiety effects
+                  5. Breast-feeding and pregnancy 6. It has antioxidant
+                  properties .7. It has anti-inflammatory properties 8. It may
+                  help boost your immune system. 9. It may help relieve cough
+                  10. It may help treat diarrhea. 11.It may act as a diuretic
+                  12. It may help treat ulcers13. It may help treat kidney
+                  stones14. It may help maintain blood sugar 15 It may be
+                  anti-aging 16. It may help treat depression
+                </p>
+
+                <div class="row">
+                  <button
+                    class="btn di-sec4-btf"
+                    data-toggle="modal"
+                    data-target="#myModal"
+                  >
+                    Get Quote
+                  </button>
+                  <a class="btn btn-herb" target="_blank" href="/curry_pata">
+                    View
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <a href="" target="_blank">
+                  <img src="/public_img/Curry.png" class="img-responsive"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </section> -->
+
+        <!-- <section class="container-fluid herb-section">
+          <div class="herb-all">
+            <div class="row">
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <a href="" target="_blank">
+                  <img src="/public_img/revand.png" class="img-responsive"
+                /></a>
+              </div>
+              <div class="col-md-8 col-sm-8 col-xs-12">
+                <h3 class="text-center">
+                  <a href="" target="blank" style="color: #000"
+                    >REVAND CHINI
+                  </a>
+                </h3>
+
+                <p><strong>Botanical Name :</strong> Asparagus racemosus</p>
+
+                <p><strong> Family Name :</strong> Asparagus Family</p>
+                <p>
+                  <strong>Common Name:</strong> Satavar, Shatavari, Shatamull,
+                  Shatawari,
+                </p>
+
+                <p><strong>Part Used :</strong> Rhizome</p>
+
+                <p><strong>Habitat :</strong> Cultivated in india</p>
+                <p><strong>Curing Diseases:</strong></p>
+
+                <p>
+                  1. Improving female reproductive health . 2. Reducing symptoms
+                  of menopause .3. Antioxidant effects . 4. Anti-anxiety effects
+                  5. Breast-feeding and pregnancy 6. It has antioxidant
+                  properties .7. It has anti-inflammatory properties 8. It may
+                  help boost your immune system. 9. It may help relieve cough
+                  10. It may help treat diarrhea. 11.It may act as a diuretic
+                  12. It may help treat ulcers13. It may help treat kidney
+                  stones14. It may help maintain blood sugar 15 It may be
+                  anti-aging 16. It may help treat depression
+                </p>
+
+                <div class="row">
+                  <button
+                    class="btn di-sec4-btf"
+                    data-toggle="modal"
+                    data-target="#myModal"
+                  >
+                    Get Quote
+                  </button>
+                  <a class="btn btn-herb" target="_blank" href="/revand_chini">
+                    View
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section> -->
+
+        <!-- <section class="container-fluid herb-section">
+          <div class="herb-all">
+            <div class="row">
+              <div class="col-md-8 col-sm-8 col-xs-12">
+                <h3 class="text-center">
+                  <a href="" target="blank" style="color: #000"
+                    >VACH (MEETHI)
+                  </a>
+                </h3>
+
+                <p><strong>Botanical Name :</strong> Asparagus racemosus</p>
+
+                <p><strong> Family Name :</strong> Asparagus Family</p>
+                <p>
+                  <strong>Common Name:</strong> Satavar, Shatavari, Shatamull,
+                  Shatawari,
+                </p>
+
+                <p><strong>Part Used :</strong> Rhizome</p>
+
+                <p><strong>Habitat :</strong> Cultivated in india</p>
+                <p><strong>Curing Diseases:</strong></p>
+
+                <p>
+                  1. Improving female reproductive health . 2. Reducing symptoms
+                  of menopause .3. Antioxidant effects . 4. Anti-anxiety effects
+                  5. Breast-feeding and pregnancy 6. It has antioxidant
+                  properties .7. It has anti-inflammatory properties 8. It may
+                  help boost your immune system. 9. It may help relieve cough
+                  10. It may help treat diarrhea. 11.It may act as a diuretic
+                  12. It may help treat ulcers13. It may help treat kidney
+                  stones14. It may help maintain blood sugar 15 It may be
+                  anti-aging 16. It may help treat depression
+                </p>
+
+                <div class="row">
+                  <button
+                    class="btn di-sec4-btf"
+                    data-toggle="modal"
+                    data-target="#myModal"
+                  >
+                    Get Quote
+                  </button>
+                  <a class="btn btn-herb" target="_blank" href="/vach_meethi">
+                    View
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <a href="" target="_blank">
+                  <img src="/public_img/Vach.png" class="img-responsive"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </section> -->
+
+        <!-- <section class="container-fluid herb-section">
+          <div class="herb-all">
+            <div class="row">
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <a href="" target="_blank">
+                  <img src="/public_img/MOSSGHASS.png" class="img-responsive"
+                /></a>
+              </div>
+              <div class="col-md-8 col-sm-8 col-xs-12">
+                <h3 class="text-center">
+                  <a href="" target="blank" style="color: #000">MOSS GHASS </a>
+                </h3>
+
+                <p><strong>Botanical Name :</strong> Asparagus racemosus</p>
+
+                <p><strong> Family Name :</strong> Asparagus Family</p>
+                <p>
+                  <strong>Common Name:</strong> Satavar, Shatavari, Shatamull,
+                  Shatawari,
+                </p>
+
+                <p><strong>Part Used :</strong> Rhizome</p>
+
+                <p><strong>Habitat :</strong> Cultivated in india</p>
+                <p><strong>Curing Diseases:</strong></p>
+
+                <p>
+                  1. Improving female reproductive health . 2. Reducing symptoms
+                  of menopause .3. Antioxidant effects . 4. Anti-anxiety effects
+                  5. Breast-feeding and pregnancy 6. It has antioxidant
+                  properties .7. It has anti-inflammatory properties 8. It may
+                  help boost your immune system. 9. It may help relieve cough
+                  10. It may help treat diarrhea. 11.It may act as a diuretic
+                  12. It may help treat ulcers13. It may help treat kidney
+                  stones14. It may help maintain blood sugar 15 It may be
+                  anti-aging 16. It may help treat depression
+                </p>
+
+                <div class="row">
+                  <button
+                    class="btn di-sec4-btf"
+                    data-toggle="modal"
+                    data-target="#myModal"
+                  >
+                    Get Quote
+                  </button>
+                  <a class="btn btn-herb" target="_blank" href="/moss_ghass">
+                    View
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section> -->
+
+        <!-- <section class="container-fluid herb-section">
+          <div class="herb-all">
+            <div class="row">
+              <div class="col-md-8 col-sm-8 col-xs-12">
+                <h3 class="text-center">
+                  <a href="" target="blank" style="color: #000"
+                    >DEVDARU,DEODAR GULIYA/DEODAR CHIPS
+                  </a>
+                </h3>
+
+                <p><strong>Botanical Name :</strong> Asparagus racemosus</p>
+
+                <p><strong> Family Name :</strong> Asparagus Family</p>
+                <p>
+                  <strong>Common Name:</strong> Satavar, Shatavari, Shatamull,
+                  Shatawari,
+                </p>
+
+                <p><strong>Part Used :</strong> Rhizome</p>
+
+                <p><strong>Habitat :</strong> Cultivated in india</p>
+                <p><strong>Curing Diseases:</strong></p>
+
+                <p>
+                  1. Improving female reproductive health . 2. Reducing symptoms
+                  of menopause .3. Antioxidant effects . 4. Anti-anxiety effects
+                  5. Breast-feeding and pregnancy 6. It has antioxidant
+                  properties .7. It has anti-inflammatory properties 8. It may
+                  help boost your immune system. 9. It may help relieve cough
+                  10. It may help treat diarrhea. 11.It may act as a diuretic
+                  12. It may help treat ulcers13. It may help treat kidney
+                  stones14. It may help maintain blood sugar 15 It may be
+                  anti-aging 16. It may help treat depression
+                </p>
+
+                <div class="row">
+                  <button
+                    class="btn di-sec4-btf"
+                    data-toggle="modal"
+                    data-target="#myModal"
+                  >
+                    Get Quote
+                  </button>
+                  <a class="btn btn-herb" target="_blank" href="/deodar">
+                    View
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <a href="" target="_blank">
+                  <img src="/public_img/Devdaru.png" class="img-responsive"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </section> -->
+
+        <!-- <section class="container-fluid herb-section">
+          <div class="herb-all">
+            <div class="row">
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <a href="" target="_blank">
+                  <img src="/public_img/Suhaga.png" class="img-responsive"
+                /></a>
+              </div>
+              <div class="col-md-8 col-sm-8 col-xs-12">
+                <h3 class="text-center">
+                  <a href="" target="blank" style="color: #000"
+                    >SUHAGA (NATURAL)
+                  </a>
+                </h3>
+
+                <p><strong>Botanical Name :</strong> Asparagus racemosus</p>
+
+                <p><strong> Family Name :</strong> Asparagus Family</p>
+                <p>
+                  <strong>Common Name:</strong> Satavar, Shatavari, Shatamull,
+                  Shatawari,
+                </p>
+
+                <p><strong>Part Used :</strong> Rhizome</p>
+
+                <p><strong>Habitat :</strong> Cultivated in india</p>
+                <p><strong>Curing Diseases:</strong></p>
+
+                <p>
+                  1. Improving female reproductive health . 2. Reducing symptoms
+                  of menopause .3. Antioxidant effects . 4. Anti-anxiety effects
+                  5. Breast-feeding and pregnancy 6. It has antioxidant
+                  properties .7. It has anti-inflammatory properties 8. It may
+                  help boost your immune system. 9. It may help relieve cough
+                  10. It may help treat diarrhea. 11.It may act as a diuretic
+                  12. It may help treat ulcers13. It may help treat kidney
+                  stones14. It may help maintain blood sugar 15 It may be
+                  anti-aging 16. It may help treat depression
+                </p>
+
+                <div class="row">
+                  <button
+                    class="btn di-sec4-btf"
+                    data-toggle="modal"
+                    data-target="#myModal"
+                  >
+                    Get Quote
+                  </button>
+                  <a class="btn btn-herb" target="_blank" href="/suhaga">
+                    View
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section> -->
+
+        <!-- <section class="container-fluid herb-section">
+          <div class="herb-all">
+            <div class="row">
+              <div class="col-md-8 col-sm-8 col-xs-12">
+                <h3 class="text-center">
+                  <a href="" target="blank" style="color: #000">DANDASA </a>
+                </h3>
+
+                <p><strong>Botanical Name :</strong> Asparagus racemosus</p>
+
+                <p><strong> Family Name :</strong> Asparagus Family</p>
+                <p>
+                  <strong>Common Name:</strong> Satavar, Shatavari, Shatamull,
+                  Shatawari,
+                </p>
+
+                <p><strong>Part Used :</strong> Rhizome</p>
+
+                <p><strong>Habitat :</strong> Cultivated in india</p>
+                <p><strong>Curing Diseases:</strong></p>
+
+                <p>
+                  1. Improving female reproductive health . 2. Reducing symptoms
+                  of menopause .3. Antioxidant effects . 4. Anti-anxiety effects
+                  5. Breast-feeding and pregnancy 6. It has antioxidant
+                  properties .7. It has anti-inflammatory properties 8. It may
+                  help boost your immune system. 9. It may help relieve cough
+                  10. It may help treat diarrhea. 11.It may act as a diuretic
+                  12. It may help treat ulcers13. It may help treat kidney
+                  stones14. It may help maintain blood sugar 15 It may be
+                  anti-aging 16. It may help treat depression
+                </p>
+
+                <div class="row">
+                  <button
+                    class="btn di-sec4-btf"
+                    data-toggle="modal"
+                    data-target="#myModal"
+                  >
+                    Get Quote
+                  </button>
+                  <a class="btn btn-herb" target="_blank" href="/dandasa">
+                    View
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <a href="" target="_blank">
+                  <img src="/public_img/Dandasa.png" class="img-responsive"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </section> -->
+
+        <!-- <section class="container-fluid herb-section">
+          <div class="herb-all">
+            <div class="row">
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <a href="" target="_blank">
+                  <img src="/public_img/Timur.png" class="img-responsive"
+                /></a>
+              </div>
+
+              <div class="col-md-8 col-sm-8 col-xs-12">
+                <h3 class="text-center">
+                  <a href="" target="blank" style="color: #000">TIMUR </a>
+                </h3>
+
+                <p><strong>Botanical Name :</strong> Asparagus racemosus</p>
+
+                <p><strong> Family Name :</strong> Asparagus Family</p>
+                <p>
+                  <strong>Common Name:</strong> Satavar, Shatavari, Shatamull,
+                  Shatawari,
+                </p>
+
+                <p><strong>Part Used :</strong> Rhizome</p>
+
+                <p><strong>Habitat :</strong> Cultivated in india</p>
+                <p><strong>Curing Diseases:</strong></p>
+
+                <p>
+                  1. Improving female reproductive health . 2. Reducing symptoms
+                  of menopause .3. Antioxidant effects . 4. Anti-anxiety effects
+                  5. Breast-feeding and pregnancy 6. It has antioxidant
+                  properties .7. It has anti-inflammatory properties 8. It may
+                  help boost your immune system. 9. It may help relieve cough
+                  10. It may help treat diarrhea. 11.It may act as a diuretic
+                  12. It may help treat ulcers13. It may help treat kidney
+                  stones14. It may help maintain blood sugar 15 It may be
+                  anti-aging 16. It may help treat depression
+                </p>
+
+                <div class="row">
+                  <button
+                    class="btn di-sec4-btf"
+                    data-toggle="modal"
+                    data-target="#myModal"
+                  >
+                    Get Quote
+                  </button>
+                  <a class="btn btn-herb" target="_blank" href="/timur">
+                    View
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section> -->
+
+        <!-- <section class="container-fluid herb-section">
+          <div class="herb-all">
+            <div class="row">
+              <div class="col-md-8 col-sm-8 col-xs-12">
+                <h3 class="text-center">
+                  <a href="" target="blank" style="color: #000"
+                    >TALISA PATRA
+                  </a>
+                </h3>
+
+                <p><strong>Botanical Name :</strong> Asparagus racemosus</p>
+
+                <p><strong> Family Name :</strong> Asparagus Family</p>
+                <p>
+                  <strong>Common Name:</strong> Satavar, Shatavari, Shatamull,
+                  Shatawari,
+                </p>
+
+                <p><strong>Part Used :</strong> Rhizome</p>
+
+                <p><strong>Habitat :</strong> Cultivated in india</p>
+                <p><strong>Curing Diseases:</strong></p>
+
+                <p>
+                  1. Improving female reproductive health . 2. Reducing symptoms
+                  of menopause .3. Antioxidant effects . 4. Anti-anxiety effects
+                  5. Breast-feeding and pregnancy 6. It has antioxidant
+                  properties .7. It has anti-inflammatory properties 8. It may
+                  help boost your immune system. 9. It may help relieve cough
+                  10. It may help treat diarrhea. 11.It may act as a diuretic
+                  12. It may help treat ulcers13. It may help treat kidney
+                  stones14. It may help maintain blood sugar 15 It may be
+                  anti-aging 16. It may help treat depression
+                </p>
+
+                <div class="row">
+                  <button
+                    class="btn di-sec4-btf"
+                    data-toggle="modal"
+                    data-target="#myModal"
+                  >
+                    Get Quote
+                  </button>
+                  <a class="btn btn-herb" target="_blank" href="/talisa_patra">
+                    View
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <a href="" target="_blank">
+                  <img src="/public_img/Talisapatra.png" class="img-responsive"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </section> -->
+
+        <!-- <section class="container-fluid herb-section">
+          <div class="herb-all">
+            <div class="row">
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <a href="" target="_blank">
+                  <img src="/public_img/Daruhaldi.png" class="img-responsive"
+                /></a>
+              </div>
+              <div class="col-md-8 col-sm-8 col-xs-12">
+                <h3 class="text-center">
+                  <a href="" target="blank" style="color: #000"
+                    >DARUHALDI CHHAL OR DARUHALDI CHIPS
+                  </a>
+                </h3>
+
+                <p><strong>Botanical Name :</strong> Asparagus racemosus</p>
+
+                <p><strong> Family Name :</strong> Asparagus Family</p>
+                <p>
+                  <strong>Common Name:</strong> Satavar, Shatavari, Shatamull,
+                  Shatawari,
+                </p>
+
+                <p><strong>Part Used :</strong> Rhizome</p>
+
+                <p><strong>Habitat :</strong> Cultivated in india</p>
+                <p><strong>Curing Diseases:</strong></p>
+
+                <p>
+                  1. Improving female reproductive health . 2. Reducing symptoms
+                  of menopause .3. Antioxidant effects . 4. Anti-anxiety effects
+                  5. Breast-feeding and pregnancy 6. It has antioxidant
+                  properties .7. It has anti-inflammatory properties 8. It may
+                  help boost your immune system. 9. It may help relieve cough
+                  10. It may help treat diarrhea. 11.It may act as a diuretic
+                  12. It may help treat ulcers13. It may help treat kidney
+                  stones14. It may help maintain blood sugar 15 It may be
+                  anti-aging 16. It may help treat depression
+                </p>
+
+                <div class="row">
+                  <button
+                    class="btn di-sec4-btf"
+                    data-toggle="modal"
+                    data-target="#myModal"
+                  >
+                    Get Quote
+                  </button>
+                  <a
+                    class="btn btn-herb"
+                    target="_blank"
+                    href="/daruhaldi_chhal"
+                  >
+                    View
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section> -->
+
+        <!-- <section class="container-fluid herb-section">
+          <div class="herb-all">
+            <div class="row">
+              <div class="col-md-8 col-sm-8 col-xs-12">
+                <h3 class="text-center">
+                  <a href="" target="blank" style="color: #000">AMLA(DRIED) </a>
+                </h3>
+
+                <p><strong>Botanical Name :</strong> Asparagus racemosus</p>
+
+                <p><strong> Family Name :</strong> Asparagus Family</p>
+                <p>
+                  <strong>Common Name:</strong> Satavar, Shatavari, Shatamull,
+                  Shatawari,
+                </p>
+
+                <p><strong>Part Used :</strong> Rhizome</p>
+
+                <p><strong>Habitat :</strong> Cultivated in india</p>
+                <p><strong>Curing Diseases:</strong></p>
+
+                <p>
+                  1. Improving female reproductive health . 2. Reducing symptoms
+                  of menopause .3. Antioxidant effects . 4. Anti-anxiety effects
+                  5. Breast-feeding and pregnancy 6. It has antioxidant
+                  properties .7. It has anti-inflammatory properties 8. It may
+                  help boost your immune system. 9. It may help relieve cough
+                  10. It may help treat diarrhea. 11.It may act as a diuretic
+                  12. It may help treat ulcers13. It may help treat kidney
+                  stones14. It may help maintain blood sugar 15 It may be
+                  anti-aging 16. It may help treat depression
+                </p>
+
+                <div class="row">
+                  <button
+                    class="btn di-sec4-btf"
+                    data-toggle="modal"
+                    data-target="#myModal"
+                  >
+                    Get Quote
+                  </button>
+                  <a class="btn btn-herb" target="_blank" href="/dried_amla">
+                    View
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <a href="" target="_blank">
+                  <img src="/public_img/Amla.png" class="img-responsive"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </section> -->
+
+        <!-- <section class="container-fluid herb-section">
+          <div class="herb-all">
+            <div class="row">
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <a href="" target="_blank">
+                  <img src="/public_img/mulethi.png" class="img-responsive"
+                /></a>
+              </div>
+
+              <div class="col-md-8 col-sm-8 col-xs-12">
+                <h3 class="text-center">
+                  <a href="" target="blank" style="color: #000">MULETHI </a>
+                </h3>
+
+                <p><strong>Botanical Name :</strong> Asparagus racemosus</p>
+
+                <p><strong> Family Name :</strong> Asparagus Family</p>
+                <p>
+                  <strong>Common Name:</strong> Satavar, Shatavari, Shatamull,
+                  Shatawari,
+                </p>
+
+                <p><strong>Part Used :</strong> Rhizome</p>
+
+                <p><strong>Habitat :</strong> Cultivated in india</p>
+                <p><strong>Curing Diseases:</strong></p>
+
+                <p>
+                  1. Improving female reproductive health . 2. Reducing symptoms
+                  of menopause .3. Antioxidant effects . 4. Anti-anxiety effects
+                  5. Breast-feeding and pregnancy 6. It has antioxidant
+                  properties .7. It has anti-inflammatory properties 8. It may
+                  help boost your immune system. 9. It may help relieve cough
+                  10. It may help treat diarrhea. 11.It may act as a diuretic
+                  12. It may help treat ulcers13. It may help treat kidney
+                  stones14. It may help maintain blood sugar 15 It may be
+                  anti-aging 16. It may help treat depression
+                </p>
+
+                <div class="row">
+                  <button
+                    class="btn di-sec4-btf"
+                    data-toggle="modal"
+                    data-target="#myModal"
+                  >
+                    Get Quote
+                  </button>
+                  <a class="btn btn-herb" target="_blank" href="/mulethi">
+                    View
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section> -->
+
+        <!-- <section class="container-fluid herb-section">
+          <div class="herb-all">
+            <div class="row">
+              <div class="col-md-8 col-sm-8 col-xs-12">
+                <h3 class="text-center">
+                  <a href="" target="blank" style="color: #000"
+                    >MEETHA ATIS /ATIS MEETHA
+                  </a>
+                </h3>
+
+                <p><strong>Botanical Name :</strong> Asparagus racemosus</p>
+
+                <p><strong> Family Name :</strong> Asparagus Family</p>
+                <p>
+                  <strong>Common Name:</strong> Satavar, Shatavari, Shatamull,
+                  Shatawari,
+                </p>
+
+                <p><strong>Part Used :</strong> Rhizome</p>
+
+                <p><strong>Habitat :</strong> Cultivated in india</p>
+                <p><strong>Curing Diseases:</strong></p>
+
+                <p>
+                  1. Improving female reproductive health . 2. Reducing symptoms
+                  of menopause .3. Antioxidant effects . 4. Anti-anxiety effects
+                  5. Breast-feeding and pregnancy 6. It has antioxidant
+                  properties .7. It has anti-inflammatory properties 8. It may
+                  help boost your immune system. 9. It may help relieve cough
+                  10. It may help treat diarrhea. 11.It may act as a diuretic
+                  12. It may help treat ulcers13. It may help treat kidney
+                  stones14. It may help maintain blood sugar 15 It may be
+                  anti-aging 16. It may help treat depression
+                </p>
+
+                <div class="row">
+                  <button
+                    class="btn di-sec4-btf"
+                    data-toggle="modal"
+                    data-target="#myModal"
+                  >
+                    Get Quote
+                  </button>
+                  <a class="btn btn-herb" target="_blank" href="/meetha_atis">
+                    View
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <a href="" target="_blank" rel="noopener noreferrer">
+                  <img src="/public_img/Meetha.png" class="img-responsive"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </section> -->
+
+        <!--------request for quote----------->
+        <%- include("include/_get_quote") %>
+
+        <!-------- footer section		-----	 -->
+        <%- include("include/_footer") %>
+      </div>
+    </div>
+
+    <!-- Scripts  -->
+    <%- include("include/_scripts") %>
+  </body>
+</html>

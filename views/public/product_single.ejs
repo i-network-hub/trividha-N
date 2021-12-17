@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Trividha | Product</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <%- include("include/_header") %>
+    <link
+      rel="stylesheet"
+      href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      .affix {
+        top: 0;
+        width: 100%;
+        z-index: 9999 !important;
+      }
+
+      .affix + .container-fluid {
+        padding-top: 70px;
+      }
+      #fp-nav {
+        display: none;
+      }
+      .reach-us {
+        padding-left: 60px;
+      }
+      @media (max-width: 990px) {
+        .reach-us {
+          padding-left: 0px;
+        }
+        .ps-image {
+          padding-left: 120px;
+        }
+        .doctr-sec3 {
+          min-height: auto;
+        }
+        .product-carousel .carousel-cell img {
+          margin-left: 0% !important;
+        }
+      }
+      .product-carousel .carousel-cell {
+        width: 100%;
+        height: 300px;
+      }
+
+      .product-carousel .carousel-cell img {
+        padding: 30px;
+        width: 200px;
+        height: 300px;
+        margin-left: 25%;
+      }
+      .product-carousel .flickity-button {
+        display: none;
+      }
+      .product-carousel .flickity-page-dots {
+        bottom: 0px;
+      }
+      .product-carousel .flickity-page-dots .dot {
+        background-color: #000;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- Social Links  -->
+      <%- include("include/_social_links") %>
+
+      <section
+        class="container-fluid header nopadding vertical-scrolling b-img"
+      >
+        <!-- header top-fix navbar  -->
+        <%- include("include/_navbar_cart") %>
+
+        <!-- header top-fix side navbar  -->
+        <%- include("include/_side_navbar") %>
+
+        <div class="reach-us mt-100">
+          <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12 ps-image">
+              <div
+                class="main-carousel product-carousel"
+                data-flickity='{"wrapAround":true}'
+              >
+                <% data.image.forEach(function(user){ %>
+                <div class="carousel-cell">
+                  <div class="slider-content">
+                    <img src="../<%=user%>" alt="" />
+                  </div>
+                </div>
+                <% }); %>
+
+                <!-- <div class="carousel-cell">
+                  <div class="slider-content">
+                    <img src="assets/img/pro2.png" alt="" />
+                  </div>
+                </div> -->
+                <!-- <div class="carousel-cell">
+                  <div class="slider-content">
+                    <img src="assets/img/pro3.png" alt="" />
+                  </div>
+                </div> -->
+                <!-- <div class="carousel-cell">
+                  <div class="slider-content">
+                    <img src="assets/img/pro2.png" alt="" />
+                  </div>
+                </div> -->
+              </div>
+            </div>
+
+            <div class="col-md-8 col-sm-8 col-xs-12">
+              <div class="product-heading">
+                <h2><%=data.name%></h2>
+                <h4><%=data.especialities%></h4>
+              </div>
+              <p class="product-main">
+                <%=data.content%> <br /><br />
+                <strong>Current Price :</strong> <%=data.price%>/- <br /><br />
+                <strong>Discount :</strong> <%=data.discount%>%
+              </p>
+
+              <button
+                class="btn btn-herb addtocart"
+                data-productid="<%=data._id%>"
+                data-quantity="1"
+                data-name="<%=data.name%>"
+                data-price="<%=data.price%>"
+                data-discount="<%=data.discount%>"
+                style="margin-left: 35px"
+              >
+                Add To Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="container-fluid abt-new">
+        <div class="row">
+          <div class="col-md-12 colsm-12 col-xs-12">
+            <h1 class="heading">Ingredients</h1>
+
+            <p><%=data.ingredients%> <br /><br /></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="container-fluid doctr-sec3">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-1 col-sm-12 colxs-12"></div>
+            <div class="col-md-10 col-sm-12 col-xs-12">
+              <h1 class="heading">Usage And Benefits</h1>
+              <p><%=data.usage_and_benefits%> <br /><br /></p>
+            </div>
+            <div class="col-md-1 col-sm-12 colxs-12"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="container-fluid abt-new">
+        <div class="row">
+          <div class="col-md-12 colsm-12 col-xs-12">
+            <h1 class="heading">How To Use</h1>
+
+            <p><%=data.how_to_use%></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="container-fluid doctr-sec3">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-1 col-sm-12 colxs-12"></div>
+            <div class="col-md-10 col-sm-12 col-xs-12">
+              <h1 class="heading">Disclaimer</h1>
+
+              <p><%=data.disclaimer%> <br /><br /></p>
+            </div>
+
+            <div class="col-md-1 col-sm-12 colxs-12"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-------- footer section		-----	 -->
+      <%- include("include/_footer") %>
+    </div>
+
+    <!-- Scripts  -->
+    <%- include("include/_scripts") %>
+  </body>
+</html>

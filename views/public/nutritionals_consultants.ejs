@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Trividha | Nutritionals Consultants</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <%- include("include/_header") %>
+    <link
+      rel="stylesheet"
+      href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      .affix {
+        top: 0;
+        width: 100%;
+        z-index: 9999 !important;
+      }
+
+      .affix + .container-fluid {
+        padding-top: 70px;
+      }
+      #fp-nav {
+        display: none;
+      }
+      .owl-nav .owl-prev,
+      .owl-next {
+        margin-top: -100px !important;
+      }
+      @media (max-width: 990px) {
+        .cusm {
+          margin-top: -15px;
+        }
+        .owl-nav .owl-prev,
+        .owl-next {
+          margin-top: -80px !important;
+        }
+
+        .owl-nav .owl-prev {
+          margin-left: -20px !important;
+        }
+        .owl-nav .owl-next {
+          margin-right: -20px !important;
+        }
+        .slider-box {
+          margin-left: 41px !important;
+        }
+        .slider-box p {
+          margin-top: 0px !important;
+        }
+      }
+      .ctm {
+        margin-top: 0px;
+      }
+      .abt-new-sec {
+        padding-top: 115px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- Social Links  -->
+      <%- include("include/_social_links") %>
+      <div id="main">
+        <section
+          class="container-fluid header nopadding vertical-scrolling b-img"
+        >
+          <!-- header top-fix navbar  -->
+          <%- include("include/_navbar") %>
+
+          <!-- header top-fix side navbar  -->
+          <%- include("include/_side_navbar") %>
+
+          <img src="/public_img/upd.jpg" class="img-responsive mt-120" />
+        </section>
+
+        <section class="container-fluid abt-new">
+          <div class="row">
+            <div class="col-md-12 colsm-12 col-xs-12">
+              <h1 class="heading">Why You Need a Nutritionalist ?</h1>
+
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
+                ipsum suspendisse ultrices gravida. Risus commodo viverra
+                maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit
+                amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Quis ipsum
+                suspendisse ultrices gravida. Risus commodo viverra maecenas
+                accumsan lacus vel facilisis. <br /><br />
+
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
+                ipsum suspendisse ultrices gravida. Risus commodo viverra
+                maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit
+                amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Quis ipsum
+                suspendisse ultrices gravida. Risus commodo viverra maecenas
+                accumsan lacus vel facilisis. Lorem ipsum dolor sit amet,
+                consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
+                gravida. Risus commodo viverra maecenas accumsan lacus vel
+                facilisis. <br /><br />
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="container-fluid doctr-sec3">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-1 col-sm-12 colxs-12"></div>
+              <div class="col-md-10 col-sm-12 col-xs-12">
+                <h1 class="heading">Our Speciality as a Nutritionalist</h1>
+
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
+                  maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit
+                  amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua. Quis ipsum
+                  suspendisse ultrices gravida. Risus commodo viverra maecenas
+                  accumsan lacus vel facilisis. <br /><br />
+
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
+                  maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit
+                  amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua. Quis ipsum
+                  suspendisse ultrices gravida. Risus commodo viverra maecenas
+                  accumsan lacus vel facilisis. Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                  ut labore et dolore magna aliqua. Quis ipsum suspendisse
+                  ultrices gravida. Risus commodo viverra maecenas accumsan
+                  lacus vel facilisis.
+                </p>
+              </div>
+
+              <div class="col-md-1 col-sm-12 colxs-12"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="container-fluid abt-new-sec">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 colsm-12 col-xs-12">
+                <h1 class="heading text-center">Weight Managment Programs</h1>
+              </div>
+
+              <div class="col-md-12 colsm-12 col-xs-12">
+                <div class="owl-carousel owl-theme upd">
+                  <%for(let i=0; i < 7; i++){%>
+                  <div class="item">
+                    <img
+                      src="../<%=weightPlans[i].image%>"
+                      class="img-responsive"
+                      style="
+                        width: 75%;
+                        height: 300px;
+                        margin: auto;
+                        display: block;
+                      "
+                    />
+
+                    <div class="slider-box lift">
+                      <div class="slider-text">
+                        <h4 class="">
+                          <%= weightPlans[i].name.slice(0, 10) +
+                          (weightPlans[i].name.length > 10 ? "..." : "") %>
+                        </h4>
+                        <p>
+                          <%= weightPlans[i].content.slice(0, 30) +
+                          (weightPlans[i].content.length > 30 ? "..." : "") %>
+                        </p>
+                        <a
+                          href="/weight_single?id=<%=weightPlans[i]._id%>"
+                          target="_blank"
+                          >Read More</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <%}%>
+
+                  <!-- <div class="item">
+                    <img
+                      src="/public_img/weight-loss.jpg"
+                      class="img-responsive"
+                      style="width: 75%; margin: auto; display: block"
+                    />
+
+                    <div class="slider-box">
+                      <div class="slider-text">
+                        <h4 class="">Weight Loss with Associate Disease</h4>
+                        <p A>
+                          Perfect Program For Weight Loss, Fat Loss And Inch
+                          Loss. Ideal for students, bachelors, corporates,
+                          working women, housewives.
+                        </p>
+                        <a href="#">Read More</a>
+                      </div>
+                    </div>
+                  </div> -->
+
+                  <!-- <div class="item">
+                    <img
+                      src="/public_img/weight-loss.jpg"
+                      class="img-responsive"
+                      style="width: 75%; margin: auto; display: block"
+                    />
+
+                    <div class="slider-box">
+                      <div class="slider-text">
+                        <h4 class="">Therapeutic(Medical issues)</h4>
+                        <p A>
+                          Perfect Program For Weight Loss, Fat Loss And Inch
+                          Loss. Ideal for students, bachelors, corporates,
+                          working women, housewives.
+                        </p>
+                        <a href="#">Read More</a>
+                      </div>
+                    </div>
+                  </div> -->
+                  <!-- <div class="item">
+                    <img
+                      src="/public_img/weight-loss.jpg"
+                      class="img-responsive"
+                      style="width: 75%; margin: auto; display: block"
+                    />
+
+                    <div class="slider-box">
+                      <div class="slider-text">
+                        <h4 class="">Post Delivery Weight management</h4>
+                        <p A>
+                          Perfect Program For Weight Loss, Fat Loss And Inch
+                          Loss. Ideal for students, bachelors, corporates,
+                          working women, housewives.
+                        </p>
+                        <a href="#">Read More</a>
+                      </div>
+                    </div>
+                  </div> -->
+
+                  <!-- <div class="item">
+                    <img
+                      src="/public_img/weight-loss.jpg"
+                      class="img-responsive"
+                      style="width: 75%; margin: auto; display: block"
+                    />
+
+                    <div class="slider-box">
+                      <div class="slider-text">
+                        <h4 class="">Weight Gain</h4>
+                        <p A>
+                          Perfect Program For Weight Loss, Fat Loss And Inch
+                          Loss. Ideal for students, bachelors, corporates,
+                          working women, housewives.
+                        </p>
+                        <a href="#">Read More</a>
+                      </div>
+                    </div>
+                  </div> -->
+
+                  <!-- <div class="item">
+                    <img
+                      src="/public_img/weight-loss.jpg"
+                      class="img-responsive"
+                      style="width: 75%; margin: auto; display: block"
+                    />
+
+                    <div class="slider-box">
+                      <div class="slider-text">
+                        <h4 class="">Senior Citizen Diet Program</h4>
+                        <p A>
+                          Perfect Program For Weight Loss, Fat Loss And Inch
+                          Loss. Ideal for students, bachelors, corporates,
+                          working women, housewives.
+                        </p>
+                        <a href="#">Read More</a>
+                      </div>
+                    </div>
+                  </div> -->
+
+                  <!-- <div class="item">
+                    <img
+                      src="/public_img/weight-loss.jpg"
+                      class="img-responsive"
+                      style="width: 75%; margin: auto; display: block"
+                    />
+
+                    <div class="slider-box">
+                      <div class="slider-text">
+                        <h4 class="">Pre wedding Program</h4>
+                        <p A>
+                          Perfect Program For Weight Loss, Fat Loss And Inch
+                          Loss. Ideal for students, bachelors, corporates,
+                          working women, housewives.
+                        </p>
+                        <a href="#">Read More</a>
+                      </div>
+                    </div>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+            <a href="/check_all_program" target="_blank"
+              ><button class="btn ctm">Check All programms</button></a
+            >
+          </div>
+        </section>
+
+        <section class="container-fluid abt-new-sec">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 colsm-12 col-xs-12">
+                <h1 class="heading text-center">
+                  We Offer Different type of Diet Plans
+                </h1>
+              </div>
+
+              <div class="col-md-12 colsm-12 col-xs-12">
+                <div class="owl-carousel owl-theme upd">
+                  <%for(let i=0; i < 10; i++){%>
+                  <div class="item">
+                    <img
+                      src="../<%=diets[i].image%>"
+                      class="img-responsive"
+                      style="
+                        width: 75%;
+                        height: 300px;
+                        margin: auto;
+                        display: block;
+                      "
+                    />
+
+                    <div class="slider-box lift">
+                      <div class="slider-text">
+                        <h4 class="">
+                          <%= diets[i].name.slice(0, 10) + (diets[i].name.length
+                          > 10 ? "..." : "") %>
+                        </h4>
+                        <p>
+                          <%= diets[i].content.slice(0, 30) +
+                          (diets[i].content.length > 30 ? "..." : "") %>
+                        </p>
+                        <a
+                          href="/plan_single?id=<%=diets[i]._id%>"
+                          target="_blank"
+                          >Read More</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <%}%>
+                  <!-- <div class="item">
+                    <img
+                      src="/public_img/weight-loss.jpg"
+                      class="img-responsive"
+                      style="width: 75%; margin: auto; display: block"
+                    />
+
+                    <div class="slider-box">
+                      <div class="slider-text">
+                        <h4 class="">Moderate carb diet plan (MCD)</h4>
+                        <p A>
+                          Perfect Program For Weight Loss, Fat Loss And Inch
+                          Loss. Ideal for students, bachelors, corporates,
+                          working women, housewives.
+                        </p>
+                        <a href="#">Read More</a>
+                      </div>
+                    </div>
+                  </div> -->
+                  <!-- <div class="item">
+                    <img
+                      src="/public_img/weight-loss.jpg"
+                      class="img-responsive"
+                      style="width: 75%; margin: auto; display: block"
+                    />
+
+                    <div class="slider-box">
+                      <div class="slider-text">
+                        <h4 class="">High carb diet plan (HCD)</h4>
+                        <p A>
+                          Perfect Program For Weight Loss, Fat Loss And Inch
+                          Loss. Ideal for students, bachelors, corporates,
+                          working women, housewives.
+                        </p>
+                        <a href="#">Read More</a>
+                      </div>
+                    </div>
+                  </div> -->
+                  <!-- <div class="item">
+                    <img
+                      src="/public_img/weight-loss.jpg"
+                      class="img-responsive"
+                      style="width: 75%; margin: auto; display: block"
+                    />
+
+                    <div class="slider-box">
+                      <div class="slider-text">
+                        <h4 class="">Ketogenic diet plan</h4>
+                        <p A>
+                          Perfect Program For Weight Loss, Fat Loss And Inch
+                          Loss. Ideal for students, bachelors, corporates,
+                          working women, housewives.
+                        </p>
+                        <a href="#">Read More</a>
+                      </div>
+                    </div>
+                  </div> -->
+                  <!-- <div class="item">
+                    <img
+                      src="/public_img/weight-loss.jpg"
+                      class="img-responsive"
+                      style="width: 75%; margin: auto; display: block"
+                    />
+
+                    <div class="slider-box">
+                      <div class="slider-text">
+                        <h4 class="">Intermittent fasting</h4>
+                        <p A>
+                          Perfect Program For Weight Loss, Fat Loss And Inch
+                          Loss. Ideal for students, bachelors, corporates,
+                          working women, housewives.
+                        </p>
+                        <a href="#">Read More</a>
+                      </div>
+                    </div>
+                  </div> -->
+                  <!-- <div class="item">
+                    <img
+                      src="/public_img/weight-loss.jpg"
+                      class="img-responsive"
+                      style="width: 75%; margin: auto; display: block"
+                    />
+
+                    <div class="slider-box">
+                      <div class="slider-text">
+                        <h4 class="">Detox diet plan</h4>
+                        <p A>
+                          Perfect Program For Weight Loss, Fat Loss And Inch
+                          Loss. Ideal for students, bachelors, corporates,
+                          working women, housewives.
+                        </p>
+                        <a href="#">Read More</a>
+                      </div>
+                    </div>
+                  </div> -->
+                  <!-- <div class="item">
+                    <img
+                      src="/public_img/weight-loss.jpg"
+                      class="img-responsive"
+                      style="width: 75%; margin: auto; display: block"
+                    />
+
+                    <div class="slider-box">
+                      <div class="slider-text">
+                        <h4 class="">Zone diet plan</h4>
+                        <p A>
+                          Perfect Program For Weight Loss, Fat Loss And Inch
+                          Loss. Ideal for students, bachelors, corporates,
+                          working women, housewives.
+                        </p>
+                        <a href="#">Read More</a>
+                      </div>
+                    </div>
+                  </div> -->
+                  <!-- <div class="item">
+                    <img
+                      src="/public_img/weight-loss.jpg"
+                      class="img-responsive"
+                      style="width: 75%; margin: auto; display: block"
+                    />
+
+                    <div class="slider-box">
+                      <div class="slider-text">
+                        <h4 class="">Very-low-calorie diet plan</h4>
+                        <p A>
+                          Perfect Program For Weight Loss, Fat Loss And Inch
+                          Loss. Ideal for students, bachelors, corporates,
+                          working women, housewives.
+                        </p>
+                        <a href="#">Read More</a>
+                      </div>
+                    </div>
+                  </div> -->
+                  <!-- <div class="item">
+                    <img
+                      src="/public_img/weight-loss.jpg"
+                      class="img-responsive"
+                      style="width: 75%; margin: auto; display: block"
+                    />
+
+                    <div class="slider-box">
+                      <div class="slider-text">
+                        <h4 class="">GM Diet Plan</h4>
+                        <p A>
+                          Perfect Program For Weight Loss, Fat Loss And Inch
+                          Loss. Ideal for students, bachelors, corporates,
+                          working women, housewives.
+                        </p>
+                        <a href="#">Read More</a>
+                      </div>
+                    </div>
+                  </div> -->
+                  <!-- <div class="item">
+                    <img
+                      src="/public_img/weight-loss.jpg"
+                      class="img-responsive"
+                      style="width: 75%; margin: auto; display: block"
+                    />
+
+                    <div class="slider-box">
+                      <div class="slider-text">
+                        <h4 class="">PCOD Diet Plan</h4>
+                        <p A>
+                          Perfect Program For Weight Loss, Fat Loss And Inch
+                          Loss. Ideal for students, bachelors, corporates,
+                          working women, housewives.
+                        </p>
+                        <a href="#">Read More</a>
+                      </div>
+                    </div>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+            <a href="/explore_all_plan" target="_blank"
+              ><button class="btn ctm">Explor all plan</button></a
+            >
+          </div>
+        </section>
+        <section class="container-fluid doctr-sec3">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-1 col-sm-12 colxs-12"></div>
+              <div class="col-md-10 col-sm-12 col-xs-12">
+                <h1 class="heading">Transformation Journey of our Clients</h1>
+
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
+                  maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit
+                  amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua. Quis ipsum
+                  suspendisse ultrices gravida. Risus commodo viverra maecenas
+                  accumsan lacus vel facilisis. <br /><br />
+                </p>
+              </div>
+
+              <div class="col-md-1 col-sm-12 colxs-12"></div>
+            </div>
+          </div>
+        </section>
+        <section class="container-fluid abt-new">
+          <div class="row">
+            <div class="col-md-12 colsm-12 col-xs-12" style="margin-top: -30px">
+              <h1 class="heading">View top transformation Story</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
+                ipsum suspendisse ultrices gravida. Risus commodo viverra
+                maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit
+                amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Quis ipsum
+                suspendisse ultrices gravida. Risus commodo viverra maecenas
+                accumsan lacus vel facilisis. <br /><br />
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-------- footer section		-----	 -->
+        <%- include("include/_footer") %>
+      </div>
+    </div>
+    <script>
+      $(".upd").owlCarousel({
+        loop: true,
+        margin: 10,
+        dots: false,
+        responsiveClass: true,
+        autoplay: true,
+        autoplayHoverPause: true,
+        responsive: {
+          0: {
+            items: 1,
+            nav: true,
+          },
+          600: {
+            items: 2,
+            nav: true,
+          },
+          1000: {
+            items: 2,
+            nav: true,
+            loop: true,
+            margin: 20,
+          },
+        },
+      });
+    </script>
+    <!-- Scripts  -->
+    <%- include("include/_scripts") %>
+  </body>
+</html>

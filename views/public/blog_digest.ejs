@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Trividha | Blog | Digest</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <%- include("include/_header") %>
+    <link
+      rel="stylesheet"
+      href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      .affix {
+        top: 0;
+        width: 100%;
+        z-index: 9999 !important;
+      }
+
+      .affix + .container-fluid {
+        padding-top: 70px;
+      }
+      #fp-nav {
+        display: none;
+      }
+
+      .abt-new p {
+        padding-top: 0px;
+      }
+      .check-program2 {
+        padding-top: 80px;
+      }
+      @media (max-width: 990px) {
+        .check-program2 {
+          padding-top: 0px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Social Links  -->
+      <%- include("include/_social_links") %>
+      <div id="main">
+        <section
+          class="container-fluid header nopadding vertical-scrolling b-img"
+        >
+          <!-- header top-fix navbar  -->
+          <%- include("include/_navbar_cart") %>
+
+          <!-- header top-fix side navbar  -->
+          <%- include("include/_side_navbar") %>
+
+          <div
+            class="
+              container-fluid
+              check-program
+              col-md-12
+              mt-100
+              section-divide
+            "
+          >
+            <h1 class="abt-txt text-center"><%=data.name%></h1>
+
+            <div class="row">
+              <div class="col-md-8">
+                <p class="text col-md-12 txt"><%=data.content[0]%></p>
+              </div>
+              <div class="col-md-4 mt-50">
+                <img
+                  src="../<%=data.image[0]%>"
+                  alt=""
+                  class="img-fluid"
+                  width="100%"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <%for(let i=1; i < data.content.length; i++){%>
+        <section class="abt-new">
+          <div class="row">
+            <div class="col-md-4" style="margin-top: -100px">
+              <img
+                src="../<%=data.image[i]%>"
+                alt=""
+                class="img-fluid"
+                width="100%"
+              />
+            </div>
+            <div class="col-md-8">
+              <p class="" style="width: auto"><%=data.content[i]%></p>
+            </div>
+          </div>
+        </section>
+        <%if(data.content[i+1]){%>
+        <section class="abt-new">
+          <div class="row">
+            <div class="col-md-8">
+              <p class="" style="width: auto"><%=data.content[i+1]%></p>
+            </div>
+            <div class="col-md-4" style="margin-top: -100px">
+              <img
+                src="../<%=data.image[i+1]%>"
+                alt=""
+                class="img-fluid"
+                width="100%"
+              />
+            </div>
+          </div>
+        </section>
+        <%}%> <%}%>
+
+        <section class="container-fluid check-program2">
+          <div class="container">
+            <h1 class="abt-txt text-center">Comments</h1>
+            <%for(let i=0; i < comments.length; i++){%>
+            <div class="row comment-sec col-md-12">
+              <div class="col-md-1">
+                <!-- <span
+                  class=""
+                  style="
+                    font-size: 30px;
+                    text-transform: uppercase;
+                    padding-top: 10px;
+                  "
+                >
+                  <%=comments[i].name.slice(0, 2)%>
+                </span> -->
+                <img
+                  src="https://img.icons8.com/bubbles/100/000000/user.png"
+                  width="100%"
+                />
+                <!-- <img
+                  src="/public_img/testimonial-img.png"
+                  alt=""
+                  width="100%"
+                /> -->
+              </div>
+              <div class="col-md-10">
+                <p class="text">
+                  <strong><%=comments[i].name%></strong> <br />
+                  <%=comments[i].comment%><br />
+                  <!-- <a href=""
+                    ><i
+                      class="fa fa-comments"
+                      title="Reply To This Comment"
+                      style="color: #c77b2b"
+                    ></i
+                  ></a> -->
+                  <%if(comments[i].reply){%>
+                  <span
+                    style="
+                      margin-left: 20px;
+                      color: rgb(78, 76, 76);
+                      padding: 10px;
+                      font-size: 15px;
+                    "
+                  >
+                    <%=comments[i].reply%>
+                  </span>
+                  <%}%>
+                </p>
+              </div>
+            </div>
+            <%}%>
+          </div>
+
+          <%if(userIs){%>
+          <div class="container">
+            <div class="row">
+              <div
+                class="ftm col-md-5"
+                style="margin-top: 70px; margin-left: 30px"
+              >
+                <h1
+                  class="abt-txt caree"
+                  style="font-family: fontone; color: #5d7326"
+                >
+                  Post A Comment
+                </h1>
+              </div>
+              <div class="ftm col-md-6">
+                <div class="col-lg-12 col-sm-12 col-xs-12 frm">
+                  <form
+                    action="/api/post_comments"
+                    method="POST"
+                    id="upload_data_newsletter"
+                  >
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          name="name"
+                          style="display: none"
+                          value="<%=userName%>"
+                        />
+                        <input
+                          type="text"
+                          name="email"
+                          style="display: none"
+                          value="<%=userEmail%>"
+                        />
+                        <input
+                          type="text"
+                          name="comment_on"
+                          style="display: none"
+                          value="<%=data.name%>"
+                        />
+                        <input
+                          type="text"
+                          name="blog_id"
+                          style="display: none"
+                          value="<%=data._id%>"
+                        />
+                        <label for="comment" class="frm-txt">Comment</label>
+                        <textarea
+                          name="comment"
+                          id=""
+                          cols="10"
+                          rows="2"
+                          class="form-control"
+                        ></textarea>
+                      </div>
+                      <div class="form-group">
+                        <p class="frm-txt">
+                          <button
+                            type="submit"
+                            class="btn btn-default"
+                            style="
+                              color: #000;
+                              background: #c77b2b;
+                              padding: 3px 15px;
+                              border-radius: 0;
+                            "
+                          >
+                            Send
+                          </button>
+                        </p>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <%}else{%>
+          <div class="container">
+            <div class="row">
+              <div
+                class="ftm col-md-5 justify-content-center text-center"
+                style="
+                  margin-top: 70px;
+                  margin-left: 30px;
+                  padding: 20px 10px;
+                  background-color: #c77b2b;
+                "
+              >
+                <a
+                  href="./log_in"
+                  style="text-decoration: none; color: #fff; font-size: 15px"
+                  >Please Login To Post Comments
+                </a>
+                <!-- <div class="blog-box" style="padding: 0 !important">
+                  <a href="/blog" target="_blank" class="">Read</a>
+                </div> -->
+              </div>
+            </div>
+          </div>
+          <%}%>
+        </section>
+
+        <!-------- footer section		-----	 -->
+        <%- include("include/_footer") %>
+      </div>
+    </div>
+    <!-- Scripts  -->
+    <%- include("include/_scripts") %>
+  </body>
+</html>

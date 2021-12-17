@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Trividha | Product</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <%- include("include/_header") %>
+    <link
+      rel="stylesheet"
+      href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      .affix {
+        top: 0;
+        width: 100%;
+        z-index: 9999 !important;
+      }
+
+      .affix + .container-fluid {
+        padding-top: 70px;
+      }
+
+      #fp-nav {
+        display: none;
+      }
+
+      @media (max-width: 990px) {
+        .heading {
+          margin-top: 0px !important;
+        }
+      }
+
+      .carousel-cell {
+        width: 220px;
+        margin-right: 30px;
+      }
+      .carousel-cell h4 {
+        font-weight: 800;
+        font-size: 18px;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+      .flickity-page-dots {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Social Links  -->
+      <%- include("include/_social_links") %>
+      <div id="main">
+        <section
+          class="container-fluid header nopadding vertical-scrolling b-img"
+        >
+          <!-- header top-fix navbar  -->
+          <%- include("include/_navbar_cart") %>
+
+          <!-- header top-fix side navbar  -->
+          <%- include("include/_side_navbar") %>
+
+          <div class="container-fluid doctr-sec3 section-divide">
+            <div class="">
+              <h1 class="text-center heading">Recommended Products</h1>
+              <div
+                class="main-carousel"
+                data-flickity='{"wrapAround":true , "autoPlay":true }'
+                style="padding-bottom: 90px"
+              >
+                <%for(let i=0; i < sliderData.length; i++){%>
+                <div class="carousel-cell">
+                  <div>
+                    <div class="product-img-box">
+                      <a href="/product_single?id=<%=sliderData[i]._id%>"
+                        ><img src="../<%=sliderData[i].image[0]%>" alt=""
+                      /></a>
+                    </div>
+                    <div class="product-content">
+                      <h4>
+                        <%= sliderData[i].name.slice(0, 10) +
+                        (sliderData[i].name.length > 10 ? "..." : "") %>
+                        <br />
+                        <br />
+                        <span class="text-muted">
+                          <%= sliderData[i].category.slice(0, 10) +
+                          (sliderData[i].category.length > 10 ? "..." : "") %>
+                        </span>
+                      </h4>
+                      <h4>
+                        Rs <%=sliderData[i].price%>/- <br />
+                        <br />
+                        <span
+                          class="text-danger"
+                          style="margin-left: 30px; cursor: pointer"
+                          data-productid="<%=sliderData[i]._id%>"
+                          data-quantity="1"
+                          data-name="<%=sliderData[i].name%>"
+                          data-price="<%=sliderData[i].price%>"
+                          data-discount="<%=sliderData[i].discount%>"
+                          onclick="addToCart(this)"
+                          ><i class="fas fa-shopping-cart"></i
+                        ></span>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+                <%}%>
+                <!-- <div class="carousel-cell">
+                  <div>
+                    <div class="product-img-box">
+                      <a href=""> <img src="assets/img/pro3.png" alt="" /></a>
+                    </div>
+                    <div class="product-content">
+                      <h4>
+                        Product Name <br />
+                        <br />
+                        <span class="text-muted">Ayurveda</span>
+                      </h4>
+                      <h4>
+                        Rs 200/- <br />
+                        <br />
+                        <span class="text-danger" style="margin-left: 30px; cursor: pointer"
+                          ><i class="fas fa-shopping-cart"></i
+                        ></span>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-cell">
+                  <div>
+                    <div class="product-img-box">
+                      <a href=""><img src="assets/img/pro2.png" alt="" /></a>
+                    </div>
+                    <div class="product-content">
+                      <h4>
+                        Product Name <br />
+                        <br />
+                        <span class="text-muted">Nutraceuticals</span>
+                      </h4>
+                      <h4>
+                        Rs 200/- <br />
+                        <br />
+                        <span class="text-danger" style="margin-left: 30px; cursor: pointer"
+                          ><i class="fas fa-shopping-cart"></i
+                        ></span>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-cell">
+                  <div>
+                    <div class="product-img-box">
+                      <a href=""><img src="assets/img/pro1.png" alt="" /></a>
+                    </div>
+                    <div class="product-content">
+                      <h4>
+                        Product Name <br />
+                        <br />
+                        <span class="text-muted">Ayurveda</span>
+                      </h4>
+                      <h4>
+                        Rs 200/- <br />
+                        <br />
+                        <span class="text-danger" style="margin-left: 30px; cursor: pointer"
+                          ><i class="fas fa-shopping-cart"></i
+                        ></span>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-cell">
+                  <div>
+                    <div class="product-img-box">
+                      <a href="product-single.html"
+                        ><img src="assets/img/pro2.png" alt=""
+                      /></a>
+                    </div>
+                    <div class="product-content">
+                      <h4>
+                        Product Name <br />
+                        <br />
+                        <span class="text-muted">Product-category</span>
+                      </h4>
+                      <h4>
+                        Rs 200/- <br />
+                        <br />
+                        <span class="text-danger" style="margin-left: 30px; cursor: pointer"
+                          ><i class="fas fa-shopping-cart"></i
+                        ></span>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-cell">
+                  <div>
+                    <div class="product-img-box">
+                      <a href=""> <img src="assets/img/pro3.png" alt="" /></a>
+                    </div>
+                    <div class="product-content">
+                      <h4>
+                        Product Name <br />
+                        <br />
+                        <span class="text-muted">Ayurveda</span>
+                      </h4>
+                      <h4>
+                        Rs 200/- <br />
+                        <br />
+                        <span class="text-danger" style="margin-left: 30px; cursor: pointer"
+                          ><i class="fas fa-shopping-cart"></i
+                        ></span>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-cell">
+                  <div>
+                    <div class="product-img-box">
+                      <a href=""><img src="assets/img/pro2.png" alt="" /></a>
+                    </div>
+                    <div class="product-content">
+                      <h4>
+                        Product Name <br />
+                        <br />
+                        <span class="text-muted">Nutraceuticals</span>
+                      </h4>
+                      <h4>
+                        Rs 200/- <br />
+                        <br />
+                        <span class="text-danger" style="margin-left: 30px; cursor: pointer"
+                          ><i class="fas fa-shopping-cart"></i
+                        ></span>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-cell">
+                  <div>
+                    <div class="product-img-box">
+                      <a href=""><img src="assets/img/pro1.png" alt="" /></a>
+                    </div>
+                    <div class="product-content">
+                      <h4>
+                        Product Name <br />
+                        <br />
+                        <span class="text-muted">Ayurveda</span>
+                      </h4>
+                      <h4>
+                        Rs 200/- <br />
+                        <br />
+                        <span class="text-danger" style="margin-left: 30px; cursor: pointer"
+                          ><i class="fas fa-shopping-cart"></i
+                        ></span>
+                      </h4>
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+              <!-- <div class="product-img" style="padding-bottom: 100px;">
+                  <div>
+                      <div class=" product-img-box">
+                          <a href="product-single.html"><img src="assets/img/pro2.png" alt=""></a>
+                      </div>
+                      <div class="product-content">
+                          <h4>Product Name <br> <br> <span class="text-muted ">Product-category</span></h4>
+                          <h4>Rs 200/- <br> <br> <span class="text-danger" style="margin-left: 50px;"><i class="fas fa-shopping-cart"></i></span></h4>
+                      </div>
+                  </div>
+                  <div>
+                      <div class=" product-img-box">
+                         <a href=""> <img src="assets/img/pro3.png" alt=""></a>
+                      </div>
+                      <div class="product-content">
+                          <h4>Product Name <br> <br> <span class="text-muted ">Ayurveda</span></h4>
+                          <h4>Rs 200/- <br> <br> <span class="text-danger" style="margin-left: 50px;"><i class="fas fa-shopping-cart"></i></span></h4>
+                      </div>
+                  </div>
+                  <div>
+                      <div class=" product-img-box">
+                          <a href=""><img src="assets/img/pro2.png" alt=""></a>
+                      </div>
+                      <div class="product-content">
+                          <h4>Product Name <br> <br> <span class="text-muted ">Nutraceuticals</span></h4>
+                          <h4>Rs 200/- <br> <br> <span class="text-danger" style="margin-left: 50px;"><i class="fas fa-shopping-cart"></i></span></h4>
+                      </div>
+                  </div>
+                  <div>
+                      <div class=" product-img-box">
+                          <a href=""><img src="assets/img/pro1.png" alt=""></a>
+                      </div>
+                      <div class="product-content">
+                          <h4>Product Name <br> <br> <span class="text-muted ">Ayurveda</span></h4>
+                          <h4>Rs 200/- <br> <br> <span class="text-danger" style="margin-left: 50px;"><i class="fas fa-shopping-cart"></i></span></h4>
+                      </div>
+                  </div>
+              </div> -->
+              <div></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="container-fluid bg-light section-divide">
+          <div class="container">
+            <h1 class="text-center heading"><%=data_category[0].category%></h1>
+            <div class="product-img">
+              <%for(let i=0; i < products.length; i++){ %> < /*
+              ><%if(all_data[i].category == data_category[0].category){ %>< */ >
+              <div>
+                <div class="product-img-box">
+                  <a href="product-single.html"
+                    ><img src="../<%=all_data[i].image[0]%>" alt=""
+                  /></a>
+                </div>
+                <div class="product-content">
+                  <h4>
+                    <%= all_data[i].name.slice(0, 10) + (all_data[i].name.length
+                    > 10 ? "..." : "") %><br />
+                    <br />
+                    <span class="text-muted">
+                      <%= all_data[i].category.slice(0, 10) +
+                      (all_data[i].category.length > 10 ? "..." : "") %>
+                    </span>
+                  </h4>
+                  <h4>
+                    Rs <%=all_data[i].price%>/- <br />
+                    <br />
+                    <span
+                      class="text-danger"
+                      style="margin-left: 30px; cursor: pointer"
+                      data-productid="<%=all_data[i]._id%>"
+                      data-quantity="1"
+                      data-name="<%=all_data[i].name%>"
+                      data-price="<%=all_data[i].price%>"
+                      data-discount="<%=all_data[i].discount%>"
+                      onclick="addToCart(this)"
+                      ><i class="fas fa-shopping-cart"></i
+                    ></span>
+                  </h4>
+                </div>
+              </div>
+              <%}%>
+              <!-- <div>
+                <div class="product-img-box">
+                  <a href=""> <img src="assets/img/pro3.png" alt="" /></a>
+                </div>
+                <div class="product-content">
+                  <h4>
+                    Product Name <br />
+                    <br />
+                    <span class="text-muted">Ayurveda</span>
+                  </h4>
+                  <h4>
+                    Rs 200/- <br />
+                    <br />
+                    <span class="text-danger" style="margin-left: 30px; cursor: pointer"
+                      ><i class="fas fa-shopping-cart"></i
+                    ></span>
+                  </h4>
+                </div>
+              </div>
+              <div>
+                <div class="product-img-box">
+                  <a href=""><img src="assets/img/pro2.png" alt="" /></a>
+                </div>
+                <div class="product-content">
+                  <h4>
+                    Product Name <br />
+                    <br />
+                    <span class="text-muted">Nutraceuticals</span>
+                  </h4>
+                  <h4>
+                    Rs 200/- <br />
+                    <br />
+                    <span class="text-danger" style="margin-left: 30px; cursor: pointer"
+                      ><i class="fas fa-shopping-cart"></i
+                    ></span>
+                  </h4>
+                </div>
+              </div>
+              <div>
+                <div class="product-img-box">
+                  <a href=""><img src="assets/img/pro1.png" alt="" /></a>
+                </div>
+                <div class="product-content">
+                  <h4>
+                    Product Name <br />
+                    <br />
+                    <span class="text-muted">Ayurveda</span>
+                  </h4>
+                  <h4>
+                    Rs 200/- <br />
+                    <br />
+                    <span class="text-danger" style="margin-left: 30px; cursor: pointer"
+                      ><i class="fas fa-shopping-cart"></i
+                    ></span>
+                  </h4>
+                </div>
+              </div> -->
+            </div>
+            <div class="text-center mt-20">
+              <a
+                href="/list_products?id=<%=data_category[0].category%>"
+                class="btn btn-style-three"
+                >View All</a
+              >
+            </div>
+          </div>
+        </section>
+
+        <section class="container-fluid bg-light section-divide">
+          <div class="container">
+            <h1 class="text-center heading"><%=data_category[1].category%></h1>
+            <div class="product-img">
+              <%for(let i=0; i < all_data.length; i++){ %>
+              <%if(all_data[i].category == data_category[1].category){ %>
+              <div>
+                <div class="product-img-box">
+                  <a href="product-single.html"
+                    ><img src="../<%=all_data[i].image[0]%>" alt=""
+                  /></a>
+                </div>
+                <div class="product-content">
+                  <h4>
+                    <%= all_data[i].name.slice(0, 10) + (all_data[i].name.length
+                    > 10 ? "..." : "") %>
+                    <br />
+                    <br />
+                    <span class="text-muted">
+                      <%= all_data[i].category.slice(0, 10) +
+                      (all_data[i].category.length > 10 ? "..." : "") %>
+                    </span>
+                  </h4>
+                  <h4>
+                    Rs <%=all_data[i].price%>/- <br />
+                    <br />
+                    <span
+                      class="text-danger"
+                      style="margin-left: 50px; cursor: pointer; z-index: 999"
+                      data-productid="<%=all_data[i]._id%>"
+                      data-quantity="1"
+                      data-name="<%=all_data[i].name%>"
+                      data-price="<%=all_data[i].price%>"
+                      data-discount="<%=all_data[i].discount%>"
+                      onclick="addToCart(this)"
+                    >
+                      <i class="fas fa-shopping-cart"></i>
+                    </span>
+                  </h4>
+                </div>
+              </div>
+              <%}}%>
+            </div>
+            <div class="text-center mt-20">
+              <a
+                href="/list_products?id=<%=data_category[1].category%>"
+                class="btn btn-style-three"
+                >View All</a
+              >
+            </div>
+          </div>
+        </section>
+
+        <!-------- footer section		-----	 -->
+        <%- include("include/_footer") %>
+      </div>
+    </div>
+    <!-- Scripts  -->
+    <%- include("include/_scripts") %>
+
+    <script>
+      function addToCart(e) {
+        let data = {
+          productId: e.dataset.productid,
+          quantity: parseInt(e.dataset.quantity),
+          name: e.dataset.name,
+          price: parseInt(e.dataset.price),
+          discount: parseInt(e.dataset.discount),
+        };
+        console.log(data);
+
+        let request = {
+          url: `https://trividhaa.herokuapp.com/api/cart`,
+          method: "POST",
+          data: data,
+        };
+        $.ajax(request).done(function (response) {
+          console.log(response);
+          alert("Product add to the cart! Please go to cart..");
+          location.reload();
+        });
+        return false;
+      }
+    </script>
+  </body>
+</html>

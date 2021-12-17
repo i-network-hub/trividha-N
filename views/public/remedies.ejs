@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Trividha | Remedies</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <%- include("include/_header") %>
+    <link
+      rel="stylesheet"
+      href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      .affix {
+        top: 0;
+        width: 100%;
+        z-index: 9999 !important;
+      }
+
+      .affix + .container-fluid {
+        padding-top: 70px;
+      }
+      #fp-nav {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- Social Links  -->
+      <%- include("include/_social_links") %>
+
+      <div id="main">
+        <section
+          class="container-fluid header nopadding vertical-scrolling b-img"
+        >
+          <!-- header top-fix navbar  -->
+          <%- include("include/_navbar") %>
+
+          <!-- header top-fix side navbar  -->
+          <%- include("include/_side_navbar") %>
+
+          <img
+            src="/public_img/home-remedies.jpg"
+            class="img-responsive mt-80"
+          />
+        </section>
+
+        <section class="container-fluid abt-new">
+          <div class="row">
+            <div class="col-md-12 colsm-12 col-xs-12">
+              <h1 class="heading">Home remedies:</h1>
+
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
+                ipsum suspendisse ultrices gravida. Risus commodo viverra
+                maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit
+                amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Quis ipsum
+                suspendisse ultrices gravida. Risus commodo viverra maecenas
+                accumsan lacus vel facilisis. <br /><br />
+
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
+                ipsum suspendisse ultrices gravida. Risus commodo viverra
+                maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit
+                amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Quis ipsum
+                suspendisse ultrices gravida. Risus commodo viverra maecenas
+                accumsan lacus vel facilisis. Lorem ipsum dolor sit amet,
+                consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
+                gravida. Risus commodo viverra maecenas accumsan lacus vel
+                facilisis. <br /><br />
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <%for(let i=0; i < data.length; i=i+4){%>
+        <section class="container symtom">
+          <%if(i == 0){%>
+          <h1 class="abt-txtt text-center">Home remedies for Symptoms:</h1>
+          <%}%>
+          <div class="row">
+            <div class="symptom-section">
+              <%for(let j=i; j < i+4; j++){%> <%if(data[j]){%>
+              <div class="col-md-6 col-xs-12">
+                <div class="symtom-box">
+                  <div class="col-md-4 col-xs-12">
+                    <img
+                      src="../<%=data[j].image%>"
+                      class="img-responsive"
+                      style="display: block; margin: auto"
+                    />
+                  </div>
+
+                  <div class="col-md-8 col-xs-12">
+                    <h4><%=data[j].name%></h4>
+                    <p><%=data[j].description%></p>
+                    <a
+                      href="/remedies_single?id=<%=data[j]._id%>"
+                      target="_blank"
+                    >
+                      <button class="btn btn-info">READ MORE</button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <%}%> <%}%>
+              <!-- <div class="col-md-6 col-xs-12">
+                <div class="symtom-box">
+                  <div class="col-md-4 col-xs-12">
+                    <img
+                      src="/public_img/remedies/acne.jpg"
+                      class="img-responsive"
+                      style="display: block; margin: auto"
+                    />
+                  </div>
+
+                  <div class="col-md-8 col-xs-12">
+                    <h4>ACNE</h4>
+                    <p>
+                      Acne is also known as acne vulgaris or more commonly as
+                      pimples.
+                    </p>
+                    <a href="remedies_single" target="_blank">
+                      <button class="btn btn-info">READ MORE</button>
+                    </a>
+                  </div>
+                </div>
+              </div> -->
+
+              <!-- <div class="col-md-6 col-xs-12">
+                <div class="symtom-box">
+                  <div class="col-md-4 col-xs-12">
+                    <img
+                      src="/public_img/remedies/back-pain.jpg"
+                      class="img-responsive"
+                      style="display: block; margin: auto"
+                    />
+                  </div>
+
+                  <div class="col-md-8 col-xs-12">
+                    <h4>BACK-PAIN</h4>
+                    <p>
+                      Acidity is a gastric disorder that occurs due to excessive
+                      production of acid by gastric glands.
+                    </p>
+                    <a href="remedies_single" target="_blank">
+                      <button class="btn btn-info">READ MORE</button>
+                    </a>
+                  </div>
+                </div>
+              </div> -->
+
+              <!-- <div class="col-md-6 col-xs-12">
+                <div class="symtom-box">
+                  <div class="col-md-4 col-xs-12">
+                    <img
+                      src="/public_img/remedies/cold.jpg"
+                      class="img-responsive"
+                      style="display: block; margin: auto"
+                    />
+                  </div>
+
+                  <div class="col-md-8 col-xs-12">
+                    <h4>COLD</h4>
+                    <p>
+                      Acidity is a gastric disorder that occurs due to excessive
+                      production of acid by gastric glands.
+                    </p>
+                    <a href="remedies_single" target="_blank">
+                      <button class="btn btn-info">READ MORE</button>
+                    </a>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </section>
+        <%}%>
+
+        <section class="symtom">
+          <div class="symptom-section">
+            <div class="col-md-6 col-xs-12">
+              <div class="symtom-box">
+                <div class="col-md-4 col-xs-12">
+                  <img
+                    src="/public_img/remedies/constipation.jpg"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">constipation</h4>
+                  <p>
+                    Acidity is a gastric disorder that occurs due to excessive
+                    production of acid by gastric glands.
+                  </p>
+                  <a href="remedies_single" target="_blank">
+                    <button class="btn btn-info">READ MORE</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-xs-12">
+              <div class="symtom-box">
+                <div class="col-md-4 col-xs-12">
+                  <img
+                    src="/public_img/remedies/cough.jpg"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">cough</h4>
+                  <p>
+                    Acidity is a gastric disorder that occurs due to excessive
+                    production of acid by gastric glands.
+                  </p>
+                  <a href="remedies_single" target="_blank">
+                    <button class="btn btn-info">READ MORE</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-xs-12">
+              <div class="symtom-box">
+                <div class="col-md-4 col-xs-12">
+                  <img
+                    src="/public_img/remedies/dandruff.jpg"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">dandruff</h4>
+                  <p>
+                    Acidity is a gastric disorder that occurs due to excessive
+                    production of acid by gastric glands.
+                  </p>
+                  <a href="remedies_single" target="_blank">
+                    <button class="btn btn-info">READ MORE</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-xs-12">
+              <div class="symtom-box">
+                <div class="col-md-4 col-xs-12">
+                  <img
+                    src="/public_img/remedies/dark-circles.jpg"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">dark circles</h4>
+                  <p>
+                    Acidity is a gastric disorder that occurs due to excessive
+                    production of acid by gastric glands.
+                  </p>
+                  <a href="remedies_single" target="_blank">
+                    <button class="btn btn-info">READ MORE</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="symtom">
+          <div class="symptom-section">
+            <div class="col-md-6 col-xs-12">
+              <div class="symtom-box">
+                <div class="col-md-4 col-xs-12">
+                  <img
+                    src="/public_img/remedies/ear-pain.jpg"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">ear-pain</h4>
+                  <p>
+                    Acidity is a gastric disorder that occurs due to excessive
+                    production of acid by gastric glands.
+                  </p>
+                  <a href="remedies_single" target="_blank">
+                    <button class="btn btn-info">READ MORE</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-xs-12">
+              <div class="symtom-box">
+                <div class="col-md-4 col-xs-12">
+                  <img
+                    src="/public_img/remedies/fever.jpg"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">fever</h4>
+                  <p>
+                    Acidity is a gastric disorder that occurs due to excessive
+                    production of acid by gastric glands.
+                  </p>
+                  <a href="remedies_single" target="_blank">
+                    <button class="btn btn-info">READ MORE</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-xs-12">
+              <div class="symtom-box">
+                <div class="col-md-4 col-xs-12">
+                  <img
+                    src="/public_img/remedies/gas.jpg"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">gas</h4>
+                  <p>
+                    Acidity is a gastric disorder that occurs due to excessive
+                    production of acid by gastric glands.
+                  </p>
+                  <a href="remedies_single" target="_blank">
+                    <button class="btn btn-info">READ MORE</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-xs-12">
+              <div class="symtom-box">
+                <div class="col-md-4 col-xs-12">
+                  <img
+                    src="/public_img/remedies/hair-fall.jpg"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">hair fall</h4>
+                  <p>
+                    Acidity is a gastric disorder that occurs due to excessive
+                    production of acid by gastric glands.
+                  </p>
+                  <a href="remedies_single" target="_blank">
+                    <button class="btn btn-info">READ MORE</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="symtom">
+          <div class="symptom-section">
+            <div class="col-md-6 col-xs-12">
+              <div class="symtom-box">
+                <div class="col-md-4 col-xs-12">
+                  <img
+                    src="/public_img/remedies/headache.jpg"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">headache</h4>
+                  <p>
+                    Acidity is a gastric disorder that occurs due to excessive
+                    production of acid by gastric glands.
+                  </p>
+                  <a href="remedies_single" target="_blank">
+                    <button class="btn btn-info">READ MORE</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-xs-12">
+              <div class="symtom-box">
+                <div class="col-md-4 col-xs-12">
+                  <img
+                    src="/public_img/remedies/high-bp.jpg"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">high bp</h4>
+                  <p>
+                    Acidity is a gastric disorder that occurs due to excessive
+                    production of acid by gastric glands.
+                  </p>
+                  <a href="remedies_single" target="_blank">
+                    <button class="btn btn-info">READ MORE</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-xs-12">
+              <div class="symtom-box">
+                <div class="col-md-4 col-xs-12">
+                  <img
+                    src="/public_img/remedies/indigestion.jpg"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">indigestion</h4>
+                  <p>
+                    Acidity is a gastric disorder that occurs due to excessive
+                    production of acid by gastric glands.
+                  </p>
+                  <a href="remedies_single" target="_blank">
+                    <button class="btn btn-info">READ MORE</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-xs-12">
+              <div class="symtom-box">
+                <div class="col-md-4 col-xs-12">
+                  <img
+                    src="/public_img/remedies/irregular-periods.jpg"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">irregular-periods</h4>
+                  <p>
+                    Acidity is a gastric disorder that occurs due to excessive
+                    production of acid by gastric glands.
+                  </p>
+                  <a href="remedies_single" target="_blank">
+                    <button class="btn btn-info">READ MORE</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="symtom">
+          <div class="symptom-section">
+            <div class="col-md-6 col-xs-12">
+              <div class="symtom-box">
+                <div class="col-md-4 col-xs-12">
+                  <img
+                    src="/public_img/remedies/kidney-stone.jpg"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">kidney-stone</h4>
+                  <p>
+                    Acidity is a gastric disorder that occurs due to excessive
+                    production of acid by gastric glands.
+                  </p>
+                  <a href="remedies_single" target="_blank">
+                    <button class="btn btn-info">READ MORE</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-xs-12">
+              <div class="symtom-box">
+                <div class="col-md-4 col-xs-12">
+                  <img
+                    src="/public_img/remedies/knee-pain.jpg"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">knee pain</h4>
+                  <p>
+                    Acidity is a gastric disorder that occurs due to excessive
+                    production of acid by gastric glands.
+                  </p>
+                  <a href="remedies_single" target="_blank">
+                    <button class="btn btn-info">READ MORE</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-xs-12">
+              <div class="symtom-box">
+                <div class="col-md-4 col-xs-12">
+                  <img
+                    src="/public_img/remedies/lice.jpg"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">lice</h4>
+                  <p>
+                    Acidity is a gastric disorder that occurs due to excessive
+                    production of acid by gastric glands.
+                  </p>
+                  <a href="remedies_single" target="_blank">
+                    <button class="btn btn-info">READ MORE</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-xs-12">
+              <div class="symtom-box">
+                <div class="col-md-4 col-xs-12">
+                  <img
+                    src="/public_img/remedies/loose-motion.jpg"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">loose motion</h4>
+                  <p>
+                    Acidity is a gastric disorder that occurs due to excessive
+                    production of acid by gastric glands.
+                  </p>
+                  <a href="remedies_single" target="_blank">
+                    <button class="btn btn-info">READ MORE</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="symtom">
+          <div class="symptom-section">
+            <div class="col-md-6 col-xs-12">
+              <div class="symtom-box">
+                <div class="col-md-4 col-xs-12">
+                  <img
+                    src="/public_img/remedies/migraine.jpg"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">migraine</h4>
+                  <p>
+                    Acidity is a gastric disorder that occurs due to excessive
+                    production of acid by gastric glands.
+                  </p>
+                  <a href="remedies_single" target="_blank">
+                    <button class="btn btn-info">READ MORE</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-xs-12">
+              <div class="symtom-box">
+                <div class="col-md-4 col-xs-12">
+                  <img
+                    src="/public_img/remedies/mouth-ulcer.jpg"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">mouth-ulcer</h4>
+                  <p>
+                    Acidity is a gastric disorder that occurs due to excessive
+                    production of acid by gastric glands.
+                  </p>
+                  <a href="remedies_single" target="_blank">
+                    <button class="btn btn-info">READ MORE</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-xs-12">
+              <div class="symtom-box">
+                <div class="col-md-4 col-xs-12">
+                  <img
+                    src="/public_img/remedies/piles.jpg"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">piles</h4>
+                  <p>
+                    Acidity is a gastric disorder that occurs due to excessive
+                    production of acid by gastric glands.
+                  </p>
+                  <a href="remedies_single" target="_blank">
+                    <button class="btn btn-info">READ MORE</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-xs-12">
+              <div class="symtom-box">
+                <div class="col-md-4 col-xs-12">
+                  <img
+                    src="/public_img/remedies/psoriasis.jpg"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">psoriasis</h4>
+                  <p>
+                    Acidity is a gastric disorder that occurs due to excessive
+                    production of acid by gastric glands.
+                  </p>
+                  <a href="remedies_single" target="_blank">
+                    <button class="btn btn-info">READ MORE</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="symtom">
+          <div class="symptom-section">
+            <div class="col-md-6 col-xs-12">
+              <div class="symtom-box">
+                <div class="col-md-4 col-xs-12">
+                  <img
+                    src="/public_img/remedies/running-nose.jpg"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">running-nose</h4>
+                  <p>
+                    Acidity is a gastric disorder that occurs due to excessive
+                    production of acid by gastric glands.
+                  </p>
+                  <a href="remedies_single" target="_blank">
+                    <button class="btn btn-info">READ MORE</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-xs-12">
+              <div class="symtom-box">
+                <div class="col-md-4 col-xs-12">
+                  <img
+                    src="/public_img/remedies/sinusitis.jpg"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">sinusitis</h4>
+                  <p>
+                    Acidity is a gastric disorder that occurs due to excessive
+                    production of acid by gastric glands.
+                  </p>
+                  <a href="remedies_single" target="_blank">
+                    <button class="btn btn-info">READ MORE</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-xs-12">
+              <div class="symtom-box">
+                <div class="col-md-4 col-xs-12">
+                  <img
+                    src="/public_img/remedies/stomach-pain.jpg"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">stomach-pain</h4>
+                  <p>
+                    Acidity is a gastric disorder that occurs due to excessive
+                    production of acid by gastric glands.
+                  </p>
+                  <a href="remedies_single" target="_blank">
+                    <button class="btn btn-info">READ MORE</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-xs-12">
+              <div class="symtom-box">
+                <div class="col-md-4 col-xs-12">
+                  <img
+                    src="/public_img/remedies/testicular-pain.jpg"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">testicular-pain</h4>
+                  <p>
+                    Acidity is a gastric disorder that occurs due to excessive
+                    production of acid by gastric glands.
+                  </p>
+                  <a href="remedies_single" target="_blank">
+                    <button class="btn btn-info">READ MORE</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="symtom">
+          <div class="symptom-section">
+            <div class="col-md-6 col-xs-12">
+              <div class="symtom-box">
+                <div class="col-md-4 col-xs-12">
+                  <img
+                    src="/public_img/remedies/throat-infection.jpg"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">throat-infection</h4>
+                  <p>
+                    Acidity is a gastric disorder that occurs due to excessive
+                    production of acid by gastric glands.
+                  </p>
+                  <a href="remedies_single" target="_blank">
+                    <button class="btn btn-info">READ MORE</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-xs-12">
+              <div class="symtom-box">
+                <div class="col-md-4 col-xs-12">
+                  <img
+                    src="/public_img/remedies/thyroid.jpg"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">thyroid</h4>
+                  <p>
+                    Acidity is a gastric disorder that occurs due to excessive
+                    production of acid by gastric glands.
+                  </p>
+                  <a href="remedies_single" target="_blank">
+                    <button class="btn btn-info">READ MORE</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-xs-12">
+              <div class="symtom-box">
+                <div class="col-md-4 col-xs-12">
+                  <img
+                    src="/public_img/remedies/tonsilitis.jpg"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">tonsilitis</h4>
+                  <p>
+                    Acidity is a gastric disorder that occurs due to excessive
+                    production of acid by gastric glands.
+                  </p>
+                  <a href="remedies_single" target="_blank">
+                    <button class="btn btn-info">READ MORE</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-xs-12">
+              <div class="symtom-box">
+                <div class="col-md-4 col-xs-12">
+                  <img
+                    src="/public_img/remedies/toothache.jpg"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">toothache</h4>
+                  <p>
+                    Acidity is a gastric disorder that occurs due to excessive
+                    production of acid by gastric glands.
+                  </p>
+                  <a href="remedies_single" target="_blank">
+                    <button class="btn btn-info">READ MORE</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="symtom">
+          <div class="symptom-section">
+            <div class="col-md-6 col-xs-12">
+              <div class="symtom-box">
+                <div class="col-md-4 col-xs-12">
+                  <img
+                    src="/public_img/remedies/tooth-pain.jpg"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">tooth-pain</h4>
+                  <p>
+                    Acidity is a gastric disorder that occurs due to excessive
+                    production of acid by gastric glands.
+                  </p>
+                  <a href="remedies_single" target="_blank">
+                    <button class="btn btn-info">READ MORE</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-xs-12">
+              <div class="symtom-box">
+                <div class="col-md-4 col-xs-12">
+                  <img
+                    src="/public_img/remedies/urine-infection.jpg"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">urine-infection</h4>
+                  <p>
+                    Acidity is a gastric disorder that occurs due to excessive
+                    production of acid by gastric glands.
+                  </p>
+                  <a href="remedies_single" target="_blank">
+                    <button class="btn btn-info">READ MORE</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <div class="symtom-box">
+                <div class="col-md-4 col-xs-12">
+                  <img
+                    src="/public_img/remedies/vommiting.jpg"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">vommiting</h4>
+                  <p>
+                    Acidity is a gastric disorder that occurs due to excessive
+                    production of acid by gastric glands.
+                  </p>
+                  <a href="remedies_single" target="_blank">
+                    <button class="btn btn-info">READ MORE</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-xs-12">
+              <div class="symtom-box">
+                <div class="col-md-4 col-xs-12">
+                  <img
+                    src="/public_img/remedies/weight-loss.jpg"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">weight-loss</h4>
+                  <p>
+                    Acidity is a gastric disorder that occurs due to excessive
+                    production of acid by gastric glands.
+                  </p>
+                  <a href="remedies_single" target="_blank">
+                    <button class="btn btn-info">READ MORE</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="symtom">
+          <div class="symptom-section">
+            <div class="col-md-6 col-xs-12">
+              <div class="symtom-box">
+                <div class="col-md-4 col-xs-12">
+                  <img
+                    src="/public_img/remedies/white-discharge.jpg"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">white-discharge</h4>
+                  <p>
+                    Acidity is a gastric disorder that occurs due to excessive
+                    production of acid by gastric glands.
+                  </p>
+                  <a href="remedies_single" target="_blank">
+                    <button class="btn btn-info">READ MORE</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="container-fluid doctr-sec3">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-1 col-sm-12 colxs-12"></div>
+              <div class="col-md-10 col-sm-12 col-xs-12">
+                <h1 class="heading">Disclaimer</h1>
+
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
+                  maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit
+                  amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua. Quis ipsum
+                  suspendisse ultrices gravida. Risus commodo viverra maecenas
+                  accumsan lacus vel facilisis. <br /><br />
+
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
+                  maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit
+                  amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua. Quis ipsum
+                  suspendisse ultrices gravida. Risus commodo viverra maecenas
+                  accumsan lacus vel facilisis. Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                  ut labore et dolore magna aliqua. Quis ipsum suspendisse
+                  ultrices gravida. Risus commodo viverra maecenas accumsan
+                  lacus vel facilisis. <br /><br />
+                </p>
+              </div>
+
+              <div class="col-md-1 col-sm-12 colxs-12"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="container-fluid abt-new-sec1">
+          <div class="row col-md-12">
+            <div class="col-md-6 mt-150">
+              <img
+                src="/public_img/nadi-img.png"
+                class="img-responsive"
+                style="margin: auto; margin-top: 30px"
+              />
+            </div>
+            <div class="col-md-6">
+              <h2 class="mt-150" style="font-weight: bold">
+                I need help in choosing the Right Home remedy for my Problem.
+              </h2>
+              <p class="text-justify">
+                Our Experts will reply you promptly , You can Visit our clinic
+                and consult doctor or there are following other methods to
+                contact.<br />
+                <br />
+                <br />
+                Call our helpline- +91-9499-38-38-38<br />
+                Email your problem- info@trividhaayurveda.com
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-------- footer section		-----	 -->
+        <%- include("include/_footer") %>
+      </div>
+    </div>
+    <!-- Scripts  -->
+    <%- include("include/_scripts") %>
+  </body>
+</html>

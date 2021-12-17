@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Trividha | Article</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <%- include("include/_header") %>
+    <link
+      rel="stylesheet"
+      href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="stylesheet" href="assets/fullpage.js/fullpage.css" />
+    <script
+      type="text/javascript"
+      src="assets/fullpage.js/fullpage.js"
+    ></script>
+
+    <style>
+      .affix {
+        top: 0;
+        width: 100%;
+        z-index: 9999 !important;
+      }
+
+      .affix + .container-fluid {
+        padding-top: 70px;
+      }
+      #fp-nav {
+        display: none;
+      }
+      @media (max-width: 990px) {
+        .blog-box {
+          height: 420px;
+        }
+        .blog-box img {
+          margin: auto;
+          margin-top: 20px;
+          height: 150px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Social Links  -->
+      <%- include("include/_social_links") %>
+
+      <section
+        class="container-fluid header nopadding vertical-scrolling b-img"
+      >
+        <!-- header top-fix navbar  -->
+        <%- include("include/_navbar") %>
+
+        <!-- header top-fix side navbar  -->
+        <%- include("include/_side_navbar") %>
+
+        <div class="doctr-sec3 section-divide">
+          <h1
+            class="text-center"
+            style="margin-bottom: 30px; margin-top: -30px"
+          >
+            Articles
+          </h1>
+          <div class="row col-md-12 blog-card">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <div class="item">
+                <div class="blog-box col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <h2><%=data[0].name%></h2>
+                      <p><%-data[0].content%></p>
+
+                      <a
+                        class="float-left m-5"
+                        href="/article_read?id=<%=data[0]._id%>"
+                        target="_blank"
+                        >Read</a
+                      >
+                    </div>
+                    <div class="col-md-6">
+                      <img
+                        src="<%=data[0].image%>"
+                        alt=""
+                        class="img-responsive"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <%for(let i=1; i < data.length; i++){%>
+      <section class="doctr-sec3">
+        <div class="row col-md-12 blog-card mt-40">
+          <div class="col-md-12 col-sm-6 col-xs-12">
+            <div class="item">
+              <div class="blog-box col-md-12">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h2><%=data[i].name%></h2>
+                    <p><%-data[i].content%></p>
+                    <a
+                      class="float-left m-5"
+                      href="/article_read?id=<%=data[i]._id%>"
+                      target="_blank"
+                      >Read</a
+                    >
+                  </div>
+                  <div class="col-md-6">
+                    <img
+                      src="../<%=data[i].image%>"
+                      alt=""
+                      class="img-responsive"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <%}%>
+      <!-- <section class="doctr-sec3">
+        <div class="row col-md-12 blog-card mt-40">
+          <div class="col-md-12 col-sm-6 col-xs-12">
+            <div class="item">
+              <div class="blog-box col-md-12">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h2>Trust In Ayurveda</h2>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Alias, doloremque? Doloribus totam ipsam sint hic rerum a
+                      asperiores nam veniam.
+                    </p>
+                    <a class="float-left m-5" href="" target="_blank">Read</a>
+                  </div>
+                  <div class="col-md-6">
+                    <img
+                      src="/public_img/about-pic1.png"
+                      alt=""
+                      class="img-responsive"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> -->
+      <!-------- footer section		-----	 -->
+      <%- include("include/_footer") %>
+    </div>
+
+    <!-- Scripts  -->
+    <%- include("include/_scripts") %>
+  </body>
+</html>

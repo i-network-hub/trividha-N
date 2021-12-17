@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Trividha | SignUp</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <%- include("include/_header") %>
+    <link
+      rel="stylesheet"
+      href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      .affix {
+        top: 0;
+        width: 100%;
+        z-index: 9999 !important;
+      }
+
+      .affix + .container-fluid {
+        padding-top: 70px;
+      }
+      #fp-nav {
+        display: none;
+      }
+      .ftm h5 {
+        margin-top: 150px;
+      }
+      @media (max-width: 990px) {
+        .ftm h5 {
+          margin-top: 0px !important;
+        }
+        .ftm h1 {
+          text-align: center;
+        }
+      }
+      #otp_sent_login_form,
+      #auth_verify_otp {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Social Links  -->
+      <%- include("include/_social_links") %>
+
+      <section
+        class="container-fluid header nopadding vertical-scrolling b-img"
+      >
+        <!-- header top-fix navbar  -->
+        <%- include("include/_navbar") %>
+
+        <!-- header top-fix side navbar  -->
+        <%- include("include/_side_navbar") %>
+
+        <div class="Our-treatment section-divide">
+          <div class="row">
+            <div class="ftm col-md-5 account-head">
+              <h5 class="abt-txt2" style="color: #fff">
+                Already have an account?
+              </h5>
+              <p class="diat-txt">
+                <a
+                  href="log_in"
+                  target="_blank"
+                  style="color: black; font-weight: bold"
+                  >Log In </a
+                >now and continue from where you left.
+              </p>
+            </div>
+            <div class="ftm col-md-6">
+              <h1
+                class="abt-txt caree"
+                style="font-family: fontone; color: #fff"
+              >
+                Sign Up
+              </h1>
+
+              <form
+                id="otp_sent_login_form"
+                name="signup_form"
+                action="/api/sign_up"
+                method="POST"
+              >
+                <div class="col-lg-12 col-sm-12 col-xs-12 frm">
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                      <label for="fname" class="frm-txt">First Name</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id=""
+                        placeholder=""
+                        name="fname"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="email" class="frm-txt">Email</label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        id=""
+                        placeholder=""
+                        name="email"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="password" class="frm-txt">Password</label>
+                      <input
+                        type="password"
+                        class="form-control"
+                        id=""
+                        placeholder=""
+                        name="password"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                      <label for="lname" class="frm-txt">Last Name</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id=""
+                        placeholder=""
+                        name="lname"
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label for="mobile" class="frm-txt">Mobile No</label>
+                      <input
+                        type=""
+                        class="form-control"
+                        id=""
+                        name="mobile"
+                        readonly
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="confirm_password" class="frm-txt"
+                        >Confirm Password</label
+                      >
+                      <input
+                        type="password"
+                        class="form-control"
+                        id=""
+                        placeholder=""
+                        name="confirm_password"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <p class="frm-txt">
+                        <button
+                          type="submit"
+                          class="btn btn-default"
+                          style="
+                            color: #000;
+                            background: #c77b2b;
+                            padding: 3px 15px;
+                            border-radius: 0;
+                          "
+                        >
+                          Sign Up
+                        </button>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </form>
+
+              <div
+                class="col-lg-12 col-sm-12 col-xs-12 frm"
+                id="auth_using_mobile_otp"
+              >
+                <form id="auth_using_otp" name="signup_form_using_otp">
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="form-group" id="input-wrapper">
+                      <label for="mobile" class="frm-txt">Mobile No</label>
+                      <input
+                        type="phone"
+                        class="form-control"
+                        id="mobile"
+                        placeholder=""
+                        name="mobile"
+                      />
+                    </div>
+
+                    <div class="form-group" id="send_otp_button">
+                      <button
+                        type="submit"
+                        class="btn btn-default"
+                        style="
+                          color: #000;
+                          background: #c77b2b;
+                          padding: 3px 15px;
+                          border-radius: 0;
+                        "
+                      >
+                        Send OTP
+                      </button>
+                    </div>
+                  </div>
+                </form>
+
+                <form id="auth_verify_otp" name="signup_form_using_otp_verify">
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                      <label for="otp" class="frm-txt">Enter OTP</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="otp"
+                        placeholder=""
+                        name="opt"
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <button
+                        type="submit"
+                        class="btn btn-default"
+                        style="
+                          color: #000;
+                          background: #c77b2b;
+                          padding: 3px 15px;
+                          border-radius: 0;
+                        "
+                      >
+                        Verify OTP
+                      </button>
+                    </div>
+                    <div class="">
+                      <div class="" style="padding: 10px">
+                        Didn't recieved the OTP?
+                        <a href="/sign_up">Please send again..</a>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-------- footer section		-----	 -->
+      <%- include("include/_footer") %>
+    </div>
+    <!-- Scripts  -->
+    <%- include("include/_scripts") %>
+  </body>
+</html>

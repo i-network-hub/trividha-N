@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Dashboard | Trividha|Raw Herbs</title>
+    <%- include("include/_header") %>
+    <link
+      rel="stylesheet"
+      href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      .menu-link i {
+        color: #fff;
+        font-size: 10px;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+
+  <body
+    id="kt_body"
+    class="
+      header-mobile-fixed
+      aside-enabled aside-fixed aside-minimize-hoverable
+    "
+  >
+    <%- include("include/_navbar") %>
+
+    <div class="d-flex flex-column flex-root">
+      <div class="d-flex flex-row flex-column-fluid page">
+        <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+          <div id="kt_header" class="header">
+            <div class="container">
+              <div
+                class="d-flex align-items-center flex-wrap mr-1 mt-5 mt-lg-0"
+              >
+                <div class="d-flex align-items-baseline flex-wrap mr-5">
+                  <h4 class="text-dark font-weight-bold my-1 mr-5">
+                    Dashboard
+                    <small class="text-muted ml-2"
+                      >updates and statistics</small
+                    >
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="content d-flex flex-column flex-column-fluid"
+            id="kt_content"
+          >
+            <!-- <div class="d-flex flex-column-fluid">
+              <div class="container">
+                <div class="card card-custom">
+                  <div class="card-header border-0 pt-7">
+                    <h3 class="card-title align-items-start flex-column">
+                      <span
+                        class="card-label font-weight-bold font-size-h4 text-dark-75"
+                        >Upload Raw Herb</span
+                      >
+                    </h3>
+                  </div>
+                  <div class="card-body pt-0 pb-4">
+                    <div class="tab-content mt-2" id="myTabTable5">
+                      <div
+                        class="tab-pane fade show active"
+                        id="kt_tab_table_5_3"
+                        role="tabpanel"
+                        aria-labelledby="kt_tab_table_5_3"
+                      >
+                        <div class="table-responsive">
+                          <table
+                            class="table table-borderless table-vertical-center"
+                          >
+                            <thead>
+                              <tr>
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>Content</th>
+                                <th>Especialities</th>
+                                <th>Benefits</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td><input type="file" name="" id="" /></td>
+                                <td><input type="text" name="" id="" /></td>
+                                <td>
+                                  <textarea
+                                    name=""
+                                    id=""
+                                    cols="30"
+                                    rows="1"
+                                  ></textarea>
+                                </td>
+                                <td>
+                                  <textarea
+                                    name=""
+                                    id=""
+                                    cols="30"
+                                    rows="1"
+                                  ></textarea>
+                                </td>
+                                <td>
+                                  <textarea
+                                    name=""
+                                    id=""
+                                    cols="30"
+                                    rows="1"
+                                  ></textarea>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-footer">
+                      <button type="reset" class="btn btn-warning mr-2">
+                        Submit
+                      </button>
+                      <button type="reset" class="btn btn-secondary">
+                        Cancel
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+            <div class="d-flex flex-column-fluid mt-5">
+              <div class="container">
+                <div class="card card-custom">
+                  <div class="card-header border-0 pt-7">
+                    <h3 class="card-title align-items-start flex-column">
+                      <span
+                        class="
+                          card-label
+                          font-weight-bold font-size-h4
+                          text-dark-75
+                        "
+                        >Raw Herb Details</span
+                      >
+                      <a href="upload_raw_herbs" class="btn btn-secondary">
+                        Upload new Herbs
+                      </a>
+                    </h3>
+                  </div>
+                  <div class="card-body pt-0 pb-4">
+                    <div class="tab-content mt-2" id="myTabTable5">
+                      <div
+                        class="tab-pane fade show active"
+                        id="kt_tab_table_5_3"
+                        role="tabpanel"
+                        aria-labelledby="kt_tab_table_5_3"
+                      >
+                        <div class="table-responsive">
+                          <table
+                            class="table table-borderless table-vertical-center"
+                          >
+                            <thead>
+                              <tr>
+                                <th>Sl.No</th>
+                                <th>Name</th>
+                                <th>Content</th>
+                                <th>Especialities</th>
+                                <th>Benefits</th>
+                                <th>Botanical Name</th>
+                                <th>Family Name</th>
+                                <th>Common Name</th>
+                                <th>Part Used</th>
+                                <th>Habitat</th>
+                                <th>Why Special</th>
+                                <th>Curing Diseases</th>
+                                <th>Image</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <%- include("include/_show_raw_herbs") %>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer py-4 d-flex flex-lg-column" id="kt_footer">
+            <div
+              class="
+                container
+                d-flex
+                flex-column flex-md-row
+                align-items-center
+                justify-content-between
+              "
+            >
+              <div class="text-dark order-2 order-md-1">
+                <span class="text-muted font-weight-bold mr-2">2021©</span>
+                <a
+                  href=""
+                  target="_blank"
+                  class="text-dark-75 text-hover-primary"
+                  >Proudly Powered by Trividha Team</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%- include("include/_kt_quick_search") %> <%-
+    include("include/_kt_scroll_top") %> <%-
+    include("include/_javascripts_srcs") %>
+  </body>
+</html>

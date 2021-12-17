@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Trividha | Disease | <%=data.disease%></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <%- include("include/_header") %>
+    <link
+      rel="stylesheet"
+      href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      .affix {
+        top: 0;
+        width: 100%;
+        z-index: 9999 !important;
+      }
+
+      .affix + .container-fluid {
+        padding-top: 70px;
+      }
+      #fp-nav {
+        display: none;
+      }
+      .abt-new p {
+        width: auto;
+      }
+      .abt-new .herb-img img {
+        margin-top: 10%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- Social Links  -->
+      <%- include("include/_social_links") %>
+      <div id="main">
+        <section
+          class="container-fluid header nopadding vertical-scrolling b-img"
+        >
+          <!-- header top-fix navbar  -->
+          <%- include("include/_navbar") %>
+
+          <!-- header top-fix side navbar  -->
+          <%- include("include/_side_navbar") %>
+
+          <div class="container-fluid abt-new section-divide">
+            <div class="row">
+              <div class="col-md-7 col-xs-12">
+                <h1 class="heading"><%=data.disease%></h1>
+
+                <p><%=data.description%></p>
+              </div>
+              <div class="col-md-5 herb-img">
+                <img src="../<%=data.image%>" alt="" width="450px" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="container-fluid doctr-sec3">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-1 col-sm-12 colxs-12"></div>
+              <div class="col-md-10 col-sm-12 col-xs-12">
+                <h1 class="heading">Symptoms</h1>
+
+                <p><%=data.symptoms%></p>
+              </div>
+
+              <div class="col-md-1 col-sm-12 colxs-12"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="container-fluid abt-new">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-10 col-sm-12 col-xs-12">
+                <h1 class="heading">Solution Heads</h1>
+
+                <p><%=data.solutions%></p>
+              </div>
+
+              <div class="col-md-1 col-sm-12 colxs-12"></div>
+            </div>
+          </div>
+        </section>
+        <!-------- footer section		-----	 -->
+        <%- include("include/_footer") %>
+      </div>
+    </div>
+    <!-- Scripts  -->
+    <%- include("include/_scripts") %>
+  </body>
+</html>

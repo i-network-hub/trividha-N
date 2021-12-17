@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Trividha | Cart</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <%- include("include/_header") %>
+    <link
+      rel="stylesheet"
+      href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      .affix {
+        top: 0;
+        width: 100%;
+        z-index: 9999 !important;
+      }
+
+      .affix + .container-fluid {
+        padding-top: 70px;
+      }
+
+      #fp-nav {
+        display: none;
+      }
+
+      .ftm h5 {
+        margin-top: 150px;
+      }
+
+      .ftm {
+        margin-left: 20px;
+      }
+
+      .address {
+        margin-top: 20px;
+      }
+
+      .list-group {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 20px;
+        margin-bottom: 0;
+      }
+
+      .align-items-center {
+        align-items: center !important;
+      }
+
+      .justify-content-between {
+        justify-content: space-between !important;
+      }
+
+      .d-flex {
+        display: flex !important;
+      }
+
+      @media (max-width: 990px) {
+        .ftm h5 {
+          margin-top: 0px !important;
+        }
+
+        .ftm h1 {
+          text-align: center;
+        }
+
+        .frm {
+          position: relative;
+        }
+      }
+
+      .minus,
+      .plus {
+        width: 20px;
+        height: 20px;
+        background: #f2f2f2;
+        border-radius: 4px;
+        padding: 0px 4px;
+        border: 1px solid #ddd;
+        display: inline;
+        vertical-align: middle;
+        text-align: center;
+      }
+      .cart-table .input-qty input {
+        height: 34px;
+        width: 50px;
+        text-align: center;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      #have_to_show_on_success {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Social Links  -->
+      <%- include("include/_social_links") %>
+
+      <div id="main">
+        <section
+          class="container-fluid header nopadding vertical-scrolling b-img"
+        >
+          <!-- header top-fix navbar  -->
+          <%- include("include/_navbar") %>
+
+          <!-- header top-fix side navbar  -->
+          <%- include("include/_side_navbar") %>
+
+          <div
+            class="text-center bg-dark section-divide"
+            id="have_to_show_on_success"
+          >
+            <h2 class="abt-txt mt-60" style="font-family: fontone; color: #fff">
+              Order Successfull! <br />
+              <br />
+              <span style="font-size: 60px"
+                ><i class="fas fa-check-circle"></i
+              ></span>
+            </h2>
+
+            <div class="ftm">
+              <label for="">Order ID:</label>
+              <input type="text" id="order-id" readonly />
+              <label for="">Payment ID:</label>
+              <input type="text" id="order-pay-id" readonly />
+              <label for="">Order Signature:</label>
+              <input type="text" id="order-sig" readonly />
+
+              <!-- <h5 class="abt-txt2" style="color: #fff" ></h5> -->
+              <!-- <p class="diat-txt"><a href="/" target="_blank"
+                        style="color: black; font-weight: bold;">See More Products </a></p> -->
+
+              <button
+                type="button"
+                class="theme-btn btn-style-three"
+                id="verify-button1"
+              >
+                Done
+              </button>
+            </div>
+          </div>
+
+          <div class="bg-dark section-divide" id="have_to_hide_on_success">
+            <div class="row">
+              <div class="ftm col-md-6 pt-20">
+                <h1
+                  class="abt-txt caree"
+                  style="font-family: fontone; color: #fff"
+                >
+                  Checkout
+                </h1>
+                <div class="col-lg-12 col-sm-12 col-xs-12 frm">
+                  <div class="row pt-20" style="padding-bottom: 50px">
+                    <div class="col-md-6">
+                      <label for="" class="frm-txt">Name</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        placeholder=""
+                        name="name"
+                        required
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label for="" class="frm-txt">Mobile</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="mobile"
+                        placeholder=""
+                        name="mobile"
+                        required
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label for="" class="frm-txt">Email</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="email"
+                        placeholder=""
+                        name="email"
+                        required
+                      />
+                    </div>
+                    <div class="col-md-12 address">
+                      <label for="" class="frm-txt">Address</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="address"
+                        placeholder=""
+                        name="address"
+                        required
+                      />
+                    </div>
+                    <div class="col-md-4">
+                      <label for="" class="frm-txt">City</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="city"
+                        placeholder=""
+                        name="city"
+                        required
+                      />
+                      <!-- <select name="" id="" class="form-control">
+                        <option value="selected">City</option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select> -->
+                    </div>
+                    <div class="col-md-4">
+                      <label for="" class="frm-txt">State</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="state"
+                        placeholder=""
+                        name="state"
+                        required
+                      />
+                      <!-- <select name="" id="" class="form-control">
+                        <option value="selected">State</option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select> -->
+                    </div>
+                    <div class="col-md-2 pincode">
+                      <label for="" class="frm-txt">Pincode</label>
+                      <input
+                        type=""
+                        name="zipCode"
+                        id="zipCode"
+                        class="form-control"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="ftm col-md-5 pt-20">
+                <h1
+                  class="abt-txt caree"
+                  style="font-family: fontone; color: #fff"
+                >
+                  Order Summary
+                </h1>
+                <div class="col-lg-12 col-sm-12 col-xs-12 frm">
+                  <div class="row pt-20">
+                    <ul class="list-group list-group-minimal">
+                      <li
+                        class="
+                          list-group-item
+                          d-flex
+                          justify-content-between
+                          align-items-center
+                        "
+                      >
+                        Items Rs:
+                        <input
+                          type="text"
+                          id="order-amt"
+                          value="<%=totalPrice%>.00"
+                          readonly
+                        />
+                      </li>
+                      <li
+                        class="
+                          list-group-item
+                          d-flex
+                          justify-content-between
+                          align-items-center
+                        "
+                      >
+                        Shipping
+                        <input
+                          type="text"
+                          id="shipping-amt"
+                          value="8.00"
+                          readonly
+                        />
+                      </li>
+
+                      <li
+                        class="
+                          list-group-item
+                          d-flex
+                          justify-content-between
+                          align-items-center
+                          font-weight-bold
+                        "
+                      >
+                        Order Id
+                        <input type="text" name="" id="rzp-text" readonly />
+                      </li>
+                      <li
+                        class="
+                          list-group-item
+                          d-flex
+                          justify-content-between
+                          align-items-center
+                          font-weight-bold
+                        "
+                      >
+                        Total to pay Rs
+                        <span id="total_pay"> 00.00</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="text-center">
+                <a class="btn mt-20 btn-herb" id="rzp-button1">Place Order</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-------- footer section		------->
+        <%- include("include/_footer") %>
+      </div>
+    </div>
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        let url = "/api/payment/order";
+        let totalAmount =
+          parseInt(document.getElementById("order-amt").value) +
+          parseInt(document.getElementById("shipping-amt").value);
+        document.getElementById("total_pay").innerHTML = totalAmount;
+        console.log(totalAmount);
+        let params = {
+          amount: totalAmount * 100,
+          currency: "INR",
+          receipt: "trividha",
+          payment_capture: "1",
+        };
+        let xmlHttp = new XMLHttpRequest();
+        xmlHttp.onreadystatechange = function (res) {
+          if (xmlHttp.readyState === 4) {
+            res = JSON.parse(xmlHttp.responseText);
+            console.log(res.sub.id);
+            document.getElementById("rzp-text").value = res.sub.id;
+          }
+        };
+        xmlHttp.open("POST", url, true);
+        xmlHttp.setRequestHeader("Content-type", "application/json");
+        xmlHttp.send(JSON.stringify(params));
+      });
+    </script>
+
+    <script>
+      document.getElementById("rzp-button1").onclick = function (e) {
+        let options = {
+          key: "<%= key %>",
+          currency: "INR",
+          name: "Trividha Pay",
+          description: "trividha Transection",
+          order_id: document.getElementById("rzp-text").value,
+          handler: function (response) {
+            console.log(response);
+            document.getElementById("have_to_hide_on_success").style.display =
+              "none";
+            document.getElementById("have_to_show_on_success").style.display =
+              "block";
+            document.getElementById("order-pay-id").value =
+              response.razorpay_payment_id;
+            document.getElementById("order-id").value =
+              response.razorpay_order_id;
+            document.getElementById("order-sig").value =
+              response.razorpay_signature;
+          },
+          theme: {
+            color: "#0BF9F2",
+          },
+        };
+        let rzp1 = new Razorpay(options);
+        rzp1.open();
+        e.preventDefault();
+      };
+    </script>
+
+    <script>
+      document.getElementById("verify-button1").onclick = function (e) {
+        let url = "api/payment/verify?id=<%= payData._id %>";
+        let params = {
+          razorpay_order_id: document.getElementById("order-id").value,
+          razorpay_payment_id: document.getElementById("order-pay-id").value,
+          razorpay_signature: document.getElementById("order-sig").value,
+
+          name: document.getElementById("name").value,
+          mobile: document.getElementById("mobile").value,
+          email: document.getElementById("email").value,
+          address: document.getElementById("address").value,
+          city: document.getElementById("city").value,
+          state: document.getElementById("state").value,
+          zipCode: document.getElementById("zipCode").value,
+          totalPrice: document.getElementById("total_pay").innerHTML,
+        };
+        let xmlHttp = new XMLHttpRequest();
+        xmlHttp.onreadystatechange = function (res) {
+          if (xmlHttp.readyState === 4) {
+            alert(xmlHttp.responseText);
+            window.location.replace("/index");
+          }
+        };
+        xmlHttp.open("POST", url, true); // false for synchronous request
+        xmlHttp.setRequestHeader("Content-type", "application/json");
+        xmlHttp.send(JSON.stringify(params));
+      };
+    </script>
+
+    <script>
+      $(".owl-product").owlCarousel({
+        loop: true,
+        margin: 10,
+        responsiveClass: true,
+        autoplay: true,
+        responsive: {
+          0: {
+            items: 1,
+            nav: true,
+          },
+          600: {
+            items: 1,
+            nav: true,
+          },
+          1000: {
+            items: 5,
+            nav: true,
+            loop: true,
+          },
+        },
+      });
+    </script>
+
+    <!-- Scripts  -->
+    <%- include("include/_scripts") %>
+  </body>
+</html>

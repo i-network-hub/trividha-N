@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Trividha | Return Policy</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <%- include("include/_header") %>
+    <link
+      rel="stylesheet"
+      href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      .affix {
+        top: 0;
+        width: 100%;
+        z-index: 9999 !important;
+      }
+
+      .affix + .container-fluid {
+        padding-top: 70px;
+      }
+      #fp-nav {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- Social Links  -->
+      <%- include("include/_social_links") %>
+
+      <div id="main">
+        <section
+          class="container-fluid header nopadding vertical-scrolling b-img"
+        >
+          <!-- header top-fix navbar  -->
+          <%- include("include/_navbar") %>
+
+          <!-- header top-fix side navbar  -->
+          <%- include("include/_side_navbar") %>
+
+          <div class="container-fluid abt-new section-divide">
+            <div class="row">
+              <div class="col-md-12 colsm-12 col-xs-12">
+                <h1 class="heading">Return Policy</h1>
+
+                <%if(data[0]){%>
+                <p><%=data[0].heading%> <br /></p>
+                <ul class="list-styled">
+                  <li class="show-read-more"><%-data[0].content%></li>
+                </ul>
+                <%}%> <%if(data[1]){%>
+                <p><%=data[1].heading%> <br /></p>
+                <ul class="list-styled">
+                  <li class="show-read-more"><%-data[1].content%></li>
+                </ul>
+                <%}%>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <%for(let i=2; i < data.length; i++){%>
+        <section class="container-fluid abt-new">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 colsm-12 col-xs-12">
+                <!-- <h3 class="heading">Sub heading</h3> -->
+
+                <%if(data[i]){%>
+                <p><%=data[i].heading%></p>
+                <ul class="list-styled">
+                  <li class="show-read-more"><%-data[i].content%></li>
+                </ul>
+                <%}%>
+
+                <!-- <h3 class="heading">Other sub heading</h3> -->
+
+                <%if(data[i+1]){%>
+                <p><%=data[i+1].heading%></p>
+                <ul class="list-styled">
+                  <li class="show-read-more"><%-data[i+1].content%></li>
+                </ul>
+                <%}%>
+              </div>
+            </div>
+          </div>
+        </section>
+        <%}%>
+
+        <!-------- footer section		-----	 -->
+        <%- include("include/_footer") %>
+      </div>
+    </div>
+
+    <!-- Scripts  -->
+    <%- include("include/_scripts") %>
+
+    <script>
+      $(document).ready(function () {
+        var maxLength = 500;
+        $(".show-read-more").each(function (i) {
+          var myStr = $(this).text();
+          if ($.trim(myStr).length > maxLength) {
+            var newStr = myStr.substring(0, maxLength);
+            var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
+            $(this).empty().html(newStr);
+
+            // $(this).append(
+            //   ' <a href="javascript:void(0);" style="color: orange" class="read-more">read more...</a>'
+            // );
+            // $(this).append('<span class="more-text">' + removedStr + "</span>");
+
+            $(this).append(
+              ` <a href="javascript:void(0);" style="color: orange" data-toggle="modal" data-target="#myModal${i}">read more...</a>`
+            );
+            $(this).append(`
+            <div class="modal fade" id="myModal${i}" role="dialog">
+              <div class="modal-dialog modal-md">
+                <div class="modal-content">
+                  <div class="modal-body" style="margin: 25px">${removedStr}</div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>`);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

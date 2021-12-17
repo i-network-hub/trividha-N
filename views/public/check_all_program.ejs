@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Trividha | Check all program</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <%- include("include/_header") %>
+    <link
+      rel="stylesheet"
+      href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      .affix {
+        top: 0;
+        width: 100%;
+        z-index: 9999 !important;
+      }
+
+      .affix + .container-fluid {
+        padding-top: 70px;
+      }
+      #fp-nav {
+        display: none;
+      }
+
+      @media (max-width: 990px) {
+        .pt-130 {
+          padding-top: 10%;
+        }
+      }
+      .all-plan-diet .item {
+        height: 500px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- Social Links  -->
+      <%- include("include/_social_links") %>
+      <div id="main">
+        <section
+          class="container-fluid header nopadding vertical-scrolling b-img"
+        >
+          <!-- header top-fix navbar  -->
+          <%- include("include/_navbar") %>
+
+          <!-- header top-fix side navbar  -->
+          <%- include("include/_side_navbar") %>
+
+          <img
+            src="/public_img/check-all-programs.jpg"
+            class="img-responsive mt-100"
+          />
+
+          <div>
+            <div class="col-md-5 col-xs-6" style="margin-top: -50px">
+              <div class="col-md-4 col-xs-4">
+                <a href="#"
+                  ><img
+                    src="/public_img/program-img1.png"
+                    class="img-responsive bi"
+                /></a>
+              </div>
+
+              <div class="col-md-4 col-xs-4">
+                <a href="#"
+                  ><img
+                    src="/public_img/Programs-img2.png"
+                    class="img-responsive bi"
+                /></a>
+              </div>
+
+              <div class="col-md-4 col-xs-4">
+                <a href="#"
+                  ><img
+                    src="/public_img/program-img3.png"
+                    class="img-responsive bi"
+                /></a>
+              </div>
+            </div>
+            <div class="col-md-2 col-xs-4">
+              <a href="#"
+                ><button class="btn btn-danger b-b"><u>Test Now</u></button></a
+              >
+            </div>
+          </div>
+        </section>
+
+        <section class="container-fluid pt-130">
+          <div class="container">
+            <h1
+              class="abt-txtt text-center"
+              style="
+                font-family: 'Philosopher', sans-serif;
+                font-weight: bold;
+                margin-top: 10px;
+              "
+            >
+              Our Programs
+            </h1>
+
+            <%if(weightPlans[0]){%>
+            <div class="row all-plan-diet">
+              <div class="item col-md-6">
+                <img
+                  src="../<%=weightPlans[0].image%>"
+                  class="img-responsive"
+                />
+
+                <div class="slider-box lift">
+                  <div class="slider-text">
+                    <h4 class=""><%=weightPlans[0].name%></h4>
+                    <p><%-weightPlans[0].content%></p>
+                    <a href="/diet" target="_blank">Read More</a>
+                  </div>
+                </div>
+              </div>
+              <%}%> <%if(weightPlans[1]){%>
+              <div class="item col-md-6">
+                <img
+                  src="../<%=weightPlans[1].image%>"
+                  class="img-responsive"
+                />
+
+                <div class="slider-box lift">
+                  <div class="slider-text">
+                    <h4 class=""><%=weightPlans[1].name%></h4>
+                    <p><%-weightPlans[1].content%></p>
+                    <a href="/diet" target="_blank">Read More</a>
+                  </div>
+                </div>
+              </div>
+              <%}%>
+            </div>
+          </div>
+        </section>
+
+        <%for(let i=2; i < weightPlans.length; i=i+2){%>
+        <section class="container-fluid pt-130">
+          <div class="container">
+            <div class="row all-plan-diet">
+              <div class="item col-md-6">
+                <img
+                  src="../<%=weightPlans[i].image%>"
+                  class="img-responsive"
+                />
+
+                <div class="slider-box lift">
+                  <div class="slider-text">
+                    <h4 class=""><%=weightPlans[i].name%></h4>
+                    <p><%-weightPlans[i].content%></p>
+                    <a href="/diet" target="_blank">Read More</a>
+                  </div>
+                </div>
+              </div>
+              <%if(weightPlans[i+1]){%>
+              <div class="item col-md-6">
+                <img
+                  src="../<%=weightPlans[i+1].image%>"
+                  class="img-responsive"
+                />
+
+                <div class="slider-box lift">
+                  <div class="slider-text">
+                    <h4 class=""><%=weightPlans[i+1].name%></h4>
+                    <p><%-weightPlans[i+1].content%></p>
+                    <a href="/diet" target="_blank">Read More</a>
+                  </div>
+                </div>
+              </div>
+              <%}%>
+            </div>
+          </div>
+        </section>
+        <%}%>
+
+        <!-- <section class="container-fluid pt-130">
+          <div class="container">
+            <div class="row all-plan-diet">
+              <div>
+                <div class="item col-md-6">
+                  <img
+                    src="/public_img/weight-loss.jpg"
+                    class="img-responsive"
+                  />
+
+                  <div class="slider-box lift">
+                    <div class="slider-text">
+                      <h4 class="">Pre wedding Diet program</h4>
+                      <p A>
+                        Perfect Program For Weight Loss, Fat Loss And Inch Loss.
+                        Ideal for students, bachelors, corporates, working
+                        women, housewives.
+                      </p>
+                      <a href="/diet" target="_blank">Read More</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="item col-md-6">
+                  <img
+                    src="/public_img/weight-loss.jpg"
+                    class="img-responsive"
+                  />
+
+                  <div class="slider-box lift">
+                    <div class="slider-text">
+                      <h4 class="">Senior citizen diet program</h4>
+                      <p A>
+                        Perfect Program For Weight Loss, Fat Loss And Inch Loss.
+                        Ideal for students, bachelors, corporates, working
+                        women, housewives.
+                      </p>
+                      <a href="/diet" target="_blank">Read More</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section> -->
+
+        <!-- <section class="container-fluid pt-130">
+          <div class="container">
+            <div class="row all-plan-diet">
+              <div>
+                <div class="item col-md-6">
+                  <img
+                    src="/public_img/weight-loss.jpg"
+                    class="img-responsive"
+                  />
+
+                  <div class="slider-box lift">
+                    <div class="slider-text">
+                      <h4 class="">maintenance program</h4>
+                      <p A>
+                        Perfect Program For Weight Loss, Fat Loss And Inch Loss.
+                        Ideal for students, bachelors, corporates, working
+                        women, housewives.
+                      </p>
+                      <a href="/diet" target="_blank">Read More</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="item col-md-6">
+                  <img
+                    src="/public_img/weight-loss.jpg"
+                    class="img-responsive"
+                  />
+
+                  <div class="slider-box lift">
+                    <div class="slider-text">
+                      <h4 class="">Skin/Hair Care</h4>
+                      <p A>
+                        Perfect Program For Weight Loss, Fat Loss And Inch Loss.
+                        Ideal for students, bachelors, corporates, working
+                        women, housewives.
+                      </p>
+                      <a href="/diet" target="_blank">Read More</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section> -->
+
+        <!-- <section class="container-fluid abt-new">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 colsm-12 col-xs-12">
+                <h1 class="heading">
+                  Things to Know before you start your diet Program
+                </h1>
+
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
+                  maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit
+                  amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua. Quis ipsum
+                  suspendisse ultrices gravida. Risus commodo viverra maecenas
+                  accumsan lacus vel facilisis. <br /><br />
+
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
+                  maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit
+                  amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua. Quis ipsum
+                  suspendisse ultrices gravida. Risus commodo viverra maecenas
+                  accumsan lacus vel facilisis.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section> -->
+
+        <!-- <section class="container-fluid doctr-sec3">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-1 col-sm-12 colxs-12"></div>
+              <div class="col-md-10 col-sm-12 col-xs-12">
+                <h1 class="heading">
+                  Popular Misconception about diet and body
+                </h1>
+
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
+                  maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit
+                  amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua. Quis ipsum
+                  suspendisse ultrices gravida. Risus commodo viverra maecenas
+                  accumsan lacus vel facilisis. <br /><br />
+
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
+                  maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit
+                  amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua. Quis ipsum
+                  suspendisse ultrices gravida. Risus commodo viverra maecenas
+                  accumsan lacus vel facilisis. Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                  ut labore et dolore magna aliqua. Quis ipsum suspendisse
+                  ultrices gravida. Risus commodo viverra maecenas accumsan
+                  lacus vel facilisis. <br /><br />
+                </p>
+              </div>
+
+              <div class="col-md-1 col-sm-12 colxs-12"></div>
+            </div>
+          </div>
+        </section> -->
+
+        <div class="modal fade" id="content-box" role="dialog">
+          <div class="modal-dialog modal-md">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                  &times;
+                </button>
+                <h4 class="modal-title">Heading</h4>
+              </div>
+              <div class="modal-body">
+                <p class="content-box-modal">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Necessitatibus quas numquam soluta eveniet tempore quae
+                  commodi magni ducimus tempora exercitationem perspiciatis
+                  repellendus quia expedita minima nisi totam ipsam hic labore,
+                  ab nam enim mollitia. Amet eaque, adipisci nam blanditiis
+                  inventore autem explicabo. Enim suscipit voluptas impedit
+                  asperiores, quaerat eos quos.
+                </p>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-default"
+                  data-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-------- footer section		-----	 -->
+        <%- include("include/_footer") %>
+      </div>
+    </div>
+
+    <!-- Scripts  -->
+    <%- include("include/_scripts") %>
+  </body>
+</html>

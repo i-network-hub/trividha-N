@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Trividha | Product</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <%- include("include/_header") %>
+    <link
+      rel="stylesheet"
+      href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      .affix {
+        top: 0;
+        width: 100%;
+        z-index: 9999 !important;
+      }
+
+      .affix + .container-fluid {
+        padding-top: 70px;
+      }
+
+      #fp-nav {
+        display: none;
+      }
+
+      @media (max-width: 990px) {
+        .heading {
+          margin-top: 0px !important;
+        }
+      }
+
+      .carousel-cell {
+        width: 220px;
+        margin-right: 30px;
+      }
+      .carousel-cell h4 {
+        font-weight: 800;
+        font-size: 18px;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+      .flickity-page-dots {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Social Links  -->
+      <%- include("include/_social_links") %>
+      <div id="main">
+        <section
+          class="container-fluid header nopadding vertical-scrolling b-img"
+        >
+          <!-- header top-fix navbar  -->
+          <%- include("include/_navbar_cart") %>
+
+          <!-- header top-fix side navbar  -->
+          <%- include("include/_side_navbar") %>
+
+          <div class="container-fluid doctr-sec3 section-divide">
+            <div class="">
+              <h1 class="text-center heading">Recommended Products</h1>
+              <div
+                class="main-carousel"
+                data-flickity='{"wrapAround":true , "autoPlay":true }'
+                style="padding-bottom: 90px"
+              >
+                <%for(let i=0; i < sliderData.length; i++){%>
+                <div class="carousel-cell">
+                  <div>
+                    <div class="product-img-box">
+                      <a href="/product_single?id=<%=sliderData[i]._id%>"
+                        ><img src="../<%=sliderData[i].image[0]%>" alt=""
+                      /></a>
+                    </div>
+                    <div class="product-content">
+                      <h4>
+                        <%= sliderData[i].name.slice(0, 10) +
+                        (sliderData[i].name.length > 10 ? "..." : "") %>
+                        <br />
+                        <br />
+                        <span class="text-muted">
+                          <%= sliderData[i].category.slice(0, 10) +
+                          (sliderData[i].category.length > 10 ? "..." : "") %>
+                        </span>
+                      </h4>
+                      <h4>
+                        Rs <%=sliderData[i].price%>/- <br />
+                        <br />
+                        <span
+                          class="text-danger addtocart"
+                          style="margin-left: 30px; cursor: pointer"
+                          data-productid="<%=sliderData[i]._id%>"
+                          data-quantity="1"
+                          data-name="<%=sliderData[i].name%>"
+                          data-price="<%=sliderData[i].price%>"
+                          data-discount="<%=sliderData[i].discount%>"
+                          ><i class="fas fa-shopping-cart"></i
+                        ></span>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+                <%}%>
+              </div>
+              <div></div>
+            </div>
+          </div>
+        </section>
+
+        <%for(let i=0; i < products.length; i++){ %>
+        <section class="container-fluid bg-light section-divide">
+          <div class="container">
+            <h1 class="text-center heading"><%=data_category[i].category%></h1>
+            <div class="product-img">
+              <%for(let j=0; j < products[i].length; j++){ %>
+              <div>
+                <div class="product-img-box">
+                  <a href="/product_single?id=<%=products[i][j]._id%>"
+                    ><img src="../<%=products[i][j].image[0]%>" alt=""
+                  /></a>
+                </div>
+                <div class="product-content">
+                  <h4>
+                    <%= products[i][j].name.slice(0, 10) +
+                    (products[i][j].name.length > 10 ? "..." : "") %><br />
+                    <br />
+                    <span class="text-muted">
+                      <%= products[i][j].category.slice(0, 10) +
+                      (products[i][j].category.length > 10 ? "..." : "") %>
+                    </span>
+                  </h4>
+                  <h4>
+                    Rs <%=products[i][j].price%>/- <br />
+                    <br />
+                    <span
+                      class="text-danger addtocart"
+                      style="margin-left: 30px; cursor: pointer"
+                      data-productid="<%=products[i][j]._id%>"
+                      data-quantity="1"
+                      data-name="<%=products[i][j].name%>"
+                      data-price="<%=products[i][j].price%>"
+                      data-discount="<%=products[i][j].discount%>"
+                      ><i class="fas fa-shopping-cart"></i
+                    ></span>
+                  </h4>
+                </div>
+              </div>
+              <%}%>
+            </div>
+            <div class="text-center mt-20">
+              <a
+                href="/list_products?id=<%=data_category[i].category%>"
+                class="btn btn-style-three"
+                >View All</a
+              >
+            </div>
+          </div>
+        </section>
+        <%}%>
+
+        <!-------- footer section		-----	 -->
+        <%- include("include/_footer") %>
+      </div>
+    </div>
+    <!-- Scripts  -->
+    <%- include("include/_scripts") %>
+
+    <!-- <script>
+      function addToCart(e) {
+        let data = {
+          productId: e.dataset.productid,
+          quantity: parseInt(e.dataset.quantity),
+          name: e.dataset.name,
+          price: parseInt(e.dataset.price),
+          discount: parseInt(e.dataset.discount),
+        };
+        console.log(data);
+
+        let request = {
+          url: `https://trividhaa.herokuapp.com/api/cart`,
+          method: "POST",
+          data: data,
+        };
+        $.ajax(request).done(function (response) {
+          console.log(response);
+          alert("Product add to the cart! Please go to cart..");
+          location.reload();
+        });
+        return false;
+      }
+    </script> -->
+  </body>
+</html>

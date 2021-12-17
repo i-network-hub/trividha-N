@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Trividha | Diet</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <%- include("include/_header") %>
+    <link
+      rel="stylesheet"
+      href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      .affix {
+        top: 0;
+        width: 100%;
+        z-index: 9999 !important;
+      }
+
+      .affix + .container-fluid {
+        padding-top: 70px;
+      }
+      #fp-nav {
+        display: none;
+      }
+
+      @media (max-width: 990px) {
+        .di-sec4-bt {
+          display: none;
+        }
+        .slider-box {
+          margin-left: 35px;
+        }
+      }
+      .upd .owl-prev {
+        position: absolute;
+        left: 0;
+        top: 40%;
+        font-size: 45px !important;
+      }
+      .upd .owl-next {
+        position: absolute;
+        right: 0;
+        top: 40%;
+        font-size: 45px !important;
+      }
+      .ctm {
+        margin-top: 0px;
+      }
+      .abt-new-sec {
+        padding-top: 115px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- Social Links  -->
+      <%- include("include/_social_links") %>
+      <div id="main">
+        <section
+          class="container-fluid header nopadding vertical-scrolling b-img"
+        >
+          <!-- header top-fix navbar  -->
+          <%- include("include/_navbar") %>
+
+          <!-- header top-fix side navbar  -->
+          <%- include("include/_side_navbar") %>
+
+          <img src="/public_img/b-diet.jpg" class="img-responsive mt-120" />
+          <div class="col-md-6 col-xs-11">
+            <a href="#" data-toggle="modal" data-target="#myModal"
+              ><p class="text-center pbtn">
+                If you are beginner and don’t<br />
+                know about your BMR & TDEE
+              </p></a
+            >
+          </div>
+
+          <div class="col-md-6">
+            <a href="#" data-toggle="modal" data-target="#myModal1"
+              ><p class="text-center pbtn1">
+                If you are aware about<br />
+                your calorie Intake
+              </p></a
+            >
+          </div>
+        </section>
+
+        <section class="di-sec2">
+          <div class="">
+            <div class="row">
+              <div class="container-fluid di-sec3">
+                <h1 class="text-center">
+                  Choose your most suitable diet preference
+                </h1>
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                      <div class="dropdown">
+                        <button
+                          class="btn btn-primary dropdown-toggle dp-b"
+                          type="button"
+                          data-toggle="dropdown"
+                        >
+                          Low Carbs diet <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">High Carbs</a></li>
+                          <li><a href="#">Moderate Carbs</a></li>
+                          <li><a href="#">Zone Diet</a></li>
+                          <li><a href="#">Low Carbs</a></li>
+                          <li><a href="#">Keto Diet</a></li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                      <a href="#"
+                        ><p class="ank-b">
+                          <span
+                            style="
+                              float: left;
+                              width: 80%;
+                              padding-left: 35px;
+                              font-size: 18px;
+                            "
+                            >Carb
+                          </span>
+                          <span
+                            style="
+                              background: #fff;
+                              color: #000;
+                              border-radius: 50%;
+                              padding: 12px 7px;
+                            "
+                            >25%</span
+                          >
+                        </p></a
+                      >
+                    </div>
+
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                      <a href="#"
+                        ><p class="ank-b">
+                          <span
+                            style="
+                              float: left;
+                              width: 80%;
+                              padding-left: 35px;
+                              font-size: 18px;
+                            "
+                            >Protein
+                          </span>
+                          <span
+                            style="
+                              background: #fff;
+                              color: #000;
+                              border-radius: 50%;
+                              padding: 12px 7px;
+                            "
+                            >35%</span
+                          >
+                        </p></a
+                      >
+                    </div>
+
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                      <a href="#"
+                        ><p class="ank-b">
+                          <span
+                            style="
+                              float: left;
+                              width: 80%;
+                              padding-left: 35px;
+                              font-size: 18px;
+                            "
+                            >Fat
+                          </span>
+                          <span
+                            style="
+                              background: #fff;
+                              color: #000;
+                              border-radius: 50%;
+                              padding: 12px 7px;
+                            "
+                            >40%</span
+                          >
+                        </p></a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="container-fluid flw-bn">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6 col-sm-12 col-xs-12">
+                    <p
+                      style="
+                        color: #ff940d;
+                        font-size: 25px;
+                        padding-top: 40px;
+                        font-family: 'Poppins', sans-serif;
+                      "
+                    >
+                      <span style="color: #91b130; font-weight: bold"
+                        >A complete<br />
+                        meal plan will</span
+                      ><br />
+                      come out in<br />
+                      a series.
+                    </p>
+                  </div>
+
+                  <div
+                    class="col-md-6 col-sm-12 col-xs-12"
+                    style="background-color: #3b4a51; padding-bottom: 30px"
+                  >
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      <div class="col-md-4 col-sm-12 col-xs-12">
+                        <h4 class="hd-txt">Breakfast</h4>
+                      </div>
+
+                      <div class="col-md-8 col-sm-12 col-xs-12">
+                        <div class="afbr-box">
+                          <div class="col-md-10 col-xs-10">
+                            <p class="p-back">Lorem</p>
+                          </div>
+
+                          <div class="col-md-2 col-xs-2">
+                            <i
+                              class="fa fa-file-text-o"
+                              style="color: #91b130"
+                              aria-hidden="true"
+                            ></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      <div class="col-md-4 col-sm-12 col-xs-12">
+                        <h4 class="hd-txt">Lunch</h4>
+                      </div>
+
+                      <div class="col-md-8 col-sm-12 col-xs-12">
+                        <div class="afbr-box">
+                          <div class="col-md-10 col-xs-10">
+                            <p class="p-back">Lorem</p>
+                          </div>
+
+                          <div class="col-md-2 col-xs-2">
+                            <i
+                              class="fa fa-file-text-o"
+                              style="color: #91b130"
+                              aria-hidden="true"
+                            ></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      <div class="col-md-4 col-sm-12 col-xs-12">
+                        <h4 class="hd-txt">Evening Snacks</h4>
+                      </div>
+
+                      <div class="col-md-8 col-sm-12 col-xs-12">
+                        <div class="afbr-box">
+                          <div class="col-md-10 col-xs-10">
+                            <p class="p-back">Lorem</p>
+                          </div>
+
+                          <div class="col-md-2 col-xs-2">
+                            <i
+                              class="fa fa-file-text-o"
+                              style="color: #91b130"
+                              aria-hidden="true"
+                            ></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      <div class="col-md-4 col-sm-12 col-xs-12">
+                        <h4 class="hd-txt">Dinner</h4>
+                      </div>
+
+                      <div class="col-md-8 col-sm-12 col-xs-12">
+                        <div class="afbr-box">
+                          <div class="col-md-10 col-xs-10">
+                            <p class="p-back">Lorem</p>
+                          </div>
+
+                          <div class="col-md-2 col-xs-2">
+                            <i
+                              class="fa fa-file-text-o"
+                              style="color: #91b130"
+                              aria-hidden="true"
+                            ></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal fade" id="myModal" role="dialog">
+              <div class="modal-dialog modal-lg">
+                <!-- Modal content-->
+                <div class="modal-content al-b">
+                  <!-- <div class="modal-header"> -->
+                  <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+                  <!-- <h4 class="modal-title">Modal Header</h4> -->
+                  <!-- </div> -->
+                  <div class="modal-body">
+                    <div class="container" style="width: 100%">
+                      <div class="row">
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                          <p style="font-size: 20px; padding-top: 25px">
+                            <strong style="color: #4b5f0e">Fill the</strong
+                            ><br />
+                            <span style="color: #ffa100">information </span>
+                          </p>
+                        </div>
+
+                        <div class="col-md-8 col-sm-12 col-xs-12">
+                          <div class="fm-bx">
+                            <div class="col-md-9 col-sm-12 col-xs-12">
+                              <div class="form-group">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                  <label
+                                    class="control-label col-sm-2 lbl-cus"
+                                    for="email"
+                                    >Name</label
+                                  >
+                                  <div class="col-sm-10">
+                                    <input
+                                      type="email"
+                                      class="form-control custm"
+                                      id="email"
+                                      placeholder=""
+                                      name="email"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="form-group">
+                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                  <label
+                                    class="control-label lbl-cus col-sm-4"
+                                    for="pwd"
+                                    >Age</label
+                                  >
+                                  <div class="col-sm-8">
+                                    <input
+                                      type="password"
+                                      class="form-control custm"
+                                      id="pwd"
+                                      placeholder=""
+                                      name="pwd"
+                                    />
+                                  </div>
+                                </div>
+
+                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                  <label
+                                    class="control-label col-sm-4 lbl-cus"
+                                    for="pwd"
+                                    >Sex</label
+                                  >
+                                  <div class="col-sm-8">
+                                    <input
+                                      type="password"
+                                      class="form-control custm"
+                                      id="pwd"
+                                      placeholder=""
+                                      name="pwd"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="form-group">
+                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                  <label
+                                    class="control-label col-sm-4 lbl-cus"
+                                    for="pwd"
+                                    >Height</label
+                                  >
+                                  <div class="col-sm-8">
+                                    <input
+                                      type="password"
+                                      class="form-control custm"
+                                      id="pwd"
+                                      placeholder=""
+                                      name="pwd"
+                                    />
+                                  </div>
+                                </div>
+
+                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                  <label
+                                    class="control-label col-sm-4 lbl-cus"
+                                    for="pwd"
+                                    >Weight</label
+                                  >
+                                  <div class="col-sm-8">
+                                    <input
+                                      type="password"
+                                      class="form-control custm"
+                                      id="pwd"
+                                      placeholder=""
+                                      name="pwd"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="form-group">
+                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                  <label
+                                    class="control-label col-sm-4 lbl-cus"
+                                    for="pwd"
+                                    >life style</label
+                                  >
+                                  <div class="col-sm-8">
+                                    <input
+                                      type="password"
+                                      class="form-control custm"
+                                      id="pwd"
+                                      placeholder=""
+                                      name="pwd"
+                                    />
+                                  </div>
+                                </div>
+
+                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                  <label
+                                    class="control-label col-sm-4 lbl-cus"
+                                    for="pwd"
+                                    >Goal</label
+                                  >
+                                  <div class="col-sm-8">
+                                    <input
+                                      type="password"
+                                      class="form-control custm"
+                                      id="pwd"
+                                      placeholder=""
+                                      name="pwd"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                  <button
+                                    type="submit"
+                                    class="btn btn-default fm-bn"
+                                  >
+                                    Submit
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-12 col-xs-12">
+                              <div class="grn-bx">
+                                <p class="rund-crl">
+                                  1719.12<br />
+                                  Kcal
+                                </p>
+                                <p>
+                                  Your total<br />
+                                  calorie Intake
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer" style="background: #465b0c">
+                    <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal fade" id="myModal1" role="dialog">
+              <div class="modal-dialog modal-lg">
+                <!-- Modal content-->
+                <div class="modal-content al-b">
+                  <!-- <div class="modal-header"> -->
+                  <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+                  <!-- <h4 class="modal-title">Modal Header</h4> -->
+                  <!-- </div> -->
+                  <div class="modal-body">
+                    <div class="container" style="width: 100%">
+                      <div class="row">
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                          <p style="font-size: 20px; padding-top: 25px">
+                            <strong style="color: #4b5f0e">Fill the</strong
+                            ><br />
+                            <span style="color: #ffa100">information </span>
+                          </p>
+                        </div>
+
+                        <div class="col-md-8 col-sm-12 col-xs-12">
+                          <div class="fm-bx">
+                            <div class="col-md-9 col-sm-12 col-xs-12">
+                              <div class="form-group">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                  <label
+                                    class="control-label col-sm-2 lbl-cus"
+                                    for="email"
+                                    >Name</label
+                                  >
+                                  <div class="col-sm-10">
+                                    <input
+                                      type="email"
+                                      class="form-control custm"
+                                      id="email"
+                                      placeholder=""
+                                      name="email"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="form-group">
+                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                  <label
+                                    class="control-label lbl-cus col-sm-4"
+                                    for="pwd"
+                                    >Age</label
+                                  >
+                                  <div class="col-sm-8">
+                                    <input
+                                      type="password"
+                                      class="form-control custm"
+                                      id="pwd"
+                                      placeholder=""
+                                      name="pwd"
+                                    />
+                                  </div>
+                                </div>
+
+                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                  <label
+                                    class="control-label col-sm-4 lbl-cus"
+                                    for="pwd"
+                                    >Sex</label
+                                  >
+                                  <div class="col-sm-8">
+                                    <input
+                                      type="password"
+                                      class="form-control custm"
+                                      id="pwd"
+                                      placeholder=""
+                                      name="pwd"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="form-group">
+                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                  <label
+                                    class="control-label lbl-cus col-sm-4"
+                                    for="pwd"
+                                    >Calorie</label
+                                  >
+                                  <div class="col-sm-8">
+                                    <input
+                                      type="password"
+                                      class="form-control custm"
+                                      id="pwd"
+                                      placeholder=""
+                                      name="pwd"
+                                    />
+                                  </div>
+                                </div>
+
+                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                  <!-- <label class="control-label col-sm-4 lbl-cus" for="pwd">Sex</label> -->
+                                  <!-- <div class="col-sm-8">           -->
+                                  <!-- <input type="password" class="form-control custm" id="pwd" placeholder="" name="pwd"> -->
+                                  <!-- </div> -->
+                                </div>
+                              </div>
+
+                              <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                  <button
+                                    type="submit"
+                                    class="btn btn-default fm-bn"
+                                    style="margin-top: 20%"
+                                  >
+                                    Submit
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-12 col-xs-12">
+                              <div class="grn-bx">
+                                <p class="rund-crl">
+                                  1719.12<br />
+                                  Kcal
+                                </p>
+                                <p>
+                                  Your total<br />
+                                  calorie Intake
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer" style="background: #465b0c">
+                    <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="container-fluid di-sec4 pt-100">
+          <p class="di-secp">
+            <span style="color: #91b130"><b>Ready made</b></span> diet plan
+          </p>
+
+          <div class="container">
+            <div class="row">
+              <!-- <div class="col-md-0 col-xs-12"> -->
+              <!-- </div> -->
+
+              <div class="col-md-2 col-xs-6 wdth">
+                <div class="ready-box">
+                  <img src="/public_img/ready1.jpg" class="img-responsive" />
+                  <p class="text-center di-sec4-p">
+                    High Carbs &nbsp;<i
+                      class="fa fa-download"
+                      style="color: #91b130"
+                      aria-hidden="true"
+                    ></i>
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-md-2 col-xs-6 wdth">
+                <div class="ready-box">
+                  <img src="/public_img/ready2.jpg" class="img-responsive" />
+                  <p class="text-center di-sec4-p">
+                    Moderate Carbs &nbsp;<i
+                      class="fa fa-download"
+                      style="color: #91b130"
+                      aria-hidden="true"
+                    ></i>
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-md-2 col-xs-12 wdth">
+                <div class="ready-box">
+                  <img src="/public_img/ready3.jpg" class="img-responsive" />
+                  <p class="text-center di-sec4-p">
+                    Zone Diet &nbsp;<i
+                      class="fa fa-download"
+                      style="color: #91b130"
+                      aria-hidden="true"
+                    ></i>
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-md-2 col-xs-12 wdth">
+                <div class="ready-box">
+                  <img src="/public_img/ready4.jpg" class="img-responsive" />
+                  <p class="text-center di-sec4-p">
+                    Low Carbs &nbsp;<i
+                      class="fa fa-download"
+                      style="color: #91b130"
+                      aria-hidden="true"
+                    ></i>
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-md-2 col-xs-12 wdth">
+                <div class="ready-box">
+                  <img src="/public_img/ready5.jpg" class="img-responsive" />
+                  <p class="text-center di-sec4-p">
+                    Keto Diet &nbsp;<i
+                      class="fa fa-download"
+                      style="color: #91b130"
+                      aria-hidden="true"
+                    ></i>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="container-fluid doctr-sec3">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-1 col-sm-12 colxs-12"></div>
+              <div class="col-md-10 col-sm-12 col-xs-12">
+                <h1 class="heading">How it Works</h1>
+
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
+                  maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit
+                  amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua. Quis ipsum
+                  suspendisse ultrices gravida. Risus commodo viverra maecenas
+                  accumsan lacus vel facilisis. <br /><br />
+
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
+                  maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit
+                  amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua. Quis ipsum
+                  suspendisse ultrices gravida. Risus commodo viverra maecenas
+                  accumsan lacus vel facilisis. Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                  ut labore et dolore magna aliqua. Quis ipsum suspendisse
+                  ultrices gravida. Risus commodo viverra maecenas accumsan
+                  lacus vel facilisis.
+                </p>
+              </div>
+
+              <div class="col-md-1 col-sm-12 colxs-12"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="container-fluid abt-new">
+          <div class="row">
+            <div class="col-md-12 colsm-12 col-xs-12">
+              <h1 class="heading">Online Diet Planner</h1>
+
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
+                ipsum suspendisse ultrices gravida. Risus commodo viverra
+                maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit
+                amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Quis ipsum
+                suspendisse ultrices gravida. Risus commodo viverra maecenas
+                accumsan lacus vel facilisis. <br /><br />
+
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
+                ipsum suspendisse ultrices gravida. Risus commodo viverra
+                maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit
+                amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Quis ipsum
+                suspendisse ultrices gravida. Risus commodo viverra maecenas
+                accumsan lacus vel facilisis. Lorem ipsum dolor sit amet,
+                consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
+                gravida. Risus commodo viverra maecenas accumsan lacus vel
+                facilisis. <br /><br />
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="container-fluid doctr-sec3">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-1 col-sm-12 colxs-12"></div>
+              <div class="col-md-10 col-sm-12 col-xs-12">
+                <h1 class="heading">Fitness and Diet Planner</h1>
+
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
+                  maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit
+                  amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua. Quis ipsum
+                  suspendisse ultrices gravida. Risus commodo viverra maecenas
+                  accumsan lacus vel facilisis. <br /><br />
+
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
+                  maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit
+                  amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua. Quis ipsum
+                  suspendisse ultrices gravida. Risus commodo viverra maecenas
+                  accumsan lacus vel facilisis. Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                  ut labore et dolore magna aliqua. Quis ipsum suspendisse
+                  ultrices gravida. Risus commodo viverra maecenas accumsan
+                  lacus vel facilisis.
+                </p>
+              </div>
+
+              <div class="col-md-1 col-sm-12 colxs-12"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="container-fluid abt-new-sec">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 colsm-12 col-xs-12">
+                <h1 class="heading text-center">
+                  Different types of Diet Plans
+                </h1>
+              </div>
+
+              <div class="col-md-12 colsm-12 col-xs-12">
+                <div class="owl-carousel owl-theme upd">
+                  <%for(let i=0; i < 7; i++){%>
+                  <div class="item">
+                    <img
+                      src="../<%=diets[i].image%>"
+                      class="img-responsive"
+                      style="
+                        width: 75%;
+                        height: 300px;
+                        margin: auto;
+                        display: block;
+                      "
+                    />
+
+                    <div class="slider-box lift">
+                      <div class="slider-text">
+                        <h4 class="">
+                          <%= diets[i].name.slice(0, 10) + (diets[i].name.length
+                          > 10 ? "..." : "") %>
+                        </h4>
+                        <p>
+                          <%= diets[i].content.slice(0, 30) +
+                          (diets[i].content.length > 30 ? "..." : "") %>
+                        </p>
+                        <a
+                          href="/plan_single?id=<%=diets[i]._id%>"
+                          target="_blank"
+                          >Read More</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <%}%>
+                  <!-- <div class="item">
+                    <img
+                      src="/public_img/weight-loss.jpg"
+                      class="img-responsive"
+                      style="width: 75%; margin: auto; display: block"
+                    />
+
+                    <div class="slider-box">
+                      <div class="slider-text">
+                        <h4 class="">Moderate carb diet plan (MCD)</h4>
+                        <p A>
+                          Perfect Program For Weight Loss, Fat Loss And Inch
+                          Loss. Ideal for students, bachelors, corporates,
+                          working women, housewives.
+                        </p>
+                        <a href="#">Read More</a>
+                      </div>
+                    </div>
+                  </div> -->
+                  <!-- <div class="item">
+                    <img
+                      src="/public_img/weight-loss.jpg"
+                      class="img-responsive"
+                      style="width: 75%; margin: auto; display: block"
+                    />
+
+                    <div class="slider-box">
+                      <div class="slider-text">
+                        <h4 class="">High carb diet plan (HCD)</h4>
+                        <p A>
+                          Perfect Program For Weight Loss, Fat Loss And Inch
+                          Loss. Ideal for students, bachelors, corporates,
+                          working women, housewives.
+                        </p>
+                        <a href="#">Read More</a>
+                      </div>
+                    </div>
+                  </div> -->
+                  <!-- <div class="item">
+                    <img
+                      src="/public_img/weight-loss.jpg"
+                      class="img-responsive"
+                      style="width: 75%; margin: auto; display: block"
+                    />
+
+                    <div class="slider-box">
+                      <div class="slider-text">
+                        <h4 class="">Ketogenic diet plan</h4>
+                        <p A>
+                          Perfect Program For Weight Loss, Fat Loss And Inch
+                          Loss. Ideal for students, bachelors, corporates,
+                          working women, housewives.
+                        </p>
+                        <a href="#">Read More</a>
+                      </div>
+                    </div>
+                  </div> -->
+                  <!-- <div class="item">
+                    <img
+                      src="/public_img/weight-loss.jpg"
+                      class="img-responsive"
+                      style="width: 75%; margin: auto; display: block"
+                    />
+
+                    <div class="slider-box">
+                      <div class="slider-text">
+                        <h4 class="">Zone diet plan</h4>
+                        <p A>
+                          Perfect Program For Weight Loss, Fat Loss And Inch
+                          Loss. Ideal for students, bachelors, corporates,
+                          working women, housewives.
+                        </p>
+                        <a href="#">Read More</a>
+                      </div>
+                    </div>
+                  </div> -->
+                  <!-- <div class="item">
+                    <img
+                      src="/public_img/weight-loss.jpg"
+                      class="img-responsive"
+                      style="width: 75%; margin: auto; display: block"
+                    />
+
+                    <div class="slider-box">
+                      <div class="slider-text">
+                        <h4 class="">Very-low-calorie diet plan</h4>
+                        <p A>
+                          Perfect Program For Weight Loss, Fat Loss And Inch
+                          Loss. Ideal for students, bachelors, corporates,
+                          working women, housewives.
+                        </p>
+                        <a href="#">Read More</a>
+                      </div>
+                    </div>
+                  </div> -->
+                  <!-- <div class="item">
+                    <img
+                      src="/public_img/weight-loss.jpg"
+                      class="img-responsive"
+                      style="width: 75%; margin: auto; display: block"
+                    />
+
+                    <div class="slider-box">
+                      <div class="slider-text">
+                        <h4 class="">GM Diet Plan</h4>
+                        <p A>
+                          Perfect Program For Weight Loss, Fat Loss And Inch
+                          Loss. Ideal for students, bachelors, corporates,
+                          working women, housewives.
+                        </p>
+                        <a href="#">Read More</a>
+                      </div>
+                    </div>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+            <a href="/explore_all_plan"
+              ><button class="btn ctm">Explor all plan</button></a
+            >
+          </div>
+        </section>
+
+        <section class="container-fluid question">
+          <div class="container">
+            <div class="row">
+              <h1>Frequently Asked Questions:</h1>
+
+              <%if(faqs[0]){%>
+              <div class="col-md-12 col-xs-12">
+                <h3>Q: &nbsp; <%=faqs[0].question%></h3>
+
+                <p><%=faqs[0].answer%></p>
+              </div>
+              <%}%> <%if(faqs[1]){%>
+              <div class="col-md-12 col-xs-12">
+                <h3>Q: &nbsp; <%=faqs[1].question%></h3>
+
+                <p><%=faqs[1].answer%></p>
+              </div>
+              <%}%> <%if(faqs[2]){%>
+              <div class="col-md-12 col-xs-12">
+                <h3>Q: &nbsp; <%=faqs[2].question%></h3>
+
+                <p><%=faqs[2].answer%></p>
+              </div>
+              <%}%>
+            </div>
+          </div>
+        </section>
+
+        <%for(let i=3; i < faqs.length; i=i+3){%>
+        <section class="container-fluid question">
+          <div class="container">
+            <div class="row">
+              <%for(let j=i; j < i+3; j++){%> <%if(faqs[j]){%>
+              <div class="col-md-12 col-xs-12">
+                <h3>Q: &nbsp; <%=faqs[j].question%></h3>
+
+                <p><%=faqs[j].answer%></p>
+              </div>
+              <%}%> <%}%>
+            </div>
+          </div>
+        </section>
+        <%}%>
+
+        <section class="container-fluid testimonial vertical-scrolling">
+          <h1 class="heading text-center">What people are saying</h1>
+
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="testi-box">
+                  <h4>They Save my Life</h4>
+                  <p>
+                    “Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Quis ipsum suspendisse ultrices gravida. Risus
+                    commodo viverra maecenas accumsan lacus vel facilisis”
+                  </p>
+                  <h6>
+                    Name : Lorem Ipsumb
+                    <span style="padding-left: 40px"
+                      ><img
+                        src="/public_img/testimonial-img.png"
+                        style="width: 65px; margin-top: 15px"
+                    /></span>
+                  </h6>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="testi-box">
+                  <h4>They Save my Life</h4>
+                  <p>
+                    “Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Quis ipsum suspendisse ultrices gravida. Risus
+                    commodo viverra maecenas accumsan lacus vel facilisis”
+                  </p>
+                  <h6>
+                    Name : Lorem Ipsumb
+                    <span style="padding-left: 40px"
+                      ><img
+                        src="/public_img/testimonial-img.png"
+                        style="width: 65px; margin-top: 15px"
+                    /></span>
+                  </h6>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="testi-box">
+                  <h4>They Save my Life</h4>
+                  <p>
+                    “Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Quis ipsum suspendisse ultrices gravida. Risus
+                    commodo viverra maecenas accumsan lacus vel facilisis”
+                  </p>
+                  <h6>
+                    Name : Lorem Ipsumb
+                    <span style="padding-left: 40px"
+                      ><img
+                        src="/public_img/testimonial-img.png"
+                        style="width: 65px; margin-top: 15px"
+                    /></span>
+                  </h6>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="testi-box1">
+                  <h4>They Save my Life</h4>
+                  <p>
+                    “Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Quis ipsum suspendisse ultrices gravida. Risus
+                    commodo viverra maecenas accumsan lacus vel facilisis”
+                  </p>
+                  <h6>
+                    Name : Lorem Ipsumb
+                    <span style="padding-left: 40px"
+                      ><img
+                        src="/public_img/testimonial-img.png"
+                        style="width: 65px; margin-top: 15px"
+                    /></span>
+                  </h6>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="testi-box1">
+                  <h4>They Save my Life</h4>
+                  <p>
+                    “Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Quis ipsum suspendisse ultrices gravida. Risus
+                    commodo viverra maecenas accumsan lacus vel facilisis”
+                  </p>
+                  <h6>
+                    Name : Lorem Ipsumb
+                    <span style="padding-left: 40px"
+                      ><img
+                        src="/public_img/testimonial-img.png"
+                        style="width: 65px; margin-top: 15px"
+                    /></span>
+                  </h6>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="testi-box1">
+                  <h4>They Save my Life</h4>
+                  <p>
+                    “Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Quis ipsum suspendisse ultrices gravida. Risus
+                    commodo viverra maecenas accumsan lacus vel facilisis”
+                  </p>
+                  <h6>
+                    Name : Lorem Ipsumb
+                    <span style="padding-left: 40px"
+                      ><img
+                        src="/public_img/testimonial-img.png"
+                        style="width: 65px; margin-top: 15px"
+                    /></span>
+                  </h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="container-fluid abt-new-sec1">
+          <div class="row col-md-12">
+            <div class="col-md-6 mt-150">
+              <img
+                src="/public_img/Nadi-img.png"
+                class="img-responsive"
+                style="margin: auto; margin-top: 30px"
+              />
+            </div>
+            <div class="col-md-6 mt-120">
+              <h2 class="text-center" style="font-weight: bold">
+                Join Our Community Over Facebook.
+              </h2>
+              <p class="text-justify">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Molestias minus explicabo ad cum blanditiis. Tempora incidunt
+                provident perspiciatis, magni eveniet qui dolores assumenda odio
+                eius atque, in odit aspernatur modi natus officia ratione
+                suscipit excepturi tempore voluptatem! Facere, totam modi?
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-------- footer section		-----	 -->
+        <%- include("include/_footer") %>
+      </div>
+    </div>
+    <script>
+      $(".upd").owlCarousel({
+        loop: true,
+        margin: 10,
+        dots: false,
+        responsiveClass: true,
+        autoplay: true,
+        autoplayHoverPause: true,
+        responsive: {
+          0: {
+            items: 1,
+            nav: true,
+          },
+          600: {
+            items: 2,
+            nav: true,
+          },
+          1000: {
+            items: 2,
+            nav: true,
+            loop: true,
+            margin: 20,
+          },
+        },
+      });
+    </script>
+    <!-- Scripts  -->
+    <%- include("include/_scripts") %>
+  </body>
+</html>

@@ -1,0 +1,145 @@
+<!-- header top-fix navbar starts  -->
+<div id="flipkart-navbar" class="top-fix">
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row row2">
+        <div class="col-sm-4">
+          <h2 style="margin: 0px">
+            <span class="smallnav menu" onclick="openNav()"
+              >☰
+              <a href="/index" target="_blank"
+                ><img
+                  src="/public_images/Logo.png"
+                  class="img-responsive ig"
+                  style="margin: auto; display: block"
+                /> </a
+            ></span>
+          </h2>
+
+          <div class="col-md-2 col-sm-5 col-xs-5 part-two nopadding">
+            <img
+              src="/public_images/img1.png"
+              class="img-responsive ig1 lift"
+            />
+          </div>
+
+          <div class="col-md-10 col-sm-7 col-xs-7 nopadding">
+            <p class="mbl-txt">
+              <a href="tel: +91 9499-38-38-38"> +91 9499-38-38-38</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="flipkart-navbar-search smallsearch col-sm-4 col-xs-11">
+          <div class="row">
+            <a href="/index" target="_blank">
+              <img
+                src="/public_images/Logo.png"
+                class="img-responsive ig2"
+                style="margin: auto; display: block"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="cart largenav col-sm-4">
+          <div class="col-md-4 col-sm-4 col-xs-4 nopadding"></div>
+          <div class="col-md-4 col-sm-4 col-xs-4 nopadding">
+            <a href="/cart" target="_blank">
+              <img
+                src="/public_images/rigt-icon1.png"
+                class="img-responsive ig3 lift"
+                style="right: 0; position: absolute"
+              />
+              <span
+                class="mg-responsive ig3 lift"
+                style="
+                  float: right;
+                  padding-left: 10px;
+                  padding-top: -20px;
+                  color: red;
+                  font-weight: bold;
+                "
+                ><%if(cartValue){%> <%=cartValue%> <%}%>
+              </span>
+            </a>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-4 nopadding">
+            <a href="/profile" target="_blank">
+              <img
+                src="/public_images/rigt-icon2.png"
+                class="img-responsive ig3 lift"
+                style="float: left"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row row1 mg-back">
+      <ul class="largenav">
+        <li class="upper-links">
+          <a class="links dropbtn" href="/raw_herbs" target="_blank"
+            >Raw Herb</a
+          >
+        </li>
+
+        <li class="upper-links dropdown">
+          <a class="links dropbtn" href="/doctor" target="_blank">Treatments</a>
+          <div class="dropdown-content">
+            <a class="link" href="/doctor">Digestive</a>
+            <a class="link" href="/doctor">Endocrine</a>
+            <a class="link" href="/doctor">Hair &amp; Skin</a>
+            <a class="link" href="/doctor">Urinary</a>
+            <a class="link" href="/doctor">Joint Pain</a>
+            <a class="link" href="/doctor">Respiratory</a>
+            <a class="link" href="/doctor">Gyane</a>
+            <a class="link" href="/doctor">Brain</a>
+          </div>
+        </li>
+        <li class="upper-links">
+          <a class="links dropbtn" href="/diet" target="_blank">Diet Planner</a>
+        </li>
+        <li class="upper-links">
+          <a
+            class="links dropbtn"
+            href="/nutritionals_consultants"
+            target="_blank"
+            >Consultation</a
+          >
+        </li>
+        <li class="upper-links">
+          <a class="links dropbtn" href="/social_cause" target="_blank"
+            >Social Cause</a
+          >
+        </li>
+        <li class="upper-links dropdown">
+          <a class="links dropbtn" href="/products" target="_blank">Products</a>
+          <div class="dropdown-content" id="productCategory">
+            <a
+              class="link"
+              href="/list_products?id=new category A"
+              target="_blank"
+              >Ayurveda</a
+            >
+            <a
+              class="link"
+              href="/list_products?id=new category B"
+              target="_blank"
+              >Nutraceuticals</a
+            >
+          </div>
+        </li>
+
+        <li class="upper-links dropdown">
+          <a class="links dropbtn" href="">Blogs</a>
+          <div class="dropdown-content">
+            <a class="link" href="/blog" target="_blank">Blog</a>
+            <a class="link" href="/article" target="_blank">Article</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- header top-fix navbar ends  -->

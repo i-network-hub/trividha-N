@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Trividha | Home</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <%- include("include/_header") %>
+    <link
+      rel="stylesheet"
+      href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    /> --->
+    <!-- <link
+      rel="stylesheet"
+      href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    /> -->
+
+    <!---<link
+      rel="stylesheet"
+      href="assets/owl/owlcarousel/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/owl/owlcarousel/assets/owl.theme.default.min.css"
+    />
+
+    <link rel="stylesheet" href="/public_css/nav-style.css" />
+    <link rel="stylesheet" href="/public_css/main-style.css" />
+    <link rel="stylesheet" href="/public_css/media.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="/public_owlcarousel/vendors/jquery.min.js"></script>
+    <script src="/public_owlcarousel/owlcarousel/owl.carousel.js"></script>
+    <script type="text/javascript" src="/public_js/nav.js"></script> -->
+
+    <!-- <script type="text/javascript" src="/public_js/nav.js"></script> -->
+
+    <style>
+      .affix {
+        top: 0;
+        width: 100%;
+        z-index: 9999 !important;
+      }
+
+      .affix + .container-fluid {
+        padding-top: 70px;
+      }
+      #fp-nav {
+        display: none;
+      }
+      @media (max-width: 990px) {
+        .bbg-clr {
+          margin-top: -10px;
+        }
+        .blog .abt-txt {
+          padding-top: 10px !important;
+        }
+        .news {
+          position: relative;
+          margin: 0px;
+        }
+        .man-img {
+          margin-top: -20px;
+        }
+      }
+      .blog-box {
+        width: auto;
+        margin: auto;
+      }
+      .blog .abt-txt {
+        padding-top: 190px;
+      }
+
+      .doctr-new-sec {
+        padding-top: 200px;
+        background-color: #dadada;
+      }
+
+      .maxLines {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- footer fixed nav -->
+      <div class="bottom-bx">
+        <div class="innerbx">
+          <a
+            href="https://store.jiva.com/?utm_source=jiva&amp;utm_medium=store&amp;utm_campaign=test_wellness"
+            target="_blank"
+          >
+            <div class="icon lift">
+              <p>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i><br />
+                E-store
+              </p>
+            </div>
+          </a>
+        </div>
+        <div class="innerbx">
+          <a href="https://www.jiva.com/treatment/video">
+            <div class="icon lift">
+              <p><i class="fa fa-book" aria-hidden="true"></i> <br />E-book</p>
+            </div>
+          </a>
+        </div>
+        <div class="innerbx">
+          <a
+            href="javascript:void(0);"
+            onclick="LC_API.open_chat_window(); return false;"
+          >
+            <div class="icon lift">
+              <p>
+                <i class="fa fa-comments" aria-hidden="true"></i> <br />
+                Chat
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Social Links  -->
+      <!-- <div class="icon-bar">
+        <a href="#" class="twitter lift"><i class="fa fa-twitter"></i></a>
+        <a href="#" class="twitter lift"
+          ><i class="fa fa-instagram" aria-hidden="true"></i
+        ></a>
+
+        <a href="#" class="linkedin lift"><i class="fa fa-linkedin"></i></a>
+        <a href="#" class="facebook lift"><i class="fa fa-facebook"></i></a>
+      </div> -->
+      <%- include("include/_social_links") %>
+
+      <div id="main">
+        <section
+          class="container-fluid header nopadding vertical-scrolling b-img"
+        >
+          <!-- header top-fix navbar  -->
+          <%- include("include/_navbar_cart") %>
+
+          <!-- header top-fix side navbar  -->
+          <%- include("include/_side_navbar") %>
+
+          <img src="/public_img/newheader.jpg" class="img-responsive mt-80" />
+
+          <div class="container alin-mel">
+            <div class="row">
+              <div class="col-md-4 col-sm-4 col-xs-4">
+                <a href="/diet" target="_blank"
+                  ><div class="hddr-bx">
+                    <img src="/public_img/l4.png" class="img-responsive lift" />
+                    <p class="text-center">Diet Planner</p>
+                  </div></a
+                >
+              </div>
+
+              <div class="col-md-4 col-sm-4 col-xs-4 home-header-two">
+                <a href="/body_analysis_vpk" target="_blank"
+                  ><div class="hddr-bx">
+                    <img src="/public_img/l2.png" class="img-responsive lift" />
+                    <p class="text-center">
+                      Body type Analysis<br />
+                      (Check VPK)
+                    </p>
+                  </div></a
+                >
+              </div>
+
+              <div class="col-md-4 col-sm-4 col-xs-4">
+                <a href="/doctor" target="_blank"
+                  ><div class="hddr-bx">
+                    <img src="/public_img/l1.png" class="img-responsive lift" />
+                    <p class="text-center">
+                      Online Doctor<br />
+                      Consultation
+                    </p>
+                  </div></a
+                >
+              </div>
+            </div>
+            <a href="/doctor" target="_blank"
+              ><button class="btn btn-danger do-bt">Consult Doctor</button></a
+            >
+          </div>
+        </section>
+
+        <!-------- header banner section		-----	 -->
+
+        <!-------- about us section		-----	 -->
+
+        <section class="container-fluid about-us">
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+              <img src="/public_images/fe.png" class="img-responsive but-img" />
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+              <h1 class="abt-txt mt-100" style="font-family: fontone">
+                About Us
+              </h1>
+              <h3 class="abt-txt2">Ayurveda: The essence of life</h3>
+
+              <p
+                class="diat-txt"
+                style="
+                  color: #04060a;
+                  font-size: 18px;
+                  padding-top: 18px;
+                  font-family: fontthree;
+                "
+              >
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem,
+                praesentium fugiat? Libero eos non consequatur iusto harum minus
+                odit necessitatibus cupiditate corporis dignissimos nesciunt
+                tempora, aperiam iste tempore sunt sapiente dolore incidunt
+              </p>
+
+              <p></p>
+            </div>
+          </div>
+
+          <div class="row" style="background: #c87b2b; min-height: 230px">
+            <div class="col-md-6">
+              <p class="hindi">
+                <span
+                  style="
+                    font-family: fontfour;
+                    font-style: oblique;
+                    font-weight: bold;
+                  "
+                >
+                  स्वास्थ्य स्वास्थ्य रक्षणं </span
+                >,
+                <span
+                  style="
+                    font-style: oblique;
+                    font-family: fontfive;
+                    font-weight: bold;
+                  "
+                  >आवरस्य विकार प्रशमनं च
+                </span>
+              </p>
+
+              <p class="abut-p">
+                Objectives of ayurveda are to prolong life<br />
+                and promote the perfect health & to completely<br />
+                eradicate the Disease and dysfunction of the body
+              </p>
+            </div>
+
+            <div class="col-md-6 mt-50">
+              <div class="row icn">
+                <div class="col-md-3 col-sm-4 col-xs-12 cntr">
+                  <a href="/raw_herbs" target="_blank"
+                    ><img src="/public_images/icon1.png" class="lift"
+                  /></a>
+                  <p>Raw Herbs</p>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-12 cntr">
+                  <a href="/products" target="_blank"
+                    ><img src="/public_images/icon2.png" class="lift"
+                  /></a>
+                  <p>Patant Products</p>
+                </div>
+
+                <div class="col-md-3 col-sm-4 col-xs-12 cntr">
+                  <a href="/about_us" target="_blank"
+                    ><img src="/public_images/icon3.png" class="lift"
+                  /></a>
+                  <p>Know Us & Our Vision</p>
+                </div>
+              </div>
+
+              <a
+                href="/about_us"
+                target="_blank"
+                class="lft-btm"
+                style="margin-top: -20px"
+                ><span style="background: #dd2b2b; padding: 5px">More</span> to
+                know</a
+              >
+            </div>
+          </div>
+        </section>
+
+        <!-------- about us section		-----	 -->
+        <!-------- consult doctor section		-----	 -->
+
+        <section
+          class="container-fluid consult-doc vertical-scrolling"
+          style="padding-left: 0"
+        >
+          <div class="container-fluid">
+            <div class="row">
+              <div
+                class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mt-80"
+                style="padding-left: 0"
+              >
+                <img src="/public_img/mobileimg.png" class="doc-img" />
+              </div>
+              <div class="mobile-icon">
+                <ul>
+                  <li>
+                    <img
+                      src="/public_img/iconayurveda.png"
+                      alt=""
+                      class="lift"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      src="/public_img/icon-doctor.png"
+                      alt=""
+                      class="lift"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      src="/public_img/iconclock.png"
+                      alt=""
+                      class="lift"
+                      style="
+                        width: 110px;
+                        height: 110px;
+                        margin-left: -10px;
+                        margin-top: -10px;
+                      "
+                    />
+                  </li>
+                </ul>
+              </div>
+
+              <div
+                class="
+                  col-lg-6 col-md-6 col-sm-12 col-xs-12
+                  xyz2
+                  consult-doc-text-box
+                "
+              >
+                <h1 class="abt-txt">Anytime, from Anywhere!</h1>
+
+                <p
+                  class="diat-txt"
+                  style="
+                    color: #04060a;
+                    font-size: 18px;
+                    padding-top: 16px;
+                    font-family: fontthree;
+                  "
+                >
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Autem, praesentium fugiat? Libero eos non consequatur iusto
+                  harum minus odit necessitatibus cupiditate corporis
+                  dignissimos nesciunt tempora, aperiam iste tempore sunt
+                  sapiente dolore incidunt .
+                </p>
+                <a
+                  href="/doctor"
+                  target="_blank"
+                  class="primary-btn header-btn doctr"
+                  >Consult Doctor</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-------- consult doctor section		-----	 -->
+
+        <!-------- Diet chart section		-----	 -->
+        <section class="container-fluid diet-chart" style="padding-left: 0">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-xs-12 diet-img">
+                <img
+                  src="/public_img/diet-food.png"
+                  class="img-responsive middle-align"
+                  data-tilt
+                  style="margin-top: 30px; width: 470px; height: 535px"
+                />
+              </div>
+
+              <div class="col-md-6 col-sm-6 col-xs-12 xyz1">
+                <h1
+                  class="abt-txt diet-txt"
+                  style="font-family: fontone; padding-top: 180px"
+                >
+                  Diet Chart
+                </h1>
+                <h3 class="abt-txt2">Diet Details......</h3>
+
+                <p class="diat-txt">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Autem, praesentium fugiat? Libero eos non consequatur iusto
+                  harum minus odit necessitatibus cupiditatecorporis dignissimos
+                  nesciunt tempora, aperiam iste tempore sunt sapiente dolore
+                  incidunt.
+                </p>
+                <a
+                  href="/diet"
+                  target="_blank"
+                  class="testi-txt"
+                  style="
+                    color: #000;
+                    float: right;
+                    padding-right: 80px;
+                    padding-top: 40px;
+                    font-size: 15px;
+                  "
+                >
+                  <span style="background: #dd2b2b; padding: 7px; color: #fff"
+                    >More</span
+                  >
+                  to Know
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-------- Diet chart section		-----	 -->
+
+        <!-------- Trividha Times section		-----	 -->
+
+        <section
+          class="container-fluid tri-times nopadding vertical-scrolling"
+          style="position: relative"
+        >
+          <div style="position: relative">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="shwod-img mobile-dspy" data-tilt>
+                <img src="/public_img/3.png" class="img-responsive" />
+              </div>
+            </div>
+
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="mobile-dspy" style="width: 300px">
+                <img
+                  src="/public_img/2.png"
+                  data-tilt
+                  class="img-responsive tim-img2"
+                  style="
+                    box-shadow: 17px 11px 0px #5f7720;
+                    float: left;
+                    margin-top: 15px;
+                  "
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div
+                class="mobile-dspy"
+                style="width: 300px; float: right; margin: 35px"
+              >
+                <img
+                  src="/public_img/1.png"
+                  data-tilt
+                  class="img-responsive"
+                  style="box-shadow: -17px 15px 0px 0px #5f7720; width: 95%"
+                />
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div
+                class="sdo-lstimg mobile-dspy"
+                style="width: 300px; margin-top: 30px; margin-left: 30px"
+              >
+                <img
+                  src="/public_img/4.png"
+                  data-tilt
+                  class="img-responsive tims-img4"
+                  style="box-shadow: 17px 11px 0px #c87c2b; float: left"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="news">
+            <h3 class="text-center tims-txt-head">
+              Trividha <span style="color: red">Times</span>
+            </h3>
+            <hr style="height: 2px; background: #000" />
+
+            <div class="">
+              <div class="item">
+                <p class="tims-txt text-center">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Autem, praesentium
+                </p>
+                <p class="tims-slide-txt maxlines">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Autem, praesentium<br />
+                  fugiat? Libero eos non consequatur iusto harum minus odit
+                  necessitatibus<br />
+                  cupiditate corporis dignissimos nesciunt tempora, aperiam iste
+                  tempore<br />
+                  sunt sapiente dolore incidunt
+                  <a
+                    href="/blog"
+                    target="_blank"
+                    class="testi-txt"
+                    style="color: #000; font-size: 15px"
+                    ><span
+                      style="background: #dd2b2b; padding: 7px; color: #fff"
+                      >Read</span
+                    >&nbsp; More</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-------- Trividha Times section------>
+
+        <!-------- Know your Diseases section------>
+
+        <section
+          class="container-fluid sec4 vertical-scrolling"
+          style="padding-left: 0"
+        >
+          <h2 class="text-center">Diseases & Treatments</h2>
+
+          <div class="row">
+            <div class="all-sec">
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 mt-50 img-bg">
+                <div>
+                  <img
+                    src="/public_img/man.png"
+                    class="img-responsive man-img"
+                    data-tilt
+                  />
+                </div>
+                <a
+                  href="/know_your_disease"
+                  target="_blank"
+                  class="sec-bottom-txt bbg-btn"
+                  style="padding-top: 50px; padding-left: 30px; float: left"
+                  ><span style="background: #dd2b2b; padding: 5px">More</span>
+                  to know</a
+                >
+              </div>
+
+              <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 bbg-clr">
+                <div class="iconsec">
+                  <div class="icon-bx">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                      <div class="icon lift">
+                        <img
+                          src="/public_img/i1.png"
+                          alt="Digestive "
+                          title="Digestive "
+                        />
+                        <h5>Digestive</h5>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                      <div class="icon lift">
+                        <a href="">
+                          <img
+                            src="/public_img/i2.png"
+                            alt="Digestive "
+                            title="Digestive "
+                          />
+                          <h5>Endocrine</h5></a
+                        >
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                      <div class="icon lift">
+                        <a href="">
+                          <img
+                            src="/public_img/i3.png"
+                            alt="Digestive "
+                            title="Digestive "
+                          />
+                          <h5>Hair And Skin</h5></a
+                        >
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                      <div class="icon lift">
+                        <a href="">
+                          <img
+                            src="/public_img/i4.png"
+                            alt="Digestive "
+                            title="Digestive "
+                          />
+                          <h5>Urinary</h5></a
+                        >
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                      <div class="icon lift">
+                        <a href="">
+                          <img
+                            src="/public_img/i5.png"
+                            alt="Digestive "
+                            title="Digestive "
+                          />
+                          <h5>Joint Pain</h5></a
+                        >
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                      <div class="icon lift">
+                        <a href="">
+                          <img
+                            src="/public_img/i6.png"
+                            alt="Digestive "
+                            title="Digestive "
+                          />
+                          <h5>Respiratory</h5></a
+                        >
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                      <div class="icon lift">
+                        <a href="">
+                          <img
+                            src="/public_img/i7.png"
+                            alt="Digestive "
+                            title="Digestive "
+                          />
+                          <h5>Gyane</h5></a
+                        >
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                      <div class="icon lift">
+                        <img
+                          src="/public_img/i8.png"
+                          alt="Digestive "
+                          title="Digestive "
+                        />
+                        <h5>Brain</h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-------- Know your Diseases section------>
+
+        <!-------- Home remedies section------>
+
+        <section
+          class="container-fluid remedies nopadding pt-110 vertical-scrolling"
+        >
+          <div class="xyz">
+            <div class="sld-back">
+              <ul class="nav nav-pills tav">
+                <li class="active lift">
+                  <img
+                    src="/public_img/remedies-icon.png"
+                    class="remedi-img"
+                  /><a data-toggle="pill" href="#home">Home Remedies</a>
+                </li>
+                <li class="lift">
+                  <img
+                    src="/public_img/remedies-icona.png"
+                    class="remedi-img2"
+                  /><a data-toggle="pill" href="#menu1">Nadi-Parikshan</a>
+                </li>
+                <li class="lift">
+                  <img
+                    src="/public_img/remedies-iconb.png"
+                    class="remedi-img3"
+                  /><a data-toggle="pill" href="#menu2">Body Analysis</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="tab-content">
+              <div
+                id="home"
+                class="tab-pane fade in active in-bnr"
+                style="min-height: 493px"
+              >
+                <div class="row">
+                  <div class="col-lg-5 col-md-5 col-sm-4 col-xs-12"></div>
+
+                  <div class="col-lg-7 col-md-7 col-sm-8 col-xs-12">
+                    <h1
+                      class="abt-txt"
+                      style="font-family: fontone; color: #fff"
+                    >
+                      Home Remedies
+                    </h1>
+                    <h3 class="abt-txt2" style="color: #38451c">Heading</h3>
+
+                    <p class="reme-ttx">
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                      Autem, praesentium<br />
+                      fugiat? Libero eos non consequatur iusto harum minus odit
+                      necessitatibus<br />
+                      cupiditate corporis dignissimos nesciunt tempora, aperiam
+                      iste tempore<br />
+                      sunt sapiente dolore incidunt
+                    </p>
+                    <a href="/remedies" target="_blank"
+                      ><p
+                        style="color: #fff; padding-top: 35px; font-size: 15px"
+                      >
+                        <span
+                          style="background: #dd2b2b; padding: 7px; color: #fff"
+                          >More</span
+                        >
+                        to Know
+                      </p></a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div
+                id="menu1"
+                class="tab-pane fade in-bnr2"
+                style="min-height: 493px"
+              >
+                <div class="row">
+                  <div class="col-lg-5 col-md-5 col-sm-4 col-xs-12"></div>
+
+                  <div class="col-lg-7 col-md-7 col-sm-8 col-xs-12">
+                    <h1
+                      class="abt-txt"
+                      style="font-family: fontone; color: #fff"
+                    >
+                      Nadi-Parikshan
+                    </h1>
+                    <h3 class="abt-txt2" style="color: #38451c">Heading</h3>
+
+                    <p class="reme-ttx">
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                      Autem, praesentium<br />
+                      fugiat? Libero eos non consequatur iusto harum minus odit
+                      necessitatibus<br />
+                      cupiditate corporis dignissimos nesciunt tempora, aperiam
+                      iste tempore<br />
+                      sunt sapiente dolore incidunt .
+                    </p>
+                    <a href="/nadi_parikshan" target="_blank"
+                      ><p
+                        style="color: #fff; padding-top: 35px; font-size: 15px"
+                      >
+                        <span
+                          style="background: #dd2b2b; padding: 7px; color: #fff"
+                          >More</span
+                        >
+                        to Know
+                      </p></a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div
+                id="menu2"
+                class="tab-pane fade in-bnr3"
+                style="min-height: 493px"
+              >
+                <div class="row">
+                  <div class="col-lg-5 col-md-5 col-sm-4 col-xs-12"></div>
+
+                  <div class="col-lg-7 col-md-7 col-sm-8 col-xs-12">
+                    <h1
+                      class="abt-txt"
+                      style="font-family: fontone; color: #fff"
+                    >
+                      Body Analysis
+                    </h1>
+                    <h3 class="abt-txt2" style="color: #38451c">Heading</h3>
+
+                    <p class="reme-ttx">
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                      Autem, praesentium<br />
+                      fugiat? Libero eos non consequatur iusto harum minus odit
+                      necessitatibus<br />
+                      cupiditate corporis dignissimos nesciunt tempora, aperiam
+                      iste tempore<br />
+                      sunt sapiente dolore incidunt .
+                    </p>
+                    <a href="/body_analysis_vpk" target="_blank"
+                      ><p
+                        style="color: #fff; padding-top: 35px; font-size: 15px"
+                      >
+                        <span
+                          style="background: #dd2b2b; padding: 7px; color: #fff"
+                          >More</span
+                        >
+                        to Know
+                      </p></a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-------- Home remedies section------>
+
+        <!-------- Raw herds section		-----	 -->
+
+        <section
+          class="container-fluid rw-hrb vertical-scrolling"
+          style="padding-left: 0"
+        >
+          <div class="tab-content mt-80">
+            <div
+              id="rawherbs"
+              class="tab-pane fade in active"
+              style="min-height: 493px"
+            >
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                  <img
+                    src="/public_img/raw-herb1.png"
+                    class="rw-hrb-img img-responsive"
+                  />
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                  <h1 class="raw-abt-txt">Raw Herbs</h1>
+                  <h3 class="raw-abt-txt2 pf" style="padding-top: 0px">
+                    Ayurveda
+                  </h3>
+
+                  <p class="raw-hrb-txt">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Autem, praesentium fugiat? Libero eos non consequatur iusto
+                    harum minus odit necessitatibus cupiditate corporis
+                    dignissimos nesciunt tempora, aperiam iste tempore sunt
+                    sapiente dolore incidunt .
+                  </p>
+
+                  <a
+                    href="/raw_herbs"
+                    target="_blank"
+                    style="color: #000; padding-top: 40px; font-size: 15px"
+                    ><span style="background: #dd2b2b; padding: 7px">More</span>
+                    to know</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div id="products" class="tab-pane fade" style="min-height: 493px">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                  <img
+                    src="/public_img/raw-herb1.png"
+                    class="rw-hrb-img img-responsive"
+                  />
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                  <h1 class="raw-abt-txt">Patent Products</h1>
+                  <h3 class="raw-abt-txt2 pf" style="padding-top: 0px">
+                    Our Products
+                  </h3>
+
+                  <p class="raw-hrb-txt">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Autem, praesentium fugiat? Libero eos non consequatur iusto
+                    harum minus odit necessitatibus cupiditate corporis
+                    dignissimos nesciunt tempora, aperiam iste tempore sunt
+                    sapiente dolore incidunt .
+                  </p>
+
+                  <a
+                    href="/products"
+                    target="_blank"
+                    style="color: #000; padding-top: 40px; font-size: 15px"
+                    ><span style="background: #dd2b2b; padding: 7px">More</span>
+                    to know</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div id="about" class="tab-pane fade" style="min-height: 493px">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                  <img
+                    src="/public_img/raw-herb1.png"
+                    class="rw-hrb-img img-responsive"
+                  />
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                  <h1 class="raw-abt-txt">Know Us & Our Vision</h1>
+                  <h3 class="raw-abt-txt2 pf" style="padding-top: 0px">
+                    About Us
+                  </h3>
+
+                  <p class="raw-hrb-txt">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Autem, praesentium fugiat? Libero eos non consequatur iusto
+                    harum minus odit necessitatibus cupiditate corporis
+                    dignissimos nesciunt tempora, aperiam iste tempore sunt
+                    sapiente dolore incidunt .
+                  </p>
+
+                  <a
+                    href="/about_us"
+                    target="_blank"
+                    style="color: #000; padding-top: 40px; font-size: 15px"
+                    ><span style="background: #dd2b2b; padding: 7px">More</span>
+                    to know</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="raw-down">
+              <div class="col-md-6"></div>
+
+              <div class="col-md-6">
+                <div class="row icn raw-h">
+                  <div class="nav nav-pills tav">
+                    <div class="col-md-3 col-sm-4 col-xs-12 lift">
+                      <a data-toggle="pill" href="#rawherbs">
+                        <img src="/public_img/raw-herb-i1.png" class="raw-h1" />
+                        <p style="color: #282828">Raw Herbs</p>
+                      </a>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-12 lift">
+                      <a data-toggle="pill" href="#products">
+                        <img src="/public_img/raw-herb-i2.png" class="raw-h2" />
+                        <p style="color: #282828">Patant Products</p>
+                      </a>
+                    </div>
+
+                    <div class="col-md-3 col-sm-4 col-xs-12 lift">
+                      <a data-toggle="pill" href="#about">
+                        <img src="/public_img/raw-herb-i3.png" class="raw-h3" />
+                        <p style="color: #282828">Know Us & Our Vision</p>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-12"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-------- Raw herds section		-----	 -->
+
+        <!-------- blog section		-----	 -->
+
+        <section class="container-fluid blog vertical-scrolling">
+          <div class="container">
+            <!-- <h1 class="abt-txt text-center" style=" font-family: fontone; padding-top:17px;">Product</h1> -->
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <h1 class="abt-txt" style="font-family: fontone">Blogs</h1>
+
+                <div class="item">
+                  <div class="blog-box">
+                    <div class="">
+                      <div>
+                        <h2>Ayurveda</h2>
+                        <p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Id perferendis pariatur delectus et dicta. Optio
+                          consequatur, quis quod numquam corporis, molestias
+                          nobis enim quia sunt soluta commodi officiis, aut
+                          deserunt!
+                        </p>
+                      </div>
+                    </div>
+                    <a href="/blog" target="_blank" class="">Read</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <h1 class="abt-txt" style="font-family: fontone">Articles</h1>
+
+                <div class="item">
+                  <div class="blog-box">
+                    <div class="">
+                      <div>
+                        <h2>Ayurveda</h2>
+                        <p>
+                          Lorem, ipsum dolor sit amet consectetur adipisicing
+                          elit. Totam, ea illum? Neque dicta consequatur
+                          incidunt quidem fugiat maiores eum ea. Corporis nulla
+                          ut iure mollitia aut nisi quas dolores quos!
+                        </p>
+                      </div>
+                    </div>
+                    <a href="/article" target="_blank" class="">Read</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-------- blog section		-----	 -->
+
+        <section class="container-fluid mt-40 doctr-new-sec">
+          <div class="container">
+            <h1
+              class="heading text-center"
+              style="margin-bottom: 50px; margin-top: -30px"
+            >
+              Our Products
+            </h1>
+            <div class="">
+              <div class="product-img">
+                <%let siderNo; if(products.length < 4){ siderNo =
+                products.length; } else{ siderNo = 4; } %> <%for(let i=0; i <
+                siderNo; i++){%>
+                <div>
+                  <div class="product-img-box">
+                    <a href="/product_single?id=<%=products[i]._id%>"
+                      ><img src="../<%=products[i].image[0]%>" alt=""
+                    /></a>
+                  </div>
+                  <div class="product-content">
+                    <h4>
+                      <%= products[i].name.slice(0, 10) +
+                      (products[i].name.length > 10 ? "..." : "") %>
+                      <br />
+                      <br />
+                      <span class="text-muted">
+                        <%= products[i].category.slice(0, 10) +
+                        (products[i].category.length > 10 ? "..." : "") %></span
+                      >
+                    </h4>
+                    <h4>
+                      Rs <%=products[i].price%>/- <br />
+                      <br />
+                      <span
+                        class="text-danger addtocart"
+                        style="margin-left: 30px; cursor: pointer"
+                        data-productid="<%=products[i]._id%>"
+                        data-quantity="1"
+                        data-name="<%=products[i].name%>"
+                        data-price="<%=products[i].price%>"
+                        data-discount="<%=products[i].discount%>"
+                        ><i class="fas fa-shopping-cart"></i
+                      ></span>
+                    </h4>
+                  </div>
+                </div>
+                <%}%>
+              </div>
+            </div>
+            <div class="text-center">
+              <a
+                href="/products"
+                target="_blank"
+                class="btn btn-style-three"
+                style="margin-top: 40px"
+                >More To Know</a
+              >
+            </div>
+          </div>
+        </section>
+
+        <!-------- jpb career section		-----	 -->
+        <section class="container-fluid mt-120 career">
+          <div class="container pt-100">
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12"></div>
+
+              <div class="col-lg-8 col-md-6 col-sm-6 col-xs-12">
+                <div class="ftm">
+                  <h1
+                    class="abt-txt caree"
+                    style="font-family: fontone; color: #5d7326"
+                  >
+                    Career
+                  </h1>
+
+                  <p
+                    class="caree1"
+                    style="
+                      color: #000;
+                      font-size: 18px;
+                      padding-top: 0px;
+                      font-family: fontthree;
+                    "
+                  >
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Autem, praesentium fugiat? Libero eos non consequatur iusto
+                    harum minus odit necessitatibus cupiditate corporis
+                    dignissimos nesciunt tempora, aperiam iste tempore sunt
+                    sapiente dolore incidunt
+                  </p>
+
+                  <form
+                    action="/api/career_pub"
+                    method="POST"
+                    id="upload_data"
+                    enctype="multipart/form-data"
+                  >
+                    <div class="col-lg-12 col-sm-12 col-xs-12 frm">
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label for="name" class="frm-txt">Name</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id=""
+                            placeholder=""
+                            name="name"
+                          />
+                        </div>
+
+                        <div class="form-group">
+                          <label for="designation" class="frm-txt"
+                            >Designation</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            id=""
+                            placeholder=""
+                            name="designation"
+                          />
+                        </div>
+                        <div class="form-group">
+                          <p class="frm-txt">
+                            <input
+                              type="file"
+                              name="cvinput"
+                              id="myFileInput"
+                              onChange="display_image_name(this);"
+                              accept="application/pdf,application/vnd.ms-excel"
+                              style="display: none"
+                            />
+                            C.V &nbsp; &nbsp;
+                            <button
+                              type="button"
+                              class="btn btn-default"
+                              style="
+                                color: #000;
+                                background: #dddfd9;
+                                padding: 3px 15px;
+                                border-radius: 0;
+                              "
+                              onclick="document.getElementById('myFileInput').click()"
+                            >
+                              Browse
+                            </button>
+                            <span id="displayFileName"></span>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label for="email" class="frm-txt">Email</label>
+                          <input
+                            type="email"
+                            class="form-control"
+                            id=""
+                            placeholder=""
+                            name="email"
+                          />
+                        </div>
+
+                        <div class="form-group">
+                          <label for="mobile" class="frm-txt">Mobile No</label>
+                          <input
+                            type="number"
+                            class="form-control"
+                            id="mobile"
+                            name="mobile"
+                          />
+                        </div>
+                        <div class="form-group">
+                          <p class="frm-txt">
+                            <button
+                              type="submit"
+                              class="btn btn-default"
+                              style="
+                                color: #000;
+                                background: #c77b2b;
+                                padding: 3px 15px;
+                                border-radius: 0;
+                              "
+                            >
+                              Send
+                            </button>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-------- job career section		-----	 -->
+
+        <!-------- testimonial section		-----	 -->
+
+        <section class="container-fluid testimonial vertical-scrolling">
+          <h1
+            class="abt-txt text-center"
+            style="font-family: fontone; padding-top: 35px"
+          >
+            What our patients Says
+          </h1>
+
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="testi-box">
+                  <h4>They Save my Life</h4>
+                  <p>
+                    “Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Quis ipsum suspendisse ultrices gravida. Risus
+                    commodo viverra maecenas accumsan lacus vel facilisis”
+                  </p>
+                  <h6>
+                    Name : Lorem Ipsumb
+                    <span style="padding-left: 40px"
+                      ><img
+                        src="/public_img/testimonial-img.png"
+                        style="width: 65px; margin-top: 15px"
+                    /></span>
+                  </h6>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="testi-box">
+                  <h4>They Save my Life</h4>
+                  <p>
+                    “Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Quis ipsum suspendisse ultrices gravida. Risus
+                    commodo viverra maecenas accumsan lacus vel facilisis”
+                  </p>
+                  <h6>
+                    Name : Lorem Ipsumb
+                    <span style="padding-left: 40px"
+                      ><img
+                        src="/public_img/testimonial-img.png"
+                        style="width: 65px; margin-top: 15px"
+                    /></span>
+                  </h6>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="testi-box">
+                  <h4>They Save my Life</h4>
+                  <p>
+                    “Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Quis ipsum suspendisse ultrices gravida. Risus
+                    commodo viverra maecenas accumsan lacus vel facilisis”
+                  </p>
+                  <h6>
+                    Name : Lorem Ipsumb
+                    <span style="padding-left: 40px"
+                      ><img
+                        src="/public_img/testimonial-img.png"
+                        style="width: 65px; margin-top: 15px"
+                    /></span>
+                  </h6>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="testi-box1">
+                  <h4>They Save my Life</h4>
+                  <p>
+                    “Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Quis ipsum suspendisse ultrices gravida. Risus
+                    commodo viverra maecenas accumsan lacus vel facilisis”
+                  </p>
+                  <h6>
+                    Name : Lorem Ipsumb
+                    <span style="padding-left: 40px"
+                      ><img
+                        src="/public_img/testimonial-img.png"
+                        style="width: 65px; margin-top: 15px"
+                    /></span>
+                  </h6>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="testi-box1">
+                  <h4>They Save my Life</h4>
+                  <p>
+                    “Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Quis ipsum suspendisse ultrices gravida. Risus
+                    commodo viverra maecenas accumsan lacus vel facilisis”
+                  </p>
+                  <h6>
+                    Name : Lorem Ipsumb
+                    <span style="padding-left: 40px"
+                      ><img
+                        src="/public_img/testimonial-img.png"
+                        style="width: 65px; margin-top: 15px"
+                    /></span>
+                  </h6>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="testi-box1">
+                  <h4>They Save my Life</h4>
+                  <p>
+                    “Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Quis ipsum suspendisse ultrices gravida. Risus
+                    commodo viverra maecenas accumsan lacus vel facilisis”
+                  </p>
+                  <h6>
+                    Name : Lorem Ipsumb
+                    <span style="padding-left: 40px"
+                      ><img
+                        src="/public_img/testimonial-img.png"
+                        style="width: 65px; margin-top: 15px"
+                    /></span>
+                  </h6>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <a href="" class="testi-txt" style="color:#000; float:left; padding-left: 80px;
+      padding-top:40px; font-size: 15px;"><span style="background:#dd2b2b; padding:7px; color:#fff;">More</span> to Know</a>
+             -->
+        </section>
+
+        <!-------- testimonial section		-----	 -->
+
+        <!-------- footer section		-----	 -->
+        <%- include("include/_footer") %>
+      </div>
+    </div>
+
+    <!-- Scripts  -->
+    <%- include("include/_scripts") %>
+  </body>
+</html>

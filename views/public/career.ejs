@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Trividha | Career</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <%- include("include/_header") %>
+    <link
+      rel="stylesheet"
+      href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      .affix {
+        top: 0;
+        width: 100%;
+        z-index: 9999 !important;
+      }
+
+      .affix + .container-fluid {
+        padding-top: 70px;
+      }
+      #fp-nav {
+        display: none;
+      }
+
+      .ftm h5 {
+        margin-top: 150px;
+      }
+      @media (max-width: 990px) {
+        .ftm h5 {
+          margin-top: 0px !important;
+        }
+        .ftm h1 {
+          text-align: center;
+        }
+        .position-table {
+          margin-left: 30px !important;
+        }
+        .career-heading p {
+          display: none;
+        }
+      }
+      .career-heading h1 {
+        font-family: fontone;
+        color: #c87b2b;
+        text-align: center;
+        padding: 0px;
+        font-size: 40px;
+        font-family: fontone;
+      }
+      .career-heading p {
+        color: black;
+        text-align: center;
+        padding: 30px 10px 30px 150px;
+      }
+      .abt-new {
+        padding: 30px;
+      }
+      .position-table {
+        margin-left: 30%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Social Links  -->
+      <%- include("include/_social_links") %>
+
+      <section
+        class="container-fluid header nopadding vertical-scrolling b-img"
+      >
+        <!-- header top-fix navbar  -->
+        <%- include("include/_navbar") %>
+
+        <!-- header top-fix side navbar  -->
+        <%- include("include/_side_navbar") %>
+
+        <div class="career mt-120">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12"></div>
+
+              <div class="col-lg-8 col-md-6 col-sm-6 col-xs-12">
+                <div class="ftm">
+                  <h1
+                    class="abt-txt caree"
+                    style="font-family: fontone; color: #5d7326"
+                  >
+                    Your Career With Trividha
+                  </h1>
+
+                  <p
+                    class="caree1"
+                    style="
+                      color: #000;
+                      font-size: 18px;
+                      padding-top: 0px;
+                      font-family: fontthree;
+                    "
+                  >
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Autem, praesentium fugiat? Libero eos non consequatur iusto
+                    harum minus odit necessitatibus cupiditate corporis
+                    dignissimos nesciunt tempora, aperiam iste tempore sunt
+                    sapiente dolore incidunt
+
+                    <br /><br />
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Delectus vero cumque beatae doloribus voluptas, sunt amet
+                    sequi, ad dolore natus doloremque commodi rerum architecto
+                    maxime distinctio culpa quis fugiat veniam!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="abt-new">
+        <div class="container">
+          <div class="row">
+            <div class="career-heading mt-100">
+              <h1>Open Positions</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
+                eligendi praesentium nihil sapiente consequuntur ex assumenda,
+                quod magni, ut ea illum perferendis sit nostrum. Nisi vitae
+                explicabo eum ex iure.
+              </p>
+            </div>
+            <div class="position-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th class="spacing">Position</th>
+                    <th class="spacing">Location</th>
+                    <th class="spacing"></th>
+                    <th class="spacing"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% jobs.forEach(function(user){ %>
+                  <tr>
+                    <td class="spacing"><%=user.position%></td>
+                    <td class="spacing"><%=user.location%></td>
+                    <td
+                      class="spacing theme-btn btn-style-three open_career"
+                      data-position="<%=user.position%>"
+                      data-toggle="modal"
+                      data-target="#myModal"
+                    >
+                      Apply
+                    </td>
+                  </tr>
+                  <% }); %>
+
+                  <!-- <tr>
+                    <td class="spacing">Developer</td>
+                    <td class="spacing">Remote</td>
+                    <td class="spacing theme-btn btn-style-three">Apply</td>
+                  </tr> -->
+                  <!-- <tr>
+                    <td class="spacing">Developer</td>
+                    <td class="spacing">Remote</td>
+                    <td class="spacing theme-btn btn-style-three">Apply</td>
+                  </tr> -->
+                  <!-- <tr>
+                    <td class="spacing">Developer</td>
+                    <td class="spacing">Remote</td>
+                    <td class="spacing theme-btn btn-style-three">Apply</td>
+                  </tr> -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--------request for career_apply----------->
+      <%- include("include/_career_apply") %>
+
+      <!-------- footer section		-----	 -->
+      <%- include("include/_footer") %>
+    </div>
+    <!-- Scripts  -->
+    <%- include("include/_scripts") %>
+  </body>
+</html>

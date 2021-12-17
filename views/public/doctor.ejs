@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Trividha | Doctor Consultation</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <%- include("include/_header") %>
+    <link
+      rel="stylesheet"
+      href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      .affix {
+        top: 0;
+        width: 100%;
+        z-index: 9999 !important;
+      }
+
+      .affix + .container-fluid {
+        padding-top: 70px;
+      }
+      #fp-nav {
+        display: none;
+      }
+      .ui-timepicker-wrapper {
+        width: 16.7em !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- Social Links  -->
+      <%- include("include/_social_links") %>
+      <div id="main">
+        <section
+          class="container-fluid header nopadding vertical-scrolling b-img"
+        >
+          <!-- header top-fix navbar  -->
+          <%- include("include/_navbar") %>
+
+          <!-- header top-fix side navbar  -->
+          <%- include("include/_side_navbar") %>
+          <img
+            src="/public_img/doct-banner.png"
+            class="img-responsive mt-80"
+            \
+          />
+
+          <div>
+            <div class="col-md-6 col-xs-6"></div>
+            <div class="col-md-6 col-xs-6">
+              <div class="col-md-4 col-xs-4 lift">
+                <a href="#" data-toggle="modal" data-target="#appointment"
+                  ><img
+                    src="/public_img/calendericon.png"
+                    class="img-responsive bi"
+                  />
+                  <p class="text-icon">Online Appointment</p>
+                </a>
+              </div>
+
+              <div class="col-md-4 col-xs-4 lift">
+                <a href="tel:8319432026"
+                  ><img
+                    src="/public_img/callicon.png"
+                    class="img-responsive bi"
+                  />
+                  <p class="text-icon">Call For Appointment</p>
+                </a>
+              </div>
+
+              <div class="col-md-4 col-xs-4 lift">
+                <a href="#" data-toggle="modal" data-target="#address">
+                  <img
+                    src="/public_img/hospitalicon.png"
+                    class="img-responsive bi"
+                  />
+                  <p class="text-icon">Visit Our Clinic</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="container-fluid abt-new">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <h1 class="heading">Why Trividha:</h1>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
+                  maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit
+                  amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua. Quis ipsum
+                  suspendisse ultrices gravida. Risus commodo viverra maecenas
+                  accumsan lacus vel facilisis.<br /><br />
+
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
+                  maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit
+                  amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua. Quis ipsum
+                  suspendisse ultrices gravida. Risus commodo viverra maecenas
+                  accumsan lacus vel facilisis. Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                  ut labore et dolore magna aliqua. Quis ipsum suspendisse
+                  ultrices gravida. Risus commodo viverra maecenas accumsan
+                  lacus vel facilisis.<br /><br />
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="container-fluid doctr-sec3">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-1 col-sm-12 colxs-12"></div>
+              <div class="col-md-10 col-sm-12 col-xs-12">
+                <h1 class="text-left">Ayurveda Approach towards treatments:</h1>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
+                  maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit
+                  amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua. Quis ipsum
+                  suspendisse ultrices gravida. Risus commodo viverra maecenas
+                  accumsan lacus vel facilisis.<br /><br />
+
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
+                  maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit
+                  amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua. Quis ipsum
+                  suspendisse ultrices gravida. Risus commodo viverra maecenas
+                  accumsan lacus vel facilisis. Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                  ut labore et dolore magna aliqua. Quis ipsum suspendisse
+                  ultrices gravida. Risus commodo viverra maecenas accumsan
+                  lacus vel facilisis.<br /><br />
+                </p>
+              </div>
+
+              <div class="col-md-1 col-sm-12 colxs-12"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="container-fluid sec4 vertical-scrolling">
+          <h2 class="text-center">Diseases & Treatments</h2>
+
+          <div class="row">
+            <div class="all-sec">
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 img-bg mt-50">
+                <div class="">
+                  <img
+                    src="/public_img/man.png"
+                    class="img-responsive man-img"
+                    data-tilt
+                  />
+                </div>
+              </div>
+
+              <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 bbg-clr">
+                <div class="iconsec">
+                  <div class="icon-bx">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                      <div class="icon lift">
+                        <img
+                          src="/public_img/i1.png"
+                          alt="Digestive "
+                          title="Digestive "
+                        />
+                        <h5>Digestive</h5>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                      <div class="icon lift">
+                        <a href="">
+                          <img
+                            src="/public_img/i2.png"
+                            alt="Digestive "
+                            title="Digestive "
+                          />
+                          <h5>Endocrine</h5></a
+                        >
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                      <div class="icon lift">
+                        <a href="">
+                          <img
+                            src="/public_img/i3.png"
+                            alt="Digestive "
+                            title="Digestive "
+                          />
+                          <h5>Hair And Skin</h5></a
+                        >
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                      <div class="icon lift">
+                        <a href="">
+                          <img
+                            src="/public_img/i4.png"
+                            alt="Digestive "
+                            title="Digestive "
+                          />
+                          <h5>Urinary</h5></a
+                        >
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                      <div class="icon lift">
+                        <a href="">
+                          <img
+                            src="/public_img/i5.png"
+                            alt="Digestive "
+                            title="Digestive "
+                          />
+                          <h5>Joint Pain</h5></a
+                        >
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                      <div class="icon lift">
+                        <a href="">
+                          <img
+                            src="/public_img/i6.png"
+                            alt="Digestive "
+                            title="Digestive "
+                          />
+                          <h5>Respiratory</h5></a
+                        >
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                      <div class="icon lift">
+                        <a href="">
+                          <img
+                            src="/public_img/i7.png"
+                            alt="Digestive "
+                            title="Digestive "
+                          />
+                          <h5>Gyane</h5></a
+                        >
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                      <div class="icon lift">
+                        <img
+                          src="/public_img/i8.png"
+                          alt="Digestive "
+                          title="Digestive "
+                        />
+                        <h5>Brain</h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p class="sec-bottom-txt">
+                  <a href="/know_your_disease">
+                    <span style="background: #dd2b2b; padding: 5px">More</span>
+                    to know
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="container-fluid testimonial vertical-scrolling">
+          <h1 class="abt-txt text-center">What our patients Says</h1>
+
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="testi-box">
+                  <h4>They Save my Life</h4>
+                  <p>
+                    “Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Quis ipsum suspendisse ultrices gravida. Risus
+                    commodo viverra maecenas accumsan lacus vel facilisis”
+                  </p>
+                  <h6>
+                    Name : Lorem Ipsumb
+                    <span style="padding-left: 40px"
+                      ><img
+                        src="/public_img/testimonial-img.png"
+                        style="width: 65px; margin-top: 15px"
+                    /></span>
+                  </h6>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="testi-box">
+                  <h4>They Save my Life</h4>
+                  <p>
+                    “Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Quis ipsum suspendisse ultrices gravida. Risus
+                    commodo viverra maecenas accumsan lacus vel facilisis”
+                  </p>
+                  <h6>
+                    Name : Lorem Ipsumb
+                    <span style="padding-left: 40px"
+                      ><img
+                        src="/public_img/testimonial-img.png"
+                        style="width: 65px; margin-top: 15px"
+                    /></span>
+                  </h6>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="testi-box">
+                  <h4>They Save my Life</h4>
+                  <p>
+                    “Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Quis ipsum suspendisse ultrices gravida. Risus
+                    commodo viverra maecenas accumsan lacus vel facilisis”
+                  </p>
+                  <h6>
+                    Name : Lorem Ipsumb
+                    <span style="padding-left: 40px"
+                      ><img
+                        src="/public_img/testimonial-img.png"
+                        style="width: 65px; margin-top: 15px"
+                    /></span>
+                  </h6>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="testi-box1">
+                  <h4>They Save my Life</h4>
+                  <p>
+                    “Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Quis ipsum suspendisse ultrices gravida. Risus
+                    commodo viverra maecenas accumsan lacus vel facilisis”
+                  </p>
+                  <h6>
+                    Name : Lorem Ipsumb
+                    <span style="padding-left: 40px"
+                      ><img
+                        src="/public_img/testimonial-img.png"
+                        style="width: 65px; margin-top: 15px"
+                    /></span>
+                  </h6>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="testi-box1">
+                  <h4>They Save my Life</h4>
+                  <p>
+                    “Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Quis ipsum suspendisse ultrices gravida. Risus
+                    commodo viverra maecenas accumsan lacus vel facilisis”
+                  </p>
+                  <h6>
+                    Name : Lorem Ipsumb
+                    <span style="padding-left: 40px"
+                      ><img
+                        src="/public_img/testimonial-img.png"
+                        style="width: 65px; margin-top: 15px"
+                    /></span>
+                  </h6>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="testi-box1">
+                  <h4>They Save my Life</h4>
+                  <p>
+                    “Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Quis ipsum suspendisse ultrices gravida. Risus
+                    commodo viverra maecenas accumsan lacus vel facilisis”
+                  </p>
+                  <h6>
+                    Name : Lorem Ipsumb
+                    <span style="padding-left: 40px"
+                      ><img
+                        src="/public_img/testimonial-img.png"
+                        style="width: 65px; margin-top: 15px"
+                    /></span>
+                  </h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="container-fluid question">
+          <div class="container">
+            <div class="row">
+              <h1>Frequently Asked Questions:</h1>
+
+              <%if(faqs[0]){%>
+              <div class="col-md-12 col-xs-12">
+                <h3>Q: &nbsp; <%=faqs[0].question%></h3>
+
+                <p><%=faqs[0].answer%></p>
+              </div>
+              <%}%> <%if(faqs[1]){%>
+              <div class="col-md-12 col-xs-12">
+                <h3>Q: &nbsp; <%=faqs[1].question%></h3>
+
+                <p><%=faqs[1].answer%></p>
+              </div>
+              <%}%> <%if(faqs[2]){%>
+              <div class="col-md-12 col-xs-12">
+                <h3>Q: &nbsp; <%=faqs[2].question%></h3>
+
+                <p><%=faqs[2].answer%></p>
+              </div>
+              <%}%>
+            </div>
+          </div>
+        </section>
+
+        <%for(let i=3; i < faqs.length; i=i+3){%>
+        <section class="container-fluid question">
+          <div class="container">
+            <div class="row">
+              <%for(let j=i; j < i+3; j++){%> <%if(faqs[j]){%>
+              <div class="col-md-12 col-xs-12">
+                <h3>Q: &nbsp; <%=faqs[j].question%></h3>
+
+                <p><%=faqs[j].answer%></p>
+              </div>
+              <%}%> <%}%>
+            </div>
+          </div>
+        </section>
+        <%}%>
+
+        <div class="modal fade" id="appointment" role="dialog">
+          <div class="modal-dialog modal-md">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                  &times;
+                </button>
+                <h4 class="modal-title">Book Online Appointment</h4>
+              </div>
+              <div class="modal-body">
+                <form
+                  style="padding: 40px"
+                  action="/api/appointment"
+                  id="upload_data"
+                  method="POST"
+                >
+                  <div class="form-group col-md-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="name"
+                      name="name"
+                      placeholder="Name"
+                      name="name"
+                    />
+                  </div>
+                  <div class="form-group col-md-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="number"
+                      name="mobile"
+                      placeholder="Mobile"
+                      name="number"
+                    />
+                  </div>
+                  <div class="form-group col-md-12">
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      name="email"
+                      placeholder="Email"
+                      name="email"
+                    />
+                  </div>
+
+                  <div class="form-group col-md-6">
+                    <input
+                      type="date"
+                      class="form-control datepicker"
+                      id="txtDate"
+                      placeholder="Appointment Date"
+                      name="date"
+                    />
+                  </div>
+                  <div class="form-group col-md-6">
+                    <!-- <input
+                      type="time"
+                      class="form-control"
+                      id="time"
+                      placeholder="Appointment Time"
+                      name="time"
+                    /> -->
+                    <input
+                      id="durationExample"
+                      type="text"
+                      class="form-control time"
+                      id="time"
+                      name="time"
+                    />
+                  </div>
+                  <div class="form-group col-md-12">
+                    <textarea
+                      class="form-control"
+                      rows="3"
+                      id="comment"
+                      name="purpose"
+                      placeholder="Describe your purpose"
+                    ></textarea>
+                  </div>
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-default">
+                      Submit
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-default"
+                  data-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="address" role="dialog">
+          <div class="modal-dialog modal-md">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                  &times;
+                </button>
+                <h4 class="modal-title">Book Online Appointment</h4>
+              </div>
+              <div class="modal-body">
+                <div class="col-md-12">
+                  <p class="text">
+                    <i class="fa fa-phone-alt" style="color: #c77b2b"></i>
+                    &nbsp;<strong>Call</strong> <br /><a
+                      href="tel:+91 9499-38-38-38"
+                      >+91 9499-38-38-38</a
+                    >
+                    <br />
+                    <br />
+                    <i class="fa fa-envelope" style="color: #c77b2b"></i>
+                    &nbsp;<strong>Email</strong> <br /><a href="mailto:"
+                      >mailus@gmail.com</a
+                    >
+                    <br />
+                    <br />
+                    <i class="fa fa-map-pin" style="color: #c77b2b"></i>
+                    &nbsp;<strong>Address</strong> <br />Abc Colony, XYZ Street,
+                    City, State
+                  </p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-default"
+                  data-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-------- footer section		-----	 -->
+        <%- include("include/_footer") %>
+      </div>
+    </div>
+
+    <!-- Scripts  -->
+    <%- include("include/_scripts") %>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.13.18/jquery.timepicker.min.js"
+      integrity="sha512-WHnaxy6FscGMvbIB5EgmjW71v5BCQyz5kQTcZ5iMxann3HczLlBHH5PQk7030XmmK5siar66qzY+EJxKHZTPEQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.13.18/jquery.timepicker.min.css"
+      integrity="sha512-GgUcFJ5lgRdt/8m5A0d0qEnsoi8cDoF0d6q+RirBPtL423Qsj5cI9OxQ5hWvPi5jjvTLM/YhaaFuIeWCLi6lyQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <script>
+      $("#durationExample").timepicker({
+        minTime: "11:00 am",
+        maxTime: "8:00 pm",
+        // interval: 15, // 15 minutes
+        step: "15",
+      });
+
+      $(function () {
+        var dtToday = new Date();
+
+        var month = dtToday.getMonth() + 1;
+        var day = dtToday.getDate();
+        var year = dtToday.getFullYear();
+        if (month < 10) month = "0" + month.toString();
+        if (day < 10) day = "0" + day.toString();
+
+        var maxDate = year + "-" + month + "-" + day;
+        $("#txtDate").attr("min", maxDate);
+      });
+    </script>
+  </body>
+</html>

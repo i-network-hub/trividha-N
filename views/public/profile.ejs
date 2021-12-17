@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Trividha | Raw Herbs</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <%- include("include/_header") %>
+    <link
+      rel="stylesheet"
+      href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      .affix {
+        top: 0;
+        width: 100%;
+        z-index: 9999 !important;
+      }
+
+      .affix + .container-fluid {
+        padding-top: 70px;
+      }
+      #fp-nav {
+        display: none;
+      }
+      .herb-all {
+        margin-top: 80px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- Social Links  -->
+      <%- include("include/_social_links") %>
+
+      <div id="main">
+        <section
+          class="container-fluid header nopadding vertical-scrolling b-img"
+        >
+          <!-- header top-fix navbar  -->
+          <%- include("include/_navbar") %>
+
+          <!-- header top-fix side navbar  -->
+          <%- include("include/_side_navbar") %>
+
+          <div class="abt-new1 pt-100 section-divide">
+            <div class="container">
+              <div class="row col-md-12">
+                <div class="col-4">
+                  <h5 class="abt-txt text-left pt-40">My Profile</h5>
+
+                  <div class="row">
+                    <div class="col-md-2">
+                      <div class="nav-profile">
+                        <ul class="list-unstyled pt-40">
+                          <li class="py-10 heading">
+                            <a data-toggle="pill" href="#profile">
+                              <i class="fas fa-user"></i> Profile</a
+                            >
+                          </li>
+                          <li class="py-10 heading">
+                            <a data-toggle="pill" href="#order">
+                              <i class="fas fa-shopping-bag"></i> Orders</a
+                            >
+                          </li>
+                          <li class="py-10 heading">
+                            <a data-toggle="pill" href="#profile-edit">
+                              <i class="fas fa-user-edit"></i> Edit Profile</a
+                            >
+                          </li>
+                          <li class="py-10 heading">
+                            <a data-toggle="pill" href="#logout">
+                              <i class="fas fa-sign-out-alt"></i> Log Out</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="col-md-10">
+                      <div class="tab-content">
+                        <div id="profile" class="tab-pane fade in active">
+                          <div class="col-md-2"></div>
+                          <div class="col-md-10">
+                            <div class="order-detail-box">
+                              <div class="form-group">
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <h5>First Name :</h5>
+                                    <p><%=user.fname%></p>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <h5>Last Name :</h5>
+                                    <p><%=user.lname%></p>
+                                  </div>
+                                </div>
+                                <div class="row mt-20">
+                                  <div class="col-md-6">
+                                    <h5>Email Id :</h5>
+                                    <p><%=user.email%></p>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <h5>Contact Number :</h5>
+                                    <p><%=user.mobile%></p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div id="profile-edit" class="tab-pane fade in">
+                          <div class="col-md-2"></div>
+                          <div class="col-md-10">
+                            <div class="order-detail-box">
+                              <form action="/edit_profile" method="POST">
+                                <div class="form-group">
+                                  <div class="row">
+                                    <div class="col-md-6">
+                                      <label for="">First Name</label>
+                                      <input
+                                        class="form-control"
+                                        type="text"
+                                        name="fname"
+                                        id=""
+                                        value="<%=user.fname%>"
+                                        placeholder="First Name"
+                                      />
+                                    </div>
+                                    <div class="col-md-6">
+                                      <label for="">Last Name</label>
+                                      <input
+                                        class="form-control"
+                                        type="text"
+                                        name="lname"
+                                        id=""
+                                        value="<%=user.lname%>"
+                                        placeholder="Last Name"
+                                      />
+                                    </div>
+                                  </div>
+                                  <div class="row mt-20">
+                                    <div class="col-md-6">
+                                      <label for="">Email Id</label>
+                                      <input
+                                        class="form-control"
+                                        type="text"
+                                        name="email"
+                                        id=""
+                                        value="<%=user.email%>"
+                                        placeholder="Email"
+                                      />
+                                    </div>
+                                    <div class="col-md-6">
+                                      <label for="">Contact Number</label>
+                                      <input
+                                        class="form-control"
+                                        type="text"
+                                        name="mobile"
+                                        id=""
+                                        value="<%=user.mobile%>"
+                                        placeholder="Contact"
+                                        readonly
+                                      />
+                                    </div>
+                                  </div>
+                                  <div class="row mt-20">
+                                    <div class="col-md-6">
+                                      <label for="">Current Password </label>
+                                      <input
+                                        class="form-control"
+                                        type="password"
+                                        name="current_password"
+                                        id=""
+                                        placeholder="Current Password"
+                                      />
+                                    </div>
+                                    <div class="col-md-6">
+                                      <label for="">New Password</label>
+                                      <input
+                                        class="form-control"
+                                        type="password"
+                                        name="new_password"
+                                        id=""
+                                        placeholder="New Password"
+                                      />
+                                    </div>
+                                  </div>
+                                  <div class="text-left mt-20">
+                                    <button
+                                      type="submit"
+                                      class="btn btn-style-three"
+                                    >
+                                      Save Changes
+                                    </button>
+                                  </div>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                        <div id="order" class="tab-pane fade">
+                          <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-10" style="min-height: 200px">
+                              <%for(let j=0; j < orders.length; j++){%>
+                              <div class="order-detail-box">
+                                <div class="order-details">
+                                  <div class="">
+                                    <h5>Order ID</h5>
+                                    <p>#<%=orders[j].razorpay_order_id%></p>
+                                  </div>
+                                  <div class="">
+                                    <h5>Date</h5>
+                                    <p><%=orders[j].date%></p>
+                                  </div>
+                                  <div class="">
+                                    <h5>Shipping Status</h5>
+                                    <%if(orders[j].delivered){%>
+                                    <p>Delivered</p>
+                                    <%}else{%>
+                                    <p>Pending</p>
+                                    <%}%>
+                                  </div>
+                                  <div class="">
+                                    <h5>Total Amount</h5>
+                                    <p><%=orders[j].totalPrice%>/-</p>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-8">
+                                    <%for(let i=0; i <
+                                    orders[j].products.length; i++){%>
+                                    <div class="col-md-2">
+                                      Product Name :
+                                      <%=orders[j].products[i].name%>
+                                    </div>
+                                    <%}%>
+                                    <!-- <div class="img-box col-md-2">
+                                      <img
+                                        src="/public_img/pro2.png"
+                                        width="100%"
+                                        alt=""
+                                      />
+                                    </div> -->
+                                  </div>
+                                  <div class="col-md-4">
+                                    <div class="text-right mt-20">
+                                      <a href="/" class="btn btn-style-three"
+                                        >Order Again</a
+                                      >
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <%}%>
+
+                              <!-- <div class="order-detail-box">
+                                <div class="order-details">
+                                  <div class="">
+                                    <h5>Order ID</h5>
+                                    <p>#456789</p>
+                                  </div>
+                                  <div class="">
+                                    <h5>Date</h5>
+                                    <p>10 June 2021</p>
+                                  </div>
+                                  <div class="">
+                                    <h5>Shipping Status</h5>
+                                    <p>Delivered</p>
+                                  </div>
+                                  <div class="">
+                                    <h5>Total Amount</h5>
+                                    <p>500/-</p>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-8">
+                                    <div class="img-box col-md-2">
+                                      <img
+                                        src="/public_img/pro3.png"
+                                        width="100%"
+                                        alt=""
+                                      />
+                                    </div>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <div class="text-right mt-20">
+                                      <a href="" class="btn btn-style-three"
+                                        >Order Again</a
+                                      >
+                                    </div>
+                                  </div>
+                                </div>
+                              </div> -->
+                            </div>
+                          </div>
+                        </div>
+                        <div id="logout" class="tab-pane fade">
+                          <div class="col-md-8 text-center mt-80">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-8">
+                              <h5 class="heading">
+                                Are you sure to exit?
+
+                                <div class="row mt-20">
+                                  <div class="col-md-4">
+                                    <a
+                                      href="#profile"
+                                      class="btn btn-style-three"
+                                      >No! Go Back</a
+                                    >
+                                  </div>
+                                  <div
+                                    class="col-md-4"
+                                    style="margin-left: 90px"
+                                  >
+                                    <a
+                                      href="/logout"
+                                      class="btn btn-style-three"
+                                      >Yes! Log Out</a
+                                    >
+                                  </div>
+                                </div>
+                              </h5>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!--------request for quote----------->
+        <%- include("include/_get_quote") %>
+
+        <!-------- footer section		-----	 -->
+        <%- include("include/_footer") %>
+      </div>
+    </div>
+
+    <!-- Scripts  -->
+    <%- include("include/_scripts") %>
+  </body>
+</html>

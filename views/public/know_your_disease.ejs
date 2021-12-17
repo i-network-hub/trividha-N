@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Trividha | Know Your Disease</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <%- include("include/_header") %>
+    <link
+      rel="stylesheet"
+      href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <style>
+    .category-select {
+      margin-left: -60px;
+    }
+    @media (max-width: 990px) {
+      .category-select {
+        margin-left: 40px;
+      }
+    }
+  </style>
+
+  <body>
+    <div class="wrapper">
+      <!-- Social Links  -->
+      <%- include("include/_social_links") %>
+
+      <div id="main">
+        <section
+          class="container-fluid header nopadding vertical-scrolling b-img"
+        >
+          <!-- header top-fix navbar  -->
+          <%- include("include/_navbar") %>
+
+          <!-- header top-fix side navbar  -->
+          <%- include("include/_side_navbar") %>
+
+          <img
+            src="/public_img/home-remedies.jpg"
+            class="img-responsive mt-100"
+          />
+        </section>
+        <section class="container-fluid doctr-sec3">
+          <div class="container">
+            <h1 class="heading text-center">know your Disease</h1>
+            <h1
+              class="abt-txtt text-center heading-two"
+              style="
+                font-family: 'Philosopher', sans-serif;
+                color: #074a0a;
+                font-weight: bold;
+                font-size: 20px;
+                padding-bottom: 20px;
+              "
+            >
+              Diseases are grouped into categories to help you find home
+              remedies in an easier way
+            </h1>
+
+            <div class="row">
+              <div class="col-md-5 col-xs-12">
+                <!-- <img src="/public_img/man-body.png" class="img-responsive man-body" style=""/> -->
+              </div>
+
+              <div class="col-md-4 col-xs-12">
+                <div class="category-select">
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-warning dropdown-toggle fx-b"
+                      type="button"
+                      data-toggle="dropdown"
+                    >
+                      Select Category <span class="caret"></span>
+                    </button>
+
+                    <ul class="dropdown-menu cng">
+                      <%for(let i=0; i < disease_category.length; i++){%>
+                      <li>
+                        <a href="#<%=i%>">
+                          <%= disease_category[i].category.slice(0, 25) +
+                          (disease_category[i].category.length > 25 ? "..." :
+                          "") %>
+                        </a>
+                      </li>
+                      <%}%>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="diseasesec mt-20 col-md-12">
+                <div class="boxinner" id="25">
+                  <div class="icon lift">
+                    <img
+                      src="../<%=disease_category[0].image%>"
+                      alt="Digestive "
+                      title="Digestive "
+                      width="80px"
+                      height="80px"
+                    />
+                  </div>
+                  <div class="rightdesc" id="0">
+                    <a href="#">
+                      <h3><%=disease_category[0].category%></h3>
+                    </a>
+                    <ul>
+                      <%for(let i=0; i < disease_category[0].disease.length;
+                      i++){%>
+                      <li>
+                        <a
+                          href="/disease?id=<%=disease_category[0].disease[i]%>"
+                          target="_blank"
+                          ><%=disease_category[0].disease[i]%></a
+                        >
+                      </li>
+                      <%}%>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <%for(let i=1; i < disease_category.length; i=i+2){%>
+        <section class="container-fluid doctr-sec3">
+          <div class="diseasesec col-md-12">
+            <div class="boxinner" id="21">
+              <div class="icon lift">
+                <img
+                  src="../<%=disease_category[i].image%>"
+                  alt="Endocrine "
+                  title="Endocrine "
+                  width="80px"
+                  height="80px"
+                />
+              </div>
+              <div class="rightdesc" id="<%=i%>">
+                <span id="<%=i+1%>"></span>
+                <a href="" target="_blank">
+                  <h3><%=disease_category[i].category%></h3>
+                </a>
+                <ul>
+                  <%for(let j=0; j < disease_category[i].disease.length; j++){%>
+                  <li>
+                    <a
+                      href="/disease?id=<%=disease_category[i].disease[j]%>"
+                      target="_blank"
+                      ><%=disease_category[i].disease[j]%>
+                    </a>
+                  </li>
+                  <%}%>
+                </ul>
+              </div>
+            </div>
+            <%if(disease_category[i+1]){%>
+            <div class="boxinner" id="10">
+              <div class="icon lift">
+                <img
+                  src="../<%=disease_category[i+1].image%>"
+                  alt="Endocrine "
+                  title="Endocrine "
+                  width="80px"
+                  height="80px"
+                />
+              </div>
+              <div class="rightdesc">
+                <a href="" target="_blank">
+                  <h3><%=disease_category[i+1].category%></h3>
+                </a>
+                <ul>
+                  <%for(let j=0; j < disease_category[i+1].disease.length;
+                  j++){%>
+                  <li>
+                    <a
+                      href="/disease?id=<%=disease_category[i+1].disease[j]%>"
+                      target="_blank"
+                      ><%=disease_category[i+1].disease[j]%>
+                    </a>
+                  </li>
+                  <%}%>
+                </ul>
+              </div>
+            </div>
+            <%}%>
+          </div>
+        </section>
+        <%}%>
+
+        <!-- <section class="container-fluid doctr-sec3">
+          <div class="diseasesec col-md-12">
+            <div class="boxinner" id="11">
+              <div class="icon lift">
+                <img
+                  src="/public_img/i5.png"
+                  alt="Joint pain"
+                  title="Joint pain"
+                />
+              </div>
+              <div class="rightdesc">
+                <a href="" target="_blank">
+                  <h3>Joint pain</h3>
+                </a>
+                <ul>
+                  <li>
+                    <a href="" target="_blank">Ankylosing spondylitis </a>
+                  </li>
+                  <li><a href="" target="_blank">Cervical Spondylosis </a></li>
+                  <li><a href="" target="_blank">Rheumatoid Arthritis </a></li>
+                  <li><a href="" target="_blank">Osteoarthritis</a></li>
+                  <li><a href="" target="_blank">Gout</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="boxinner" id="14">
+              <div class="icon lift">
+                <img
+                  src="/public_img/i6.png"
+                  alt="Respiratory"
+                  title="Respiratory"
+                />
+              </div>
+              <div class="rightdesc">
+                <a href="" target="_blank">
+                  <h3>Respiratory</h3>
+                </a>
+                <ul>
+                  <li><a href="" target="_blank">Asthma </a></li>
+                  <li><a href="" target="_blank">Bronchitis</a></li>
+                  <li><a href="" target="_blank">sinusitis </a></li>
+                  <li><a href="" target="_blank">Rhinitis </a></li>
+                  <li><a href="" target="_blank">Allergies </a></li>
+                  <li><a href="" target="_blank">Chronic Laryngitis</a></li>
+                  <li><a href="" target="_blank">COPD</a></li>
+                  <li><a href="" target="_blank">Influenza</a></li>
+                  <li><a href="" target="_blank">Pleurisy</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section> -->
+        <!-- <section class="container-fluid doctr-sec3">
+          <div class="diseasesec col-md-12">
+            <div class="boxinner" id="9">
+              <div class="icon lift">
+                <img src="/public_img/i7.png" alt="Gynae" title="Gynae" />
+              </div>
+              <div class="rightdesc">
+                <a href="" target="_blank">
+                  <h3>Gynae</h3>
+                </a>
+                <ul>
+                  <li><a href="" target="_blank">Infertility </a></li>
+                  <li><a href="" target="_blank">Frigidity</a></li>
+                  <li><a href="" target="_blank">Leucorrhoea </a></li>
+                  <li><a href="" target="_blank">Menopause</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="boxinner" id="24">
+              <div class="icon lift">
+                <img
+                  src="/public_img/most-common.png"
+                  alt="Most Common Diseases"
+                  width="60px"
+                  title="Most Common Diseases"
+                />
+              </div>
+              <div class="rightdesc">
+                <a href="" target="_blank">
+                  <h3>Most Common Diseases</h3>
+                </a>
+                <ul>
+                  <li><a href="" target="_blank">Obesity </a></li>
+                  <li><a href="" target="_blank">Migraine </a></li>
+                  <li><a href="" target="_blank">Diabetes </a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section> -->
+        <!-- <section class="container-fluid doctr-sec3">
+          <div class="diseasesec col-md-12">
+            <div class="boxinner" id="23">
+              <div class="icon lift">
+                <img
+                  src="/public_img/child.png"
+                  alt="Child Health"
+                  width="40px"
+                  title="Child Health"
+                />
+              </div>
+              <div class="rightdesc">
+                <a href="" target="_blank">
+                  <h3>Child Health</h3>
+                </a>
+                <ul>
+                  <li><a href="" target="_blank">Asthma </a></li>
+                  <li><a href="" target="_blank">Bed wetting</a></li>
+                  <li><a href="" target="_blank">Childhood Asthma</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="boxinner" id="22">
+              <div class="icon lift">
+                <img
+                  src="/public_img/eye.png"
+                  alt="Eye, ENT &amp; Oral"
+                  width="60px"
+                  title="Eye, ENT &amp; Oral"
+                />
+              </div>
+              <div class="rightdesc">
+                <a href="" target="_blank">
+                  <h3>Eye, ENT &amp; Oral</h3>
+                </a>
+                <ul>
+                  <li><a href="" target="_blank">Cataract</a></li>
+                  <li><a href="" target="_blank">Conjunctivitis</a></li>
+                  <li><a href="" target="_blank">Epistaxis</a></li>
+                  <li><a href="" target="_blank">Tonsillitis</a></li>
+                  <li><a href="" target="_blank">Stye</a></li>
+                  <li><a href="" target="_blank">Glaucoma</a></li>
+                  <li><a href="" target="_blank">Goitre </a></li>
+                  <li><a href="" target="_blank">Myopia</a></li>
+                  <li><a href="" target="_blank">Senile Deafness</a></li>
+                  <li><a href="" target="_blank">Halitosis</a></li>
+                  <li><a href="" target="_blank">Pyorrhoea</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section> -->
+        <!-- <section class="container-fluid doctr-sec3">
+          <div class="diseasesec col-md-12">
+            <div class="boxinner" id="20">
+              <div class="icon lift">
+                <img
+                  src="/public_img/oncology.png"
+                  alt="Oncology "
+                  width="60px"
+                  title="Oncology "
+                />
+              </div>
+              <div class="rightdesc">
+                <a href="" target="_blank">
+                  <h3>Oncology</h3>
+                </a>
+                <ul>
+                  <li><a href="" target="_blank">Cancer </a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="boxinner" id="9">
+              <div class="icon lift">
+                <img
+                  src="/public_img/sexual.png"
+                  alt="Sexual"
+                  width="60px"
+                  title="Sexual"
+                />
+              </div>
+              <div class="rightdesc">
+                <a href="" target="_blank">
+                  <h3>Sexual</h3>
+                </a>
+                <ul>
+                  <li><a href="" target="_blank">AIDS </a></li>
+                  <li><a href="" target="_blank">Erectile Dysfunction </a></li>
+                  <li><a href="" target="_blank">Frigidity </a></li>
+                  <li><a href="" target="_blank">Oligospermia </a></li>
+                  <li><a href="" target="_blank">Premature Ejaculation </a></li>
+                  <li><a href="" target="_blank">Syphilis</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section> -->
+        <!-- <section class="container-fluid doctr-sec3">
+          <div class="diseasesec col-md-12">
+            <div class="boxinner" id="13">
+              <div class="icon lift">
+                <img
+                  src="/public_img/i8.png"
+                  alt="Neurological"
+                  title="Neurological"
+                />
+              </div>
+              <div class="rightdesc">
+                <a href="" target="_blank">
+                  <h3>Neurological</h3>
+                </a>
+                <ul>
+                  <li>
+                    <a href="" target="_blank">Chronic Fatigue Syndrome</a>
+                  </li>
+                  <li><a href="" target="_blank">Fibromyalgia</a></li>
+                  <li><a href="" target="_blank">Multiple Sclerosis</a></li>
+                  <li><a href="" target="_blank">Parkinson's Disease</a></li>
+                  <li><a href="" target="_blank">Migraine </a></li>
+                  <li><a href="" target="_blank">Epilepsy</a></li>
+                  <li><a href="" target="_blank">Sciatica</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="boxinner" id="8">
+              <div class="icon lift">
+                <img
+                  src="/public_img/cardio.png"
+                  alt="Cardio"
+                  width="60px"
+                  title="Cardio"
+                />
+              </div>
+              <div class="rightdesc">
+                <a href="" target="_blank">
+                  <h3>Cardio</h3>
+                </a>
+                <ul>
+                  <li><a href="" target="_blank">Hypertension </a></li>
+                  <li><a href="" target="_blank">High Cholesterol </a></li>
+                  <li><a href="" target="_blank">Angina pectoris</a></li>
+                  <li>
+                    <a href="" target="_blank">Ischaemic Heart Disease</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section> -->
+        <!-- <section class="container-fluid doctr-sec3">
+          <div class="diseasesec col-md-12">
+            <div class="boxinner" id="19">
+              <div class="icon lift">
+                <img
+                  src="/public_img/brain.png"
+                  alt="Psychological"
+                  width="50px"
+                  title="Psychological"
+                />
+              </div>
+              <div class="rightdesc">
+                <a href="" target="_blank">
+                  <h3>Psychological</h3>
+                </a>
+                <ul>
+                  <li><a href="" target="_blank">Anxiety Disorder </a></li>
+                  <li><a href="" target="_blank">Anxiety Disorder </a></li>
+                  <li><a href="" target="_blank">Depression </a></li>
+                  <li><a href="" target="_blank">Insomnia </a></li>
+                  <li><a href="" target="_blank">Bed wetting </a></li>
+                  <li><a href="" target="_blank">Bipolar Disorder </a></li>
+                  <li><a href="" target="_blank">Psychosis</a></li>
+                  <li><a href="" target="_blank">Schizophrenia</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="boxinner" id="13">
+              <div class="icon lift">
+                <img
+                  src="/public_img/liver.png"
+                  alt="Liver & Gall "
+                  width="60px"
+                  title="Liver & Gall "
+                />
+              </div>
+              <div class="rightdesc">
+                <a href="" target="_blank">
+                  <h3>Liver & Gall</h3>
+                </a>
+                <ul>
+                  <li><a href="" target="_blank">Gallstone </a></li>
+                  <li><a href="" target="_blank">Jaundice</a></li>
+                  <li><a href="" target="_blank">Liver Cirrhosis </a></li>
+                  <li><a href="" target="_blank">Fatty Liver </a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section> -->
+        <!-- <section class="container-fluid doctr-sec3">
+          <div class="diseasesec col-md-12">
+            <div class="boxinner" id="19">
+              <div class="icon lift">
+                <img src="/public_img/i4.png" alt="Urinary" title="Urinary" />
+              </div>
+              <div class="rightdesc">
+                <a href="" target="_blank">
+                  <h3>Urinary</h3>
+                </a>
+                <ul>
+                  <li>
+                    <a href="" target="_blank"
+                      >Urinary Tract Infection (UTI)
+                    </a>
+                  </li>
+                  <li><a href="" target="_blank">Kidney Stones </a></li>
+                  <li><a href="" target="_blank">Cystitis</a></li>
+                  <li><a href="" target="_blank">Prostatitis</a></li>
+                  <li><a href="" target="_blank">Renal Failure</a></li>
+                  <li><a href="" target="_blank">Urethritis</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section> -->
+
+        <!-------- footer section		-----	 -->
+        <%- include("include/_footer") %>
+      </div>
+    </div>
+    <!-- Scripts  -->
+    <%- include("include/_scripts") %>
+  </body>
+</html>

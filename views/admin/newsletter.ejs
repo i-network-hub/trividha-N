@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Dashboard | Trividha|Newsletter</title>
+    <%- include("include/_header") %>
+    <link
+      rel="stylesheet"
+      href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      .menu-link i {
+        color: #fff;
+        font-size: 10px;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+
+  <body
+    id="kt_body"
+    class="
+      header-mobile-fixed
+      aside-enabled aside-fixed aside-minimize-hoverable
+    "
+  >
+    <%- include("include/_navbar") %>
+
+    <div class="d-flex flex-column flex-root">
+      <div class="d-flex flex-row flex-column-fluid page">
+        <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+          <div id="kt_header" class="header">
+            <div class="container">
+              <div
+                class="d-flex align-items-center flex-wrap mr-1 mt-5 mt-lg-0"
+              >
+                <div class="d-flex align-items-baseline flex-wrap mr-5">
+                  <h4 class="text-dark font-weight-bold my-1 mr-5">
+                    Dashboard
+                    <small class="text-muted ml-2"
+                      >updates and statistics</small
+                    >
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="content d-flex flex-column flex-column-fluid"
+            id="kt_content"
+          >
+            <div class="d-flex flex-column-fluid">
+              <div class="container">
+                <div class="card card-custom">
+                  <div class="card-header border-0 pt-7">
+                    <h3 class="card-title align-items-start flex-column">
+                      <span
+                        class="
+                          card-label
+                          font-weight-bold font-size-h4
+                          text-dark-75
+                        "
+                        >Newsletter</span
+                      >
+                      <span
+                        class="text-muted mt-3 font-weight-bold font-size-sm"
+                        >For Raw Herbs</span
+                      >
+                    </h3>
+                    <div class="card-toolbar"></div>
+                  </div>
+                  <div class="card-body pt-0 pb-4">
+                    <div class="tab-content mt-2" id="myTabTable5">
+                      <div
+                        class="tab-pane fade show active"
+                        id="kt_tab_table_5_3"
+                        role="tabpanel"
+                        aria-labelledby="kt_tab_table_5_3"
+                      >
+                        <div class="table-responsive">
+                          <table
+                            class="table table-borderless table-vertical-center"
+                          >
+                            <thead>
+                              <tr>
+                                <th>Sl.no</th>
+                                <th>Email</th>
+                                <th>Delete</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <%for(let i=0; i < newsletter.length; i++){%>
+                              <tr>
+                                <td class="">
+                                  <span
+                                    class="
+                                      text-dark-75
+                                      font-weight-bolder font-size-lg
+                                    "
+                                    ><%=i+1%></span
+                                  >
+                                </td>
+                                <td class="text-dark-75 font-weight-bolder">
+                                  <%=newsletter[i].email%>
+                                </td>
+                                <td>
+                                  <a
+                                    class="
+                                      btn
+                                      btn-icon
+                                      btn-light
+                                      btn-hover-primary
+                                      btn-sm
+                                      delete
+                                    "
+                                    data-id="<%=newsletter[i]._id%>"
+                                    data-api="newsletter"
+                                  >
+                                    <span
+                                      class="
+                                        svg-icon svg-icon-md svg-icon-primary
+                                      "
+                                    >
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        width="24px"
+                                        height="24px"
+                                        viewBox="0 0 24 24"
+                                        version="1.1"
+                                      >
+                                        <g
+                                          stroke="none"
+                                          stroke-width="1"
+                                          fill="none"
+                                          fill-rule="evenodd"
+                                        >
+                                          <rect
+                                            x="0"
+                                            y="0"
+                                            width="24"
+                                            height="24"
+                                          ></rect>
+                                          <path
+                                            d="M6,8 L6,20.5 C6,21.3284271 6.67157288,22 7.5,22 L16.5,22 C17.3284271,22 18,21.3284271 18,20.5 L18,8 L6,8 Z"
+                                            fill="#000000"
+                                            fill-rule="nonzero"
+                                          ></path>
+                                          <path
+                                            d="M14,4.5 L14,4 C14,3.44771525 13.5522847,3 13,3 L11,3 C10.4477153,3 10,3.44771525 10,4 L10,4.5 L5.5,4.5 C5.22385763,4.5 5,4.72385763 5,5 L5,5.5 C5,5.77614237 5.22385763,6 5.5,6 L18.5,6 C18.7761424,6 19,5.77614237 19,5.5 L19,5 C19,4.72385763 18.7761424,4.5 18.5,4.5 L14,4.5 Z"
+                                            fill="#000000"
+                                            opacity="0.3"
+                                          ></path>
+                                        </g>
+                                      </svg>
+                                    </span>
+                                  </a>
+                                </td>
+                              </tr>
+                              <%}%>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer py-4 d-flex flex-lg-column" id="kt_footer">
+            <div
+              class="
+                container
+                d-flex
+                flex-column flex-md-row
+                align-items-center
+                justify-content-between
+              "
+            >
+              <div class="text-dark order-2 order-md-1">
+                <span class="text-muted font-weight-bold mr-2">2021©</span>
+                <a
+                  href=" "
+                  target="_blank"
+                  class="text-dark-75 text-hover-primary"
+                  >Proudly Powered by Trividha Team</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%- include("include/_kt_quick_search") %> <%-
+    include("include/_kt_scroll_top") %> <%-
+    include("include/_javascripts_srcs") %>
+  </body>
+</html>

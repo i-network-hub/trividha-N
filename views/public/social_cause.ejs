@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Trividha | Social Cause</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <%- include("include/_header") %>
+    <link
+      rel="stylesheet"
+      href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      .affix {
+        top: 0;
+        width: 100%;
+        z-index: 9999 !important;
+      }
+
+      .affix + .container-fluid {
+        padding-top: 70px;
+      }
+      #fp-nav {
+        display: none;
+      }
+
+      .item img {
+        height: 250px;
+      }
+      .camp1 {
+        margin-left: 100px;
+      }
+      @media (max-width: 990px) {
+        .camp1 {
+          margin-left: 0px;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Social Links  -->
+      <%- include("include/_social_links") %>
+      <div id="main">
+        <section
+          class="container-fluid header nopadding vertical-scrolling b-img"
+        >
+          <!-- header top-fix navbar  -->
+          <%- include("include/_navbar") %>
+
+          <!-- header top-fix side navbar  -->
+          <%- include("include/_side_navbar") %>
+          <div class="doctr-sec3">
+            <div class="col-md-12 section-divide">
+              <div class="row text-center">
+                <div class="col-md-5 camp1">
+                  <h1 class="text-center">Upcoming Camps</h1>
+
+                  <p class="text col-md-12 txt">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Commodi quidem eaque deserunt dolorum in, inventore ad
+                    molestias ipsam unde maxime. Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Quos ratione, minima repellat
+                    numquam, deleniti omnis at eos autem culpa corporis eveniet
+                    eaque, sunt accusamus? Odio odit veniam mollitia quas
+                    laboriosam? <br /><br />
+                    <a
+                      class="theme-btn btn-style-three"
+                      style="border-radius: 5px; cursor: pointer"
+                      name="camps"
+                      value="Show Div"
+                      onclick="showDiv()"
+                      >View</a
+                    >
+                  </p>
+                </div>
+
+                <div class="col-md-5">
+                  <h1 class="text-center">Past Camps</h1>
+
+                  <p class="text col-md-12 txt">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Commodi quidem eaque deserunt dolorum in, inventore ad
+                    molestias ipsam unde maxime. Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Quos ratione, minima repellat
+                    numquam, deleniti omnis at eos autem culpa corporis eveniet
+                    eaque, sunt accusamus? Odio odit veniam mollitia quas
+                    laboriosam? <br /><br />
+                    <a
+                      class="theme-btn btn-style-three"
+                      style="border-radius: 5px; cursor: pointer"
+                      name="camps"
+                      value="Show Div"
+                      onclick="showDivTwo()"
+                      >View</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div id="upcoming-camps" style="display: none" class="camps_list">
+          <section class="doctr-sec3">
+            <div class="container">
+              <div class="row all-plan-diet">
+                <div>
+                  <%for(let i=0; i < upcoming_camps.length; i++){%>
+                  <div class="item col-md-6">
+                    <img
+                      src="../<%=upcoming_camps[i].image[0]%>"
+                      class="img-responsive"
+                    />
+                    <div class="slider-box">
+                      <div class="slider-text">
+                        <h4 class="">
+                          <%= upcoming_camps[i].heading.slice(0, 10) +
+                          (upcoming_camps[i].heading.length > 10 ? "..." : "")
+                          %>
+                        </h4>
+                        <p>
+                          <%= upcoming_camps[i].overview.slice(0, 30) +
+                          (upcoming_camps[i].overview.length > 30 ? "..." : "")
+                          %>
+                        </p>
+                        <a
+                          href="/camps?id=<%=upcoming_camps[i]._id%>"
+                          target="_blank"
+                          >Read More</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <%}%>
+                </div>
+                <!-- <div style="margin-top: 42%" class="text-center">
+                  <a
+                    href="/camps?ts=upcoming_camps"
+                    target="_blank"
+                    class="theme-btn btn-style-three"
+                    style="border-radius: 5px"
+                    >View More
+                  </a>
+                </div> -->
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div id="past-camps" style="display: none" class="camps_list">
+          <section class="doctr-sec3">
+            <div class="container">
+              <div class="row all-plan-diet">
+                <div>
+                  <%for(let i=0; i < past_camps.length; i++){%>
+                  <div class="item col-md-6">
+                    <img
+                      src="../<%=past_camps[i].image[0]%>"
+                      class="img-responsive"
+                    />
+                    <div class="slider-box">
+                      <div class="slider-text">
+                        <h4 class="">
+                          <%= past_camps[i].heading.slice(0, 10) +
+                          (past_camps[i].heading.length > 10 ? "..." : "") %>
+                        </h4>
+                        <p>
+                          <%= past_camps[i].overview.slice(0, 30) +
+                          (past_camps[i].overview.length > 30 ? "..." : "") %>
+                        </p>
+                        <a
+                          href="/camps?id=<%=past_camps[i]._id%>"
+                          target="_blank"
+                          >Read More</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <%}%>
+                </div>
+                <!-- <div style="margin-top: 42%" class="text-center">
+                  <a
+                    href="/camps?"
+                    target="_blank"
+                    class="theme-btn btn-style-three"
+                    style="border-radius: 5px"
+                    >View More
+                  </a>
+                </div> -->
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-------- footer section		-----	 -->
+        <%- include("include/_footer") %>
+      </div>
+    </div>
+    <script>
+      function showDiv() {
+        document.getElementById("upcoming-camps").style.display = "block";
+      }
+      function showDivTwo() {
+        document.getElementById("past-camps").style.display = "block";
+      }
+    </script>
+
+    <!-- Scripts  -->
+    <%- include("include/_scripts") %>
+  </body>
+</html>

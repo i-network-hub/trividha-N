@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Trividha | Cart</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <%- include("include/_header") %>
+    <link
+      rel="stylesheet"
+      href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      .affix {
+        top: 0;
+        width: 100%;
+        z-index: 9999 !important;
+      }
+
+      .affix + .container-fluid {
+        padding-top: 70px;
+      }
+      #fp-nav {
+        display: none;
+      }
+      .input-qty input {
+        width: 50px;
+      }
+      .cart-total {
+        margin-left: 30px;
+        margin-top: 60px;
+      }
+      @media (max-width: 990px) {
+        .card {
+          width: 100vh;
+        }
+        .cart-total {
+          margin-left: 0px;
+        }
+        .cart-total h3,
+        a {
+          text-align: center;
+        }
+      }
+      .cart-table .input-qty span {
+        cursor: pointer;
+      }
+
+      .minus,
+      .plus {
+        width: 20px;
+        height: 20px;
+        background: #f2f2f2;
+        border-radius: 4px;
+        padding: 0px 4px;
+        border: 1px solid #ddd;
+        display: inline;
+        vertical-align: middle;
+        text-align: center;
+      }
+      .cart-table .input-qty input {
+        height: 34px;
+        width: 50px;
+        text-align: center;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        display: inline-block;
+        vertical-align: middle;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Social Links  -->
+      <%- include("include/_social_links") %>
+
+      <div id="main">
+        <section
+          class="container-fluid header nopadding vertical-scrolling b-img"
+        >
+          <!-- header top-fix navbar  -->
+          <%- include("include/_navbar_cart") %>
+
+          <!-- header top-fix side navbar  -->
+          <%- include("include/_side_navbar") %>
+          <div class="abt-new1 pt-100 section-divide">
+            <div class="container">
+              <div class="row col-md-12">
+                <h5 class="abt-txt text-left">Cart</h5>
+                <%if(cartData){%>
+                <div class="cart-table col-md-7">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th class="spacing">Product</th>
+                        <th class="spacing">Price</th>
+                        <th class="spacing">Quantity</th>
+                        <th class="spacing">Total</th>
+                        <th class="spacing">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <%for(let i=0; i < cartData.products.length; i++){%>
+
+                      <tr id="<%=cartData.products[i].productId%>">
+                        <td class="spacing"><%=cartData.products[i].name%></td>
+                        <td class="spacing">
+                          Rs <%=cartData.products[i].price%>
+                        </td>
+
+                        <td class="spacing input-qty">
+                          <div class="number">
+                            <span class="minus">-</span>
+                            <input
+                              type="text"
+                              name=""
+                              value="<%=cartData.products[i].quantity%>"
+                              onChange="changeproductvalue(this);"
+                              data-productid="<%=cartData.products[i].productId%>"
+                            />
+                            <span class="plus">+</span>
+                          </div>
+                        </td>
+
+                        <td
+                          class="spacing total_price"
+                          data-value="<%=cartData.products[i].quantity *
+                        cartData.products[i].price%>"
+                          id="price-<%=i%>"
+                        >
+                          Rs <%=cartData.products[i].total_price%>
+                        </td>
+                        <td class="spacing">
+                          <button
+                            class=""
+                            data-productid="<%=cartData.products[i].productId%>"
+                            value="0"
+                            onclick="changeproductvalue(this);"
+                          >
+                            <i class="far fa-times-circle"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <%}%>
+                    </tbody>
+                  </table>
+                </div>
+                <% } else{ %>
+                <div class="cart-table col-md-7">No item in Cart</div>
+                <% } %>
+
+                <div class="col-md-3">
+                  <div class="input-group total-btn">
+                    <a href="/products" class="theme-btn btn-style-three"
+                      >Add More
+                    </a>
+                  </div>
+                </div>
+
+                <%if(sub_total){%>
+                <div class="col-md-4 cart-total">
+                  <div class="row" style="margin-top: 20px">
+                    <h3 class="heading">Cart Total</h3>
+                    <div class="">
+                      <div class="input-group total-btn">
+                        <p class="theme-btn btn-style-four">
+                          <!-- Sub Total : <span id="sub_total"></span> /- -->
+                          <!-- Sub Total : <%=sub_total%> /- -->
+                          <%if(price_after_promo){%> Sub Total :
+                          <%=price_after_promo%> /- <%}else{%> Sub Total :
+                          <%=sub_total%> /- <%}%>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <form action="/api/apply_promo" method="GET">
+                        <div class="input-group">
+                          <input
+                            type="text"
+                            class="code-btn"
+                            placeholder="Promo Code"
+                            name="promo"
+                          />
+                          <button
+                            type="submit"
+                            class="theme-btn btn-style-three"
+                          >
+                            <!-- id="promo_id" -->
+                            <!-- onclick="add_promo()" -->
+                            Apply
+                          </button>
+                          <div class="">
+                            <!-- <span id="promo_status"></span> -->
+                            <%if(status){%>
+                            <span
+                              >Promo Code Applied Discount Made
+                              <%=discount_made%></span
+                            >
+                            <%}else{if(discount_made == 'Not Applicable'){%>
+                            <span></span>
+                            <%}else{%>
+                            <span>Invalid Promo Code</span>
+                            <%}%> <%}%>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <br />
+                    <div class="col-md-3">
+                      <div class="input-group total-btn">
+                        <a
+                          href="/place_order?id=<%=cartData._id%>"
+                          class="theme-btn btn-style-three"
+                          >Checkout
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <% } %>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Recommended products starts -->
+        <section class="container-fluid abt-new1 pt-150">
+          <div class="container">
+            <div class="row">
+              <h1 class="heading text-center mt-40" style="margin-bottom: 30px">
+                Recommended Products
+              </h1>
+              <div class="owl-carousel owl-theme owl-product col-md-5">
+                <div class="item">
+                  <div class="prdct-box">
+                    <img src="/public_img/pro1.png" class="img-responsive" />
+                    <p class="hding1">Udar Nidhi</p>
+                    <a href="/product_single" target="_blank">
+                      <button
+                        type="button"
+                        class="btn btn-danger pro-bn"
+                        style="display: none"
+                      >
+                        Shop Now
+                      </button>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="item">
+                  <div class="prdct-box">
+                    <img src="/public_img/pro2.png" class="img-responsive" />
+                    <p class="hding1">Lividha</p>
+
+                    <a href="/product_single" target="_blank">
+                      <button
+                        type="button"
+                        class="btn btn-danger pro-bn"
+                        style="display: none"
+                      >
+                        Shop Now
+                      </button>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="item">
+                  <div class="prdct-box">
+                    <img src="/public_img/pro3.png" class="img-responsive" />
+                    <p class="hding1">K- Cough</p>
+
+                    <a href="/product_single" target="_blank">
+                      <button
+                        type="button"
+                        class="btn btn-danger pro-bn"
+                        style="display: none"
+                      >
+                        Shop Now
+                      </button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="text-center">
+                <a
+                  href="/products"
+                  class="btn btn-style-three"
+                  style="margin-top: 60px"
+                  >View All</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Recommended products ends -->
+
+        <!-------- footer section		------->
+        <%- include("include/_footer") %>
+      </div>
+    </div>
+
+    <script>
+      $(".minus").click(function () {
+        quantityField = $(this).next();
+        if (quantityField.val() != 0) {
+          let c_val = quantityField.val(parseInt(quantityField.val(), 10) - 1);
+          console.log(c_val.val());
+          let pid = quantityField[0].dataset.productid;
+          changeproductvalue1(pid, c_val.val());
+        }
+      });
+      $(".plus").click(function () {
+        quantityField = $(this).prev();
+        let c_val = quantityField.val(parseInt(quantityField.val(), 10) + 1);
+        console.log(c_val.val());
+        let pid = quantityField[0].dataset.productid;
+        changeproductvalue1(pid, c_val.val());
+      });
+    </script>
+
+    <script>
+      $(".owl-product").owlCarousel({
+        loop: true,
+        margin: 10,
+        responsiveClass: true,
+        autoplay: true,
+        responsive: {
+          0: {
+            items: 1,
+            nav: true,
+          },
+          600: {
+            items: 1,
+            nav: true,
+          },
+          1000: {
+            items: 5,
+            nav: true,
+            loop: true,
+          },
+        },
+      });
+    </script>
+
+    <!-- Scripts  -->
+    <%- include("include/_scripts") %>
+  </body>
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Trividha | Explor all plan</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <%- include("include/_header") %>
+    <link
+      rel="stylesheet"
+      href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      .affix {
+        top: 0;
+        width: 100%;
+        z-index: 9999 !important;
+      }
+
+      .affix + .container-fluid {
+        padding-top: 70px;
+      }
+      #fp-nav {
+        display: none;
+      }
+
+      @media (max-width: 990px) {
+        .pt-130 {
+          padding-top: 10%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- Social Links  -->
+      <%- include("include/_social_links") %>
+
+      <div id="main">
+        <section
+          class="container-fluid header nopadding vertical-scrolling b-img"
+        >
+          <!-- header top-fix navbar  -->
+          <%- include("include/_navbar") %>
+
+          <!-- header top-fix side navbar  -->
+          <%- include("include/_side_navbar") %>
+
+          <img src="/public_img/all-plan.jpg" class="img-responsive mt-80" />
+
+          <div>
+            <div class="col-md-5 col-xs-6">
+              <div class="col-md-4 col-xs-4">
+                <a href="#"
+                  ><img
+                    src="/public_img/program-img1.png"
+                    class="img-responsive bi"
+                /></a>
+              </div>
+
+              <div class="col-md-4 col-xs-4">
+                <a href="#"
+                  ><img
+                    src="/public_img/Programs-img2.png"
+                    class="img-responsive bi"
+                /></a>
+              </div>
+
+              <div class="col-md-4 col-xs-4">
+                <a href="#"
+                  ><img
+                    src="/public_img/program-img3.png"
+                    class="img-responsive bi"
+                /></a>
+              </div>
+            </div>
+            <div class="col-md-2 col-xs-4">
+              <a href="#"
+                ><button class="btn btn-danger b-b"><u>Test Now</u></button></a
+              >
+            </div>
+          </div>
+        </section>
+
+        <section class="container-fluid pt-130">
+          <div class="container">
+            <h1
+              class="abt-txtt text-center"
+              style="
+                font-family: 'Philosopher', sans-serif;
+                font-weight: bold;
+                margin-top: 10px;
+              "
+            >
+              Our Plans
+            </h1>
+
+            <div class="row all-plan-diet">
+              <%if(diets[0]){%>
+              <div class="item col-md-6">
+                <img src="../<%=diets[0].image%>" class="img-responsive" />
+
+                <div class="slider-box lift">
+                  <div class="slider-text">
+                    <h4 class="">
+                      <%= diets[0].name.slice(0, 10) + (diets[0].name.length >
+                      10 ? "..." : "") %>
+                    </h4>
+                    <p>
+                      <%= diets[0].content.slice(0, 10) +
+                      (diets[0].content.length > 10 ? "..." : "") %>
+                    </p>
+                    <a href="/plan_single?id=<%=diets[0]._id%>" target="_blank"
+                      >Read More</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <%}%> <%if(diets[1]){%>
+              <div class="item col-md-6">
+                <img src="../<%=diets[1].image%>" class="img-responsive" />
+
+                <div class="slider-box lift">
+                  <div class="slider-text">
+                    <h4 class="">
+                      <%= diets[1].name.slice(0, 10) + (diets[1].name.length >
+                      10 ? "..." : "") %>
+                    </h4>
+                    <p>
+                      <%= diets[1].content.slice(0, 30) +
+                      (diets[1].content.length > 30 ? "..." : "") %>
+                    </p>
+                    <a href="/plan_single?id=<%=diets[1]._id%>" target="_blank"
+                      >Read More</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <%}%>
+            </div>
+          </div>
+        </section>
+
+        <%for(let i=2; i < diets.length; i=i+2){%>
+        <section class="container-fluid pt-130">
+          <div class="container">
+            <div class="row all-plan-diet">
+              <div class="item col-md-6">
+                <img src="../<%=diets[i].image%>" class="img-responsive" />
+
+                <div class="slider-box lift">
+                  <div class="slider-text">
+                    <h4 class="">
+                      <%= diets[i].name.slice(0, 10) + (diets[i].name.length >
+                      10 ? "..." : "") %>
+                    </h4>
+                    <p>
+                      <%= diets[i].content.slice(0, 30) +
+                      (diets[i].content.length > 30 ? "..." : "") %>
+                    </p>
+                    <a href="/plan_single?id=<%=diets[i]._id%>" target="_blank"
+                      >Read More</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <%if(diets[i+1]){%>
+              <div class="item col-md-6">
+                <img src="../<%=diets[i+1].image%>" class="img-responsive" />
+
+                <div class="slider-box lift">
+                  <div class="slider-text">
+                    <h4 class="">
+                      <%= diets[i+1].name.slice(0, 10) + (diets[i+1].name.length
+                      > 10 ? "..." : "") %>
+                    </h4>
+                    <p>
+                      <%= diets[i+1].content.slice(0, 30) +
+                      (diets[i+1].content.length > 30 ? "..." : "") %>
+                    </p>
+                    <a
+                      href="/plan_single?id=<%=diets[i+1]._id%>"
+                      target="_blank"
+                      >Read More</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <%}%>
+            </div>
+          </div>
+        </section>
+        <%}%>
+
+        <!-- <section class="container-fluid pt-130">
+          <div class="container">
+            <div class="row all-plan-diet">
+              <div>
+                <div class="item col-md-6">
+                  <img src="/public_img/ready2.jpg" class="img-responsive" />
+
+                  <div class="slider-box lift">
+                    <div class="slider-text">
+                      <h4 class="">Interminent Fasting</h4>
+                      <p A>
+                        Perfect Program For Weight Loss, Fat Loss And Inch Loss.
+                        Ideal for students, bachelors, corporates, working
+                        women, housewives.
+                      </p>
+                      <a href="/diet" target="_blank">Read More</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="item col-md-6">
+                  <img src="/public_img/ready1.jpg" class="img-responsive" />
+
+                  <div class="slider-box lift">
+                    <div class="slider-text">
+                      <h4 class="">Ketogenic Diet Plan</h4>
+                      <p A>
+                        Perfect Program For Weight Loss, Fat Loss And Inch Loss.
+                        Ideal for students, bachelors, corporates, working
+                        women, housewives.
+                      </p>
+                      <a href="/diet" target="_blank">Read More</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section> -->
+
+        <!-- <section class="container-fluid pt-130">
+          <div class="container">
+            <div class="row all-plan-diet">
+              <div>
+                <div class="item col-md-6">
+                  <img src="/public_img/ready4.jpg" class="img-responsive" />
+
+                  <div class="slider-box lift">
+                    <div class="slider-text">
+                      <h4 class="">Zone Diet Plan</h4>
+                      <p A>
+                        Perfect Program For Weight Loss, Fat Loss And Inch Loss.
+                        Ideal for students, bachelors, corporates, working
+                        women, housewives.
+                      </p>
+                      <a href="/diet" target="_blank">Read More</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="item col-md-6">
+                  <img src="/public_img/ready3.jpg" class="img-responsive" />
+
+                  <div class="slider-box lift">
+                    <div class="slider-text">
+                      <h4 class="">Very Low calorie diet Plan</h4>
+                      <p A>
+                        Perfect Program For Weight Loss, Fat Loss And Inch Loss.
+                        Ideal for students, bachelors, corporates, working
+                        women, housewives.
+                      </p>
+                      <a href="/diet" target="_blank">Read More</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section> -->
+
+        <!-- <section class="container-fluid pt-130">
+          <div class="container">
+            <div class="row all-plan-diet">
+              <div>
+                <div class="item col-md-6">
+                  <img src="/public_img/ready3.jpg" class="img-responsive" />
+
+                  <div class="slider-box lift">
+                    <div class="slider-text">
+                      <h4 class="">TATA GM Diet Plan</h4>
+                      <p A>
+                        Perfect Program For Weight Loss, Fat Loss And Inch Loss.
+                        Ideal for students, bachelors, corporates, working
+                        women, housewives.
+                      </p>
+                      <a href="/diet" target="_blank">Read More</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="item col-md-6">
+                  <img src="/public_img/ready4.jpg" class="img-responsive" />
+
+                  <div class="slider-box lift">
+                    <div class="slider-text">
+                      <h4 class="">PCOD/PCOS Diet plan</h4>
+                      <p A>
+                        Perfect Program For Weight Loss, Fat Loss And Inch Loss.
+                        Ideal for students, bachelors, corporates, working
+                        women, housewives.
+                      </p>
+                      <a href="/diet" target="_blank">Read More</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section> -->
+        <!-- <section class="container-fluid pt-130">
+          <div class="container">
+            <div class="row all-plan-diet">
+              <div>
+                <div class="item col-md-6">
+                  <img src="/public_img/ready3.jpg" class="img-responsive" />
+
+                  <div class="slider-box lift">
+                    <div class="slider-text">
+                      <h4 class="">Detox Diet</h4>
+                      <p A>
+                        Perfect Program For Weight Loss, Fat Loss And Inch Loss.
+                        Ideal for students, bachelors, corporates, working
+                        women, housewives.
+                      </p>
+                      <a href="/diet" target="_blank">Read More</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="item col-md-6">
+                  <img src="/public_img/ready4.jpg" class="img-responsive" />
+
+                  <div class="slider-box lift">
+                    <div class="slider-text">
+                      <h4 class="">Atkin Diet</h4>
+                      <p A>
+                        Perfect Program For Weight Loss, Fat Loss And Inch Loss.
+                        Ideal for students, bachelors, corporates, working
+                        women, housewives.
+                      </p>
+                      <a href="/diet" target="_blank">Read More</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section> -->
+
+        <!-------- footer section		-----	 -->
+        <%- include("include/_footer") %>
+      </div>
+    </div>
+    <!-- Scripts  -->
+    <%- include("include/_scripts") %>
+  </body>
+</html>

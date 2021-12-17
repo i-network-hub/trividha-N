@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Trividha | <%=category_data[0].category%></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <%- include("include/_header") %>
+    <link
+      rel="stylesheet"
+      href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      .affix {
+        top: 0;
+        width: 100%;
+        z-index: 9999 !important;
+      }
+
+      .affix + .container-fluid {
+        padding-top: 70px;
+      }
+      #fp-nav {
+        display: none;
+      }
+      .abt-new p {
+        padding-top: 0px;
+      }
+      .product-text {
+        text-align: justify;
+      }
+      .product-text h4 {
+        font-size: 20px;
+        text-align: center;
+        color: #c87b2b;
+      }
+      .product-text p {
+        padding: 0px;
+      }
+      @media (max-width: 990px) {
+        .heading {
+          margin-top: 0px !important;
+        }
+        .doctr-sec3 {
+          min-height: auto;
+        }
+      }
+      .owl-dots {
+        display: none;
+      }
+      .owl-nav {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Social Links  -->
+      <%- include("include/_social_links") %>
+      <div id="main">
+        <section
+          class="container-fluid header nopadding vertical-scrolling b-img"
+        >
+          <!-- header top-fix navbar  -->
+          <%- include("include/_navbar_cart") %>
+
+          <!-- header top-fix side navbar  -->
+          <%- include("include/_side_navbar") %>
+
+          <div class="container-fluid abt-new section-divide">
+            <div class="row">
+              <div class="col-md-12 colsm-12 col-xs-12">
+                <h1
+                  class="abt-txtt"
+                  style="
+                    font-family: 'Philosopher', sans-serif;
+                    font-weight: bold;
+                    margin-top: 0px;
+                  "
+                >
+                  <%=category_data[0].category%>
+                </h1>
+
+                <p><%=category_data[0].details%></p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <% /* %> <%for(let i=0; i < data.length; i=i+4){%>
+        <section class="container-fluid symtom">
+          <h1 class="text-center heading pt-20">
+            <%=category_data[0].category%> products
+          </h1>
+          <div class="symptom-section">
+            <div class="col-md-6 col-xs-12">
+              <div class="pr-box">
+                <div class="col-md-3 col-xs-12">
+                  <img
+                    src="../<%=data[i].image[0]%>"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase"><%=data[i].name%></h4>
+                  <p><%-data[i].content%></p>
+                  <a href="/product_single?id=<%=data[i]._id%>" target="_blank">
+                    <button class="btn btn-info">View</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <%if(data[i+1]){%>
+            <div class="col-md-6 col-xs-12">
+              <div class="pr-box">
+                <div class="col-md-3 col-xs-12">
+                  <img
+                    src="../<%=data[i+1].image%>"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase"><%=data[i+1].name%></h4>
+                  <p><%-data[i+1].content%></p>
+                  <a
+                    href="/product_single?id=<%=data[i+1]._id%>"
+                    target="_blank"
+                  >
+                    <button class="btn btn-info">View</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <%}%> <%if(data[i+2]){%>
+            <div class="col-md-6 col-xs-12">
+              <div class="pr-box">
+                <div class="col-md-3 col-xs-12">
+                  <img
+                    src="../<%=data[i+2].image%>"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase"><%=data[i+2].name%></h4>
+                  <p><%-data[i+2].content%></p>
+                  <a
+                    href="/product_single?id=<%=data[i+2]._id%>"
+                    target="_blank"
+                  >
+                    <button class="btn btn-info">View</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <%}%> <%if(data[i+3]){%>
+            <div class="col-md-6 col-xs-12">
+              <div class="pr-box">
+                <div class="col-md-3 col-xs-12">
+                  <img
+                    src="../<%=data[i+3].image%>"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase"><%=data[i+3].name%></h4>
+                  <p><%-data[i+3].content%></p>
+                  <a
+                    href="/product_single?id=<%=data[i+3]._id%>"
+                    target="_blank"
+                  >
+                    <button class="btn btn-info">View</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <%}%>
+          </div>
+        </section>
+        <%}%> <% */ %>
+
+        <section class="container-fluid bg-light">
+          <h1 class="text-center heading pt-20">
+            <%=category_data[0].category%> products
+          </h1>
+          <div class="container">
+            <div class="product-img">
+              <%for(let i=0; i < 4; i++){%> <%if(data[i]){%>
+              <div>
+                <div class="product-img-box">
+                  <a href="/product_single?id=<%=data[i]._id%>"
+                    ><img src="../<%=data[i].image[0]%>" alt=""
+                  /></a>
+                </div>
+                <div class="product-content">
+                  <h4>
+                    <%= data[i].name.slice(0, 10) + (data[i].name.length > 10 ?
+                    "..." : "") %>
+                    <br />
+                    <br />
+                    <span class="text-muted">
+                      <%= data[i].category.slice(0, 10) +
+                      (data[i].category.length > 10 ? "..." : "") %>
+                    </span>
+                  </h4>
+                  <h4>
+                    Rs <%=data[i].price%>/- <br />
+                    <br />
+                    <span
+                      class="text-danger addtocart"
+                      style="margin-left: 30px; cursor: pointer"
+                      data-productid="<%=data[i]._id%>"
+                      data-quantity="1"
+                      data-name="<%=data[i].name%>"
+                      data-price="<%=data[i].price%>"
+                      data-discount="<%=data[i].discount%>"
+                      ><i class="fas fa-shopping-cart"></i
+                    ></span>
+                  </h4>
+                </div>
+              </div>
+              <%}%> <%}%>
+            </div>
+          </div>
+        </section>
+
+        <%for(let i=4; i < data.length; i=i+4){%>
+        <section class="container-fluid bg-light">
+          <div class="container">
+            <div class="product-img">
+              <%for(let j=i; j < i+4; j++){%> <%if(data[j]){%>
+              <div>
+                <div class="product-img-box">
+                  <a href="/product_single?id=<%=data[j]._id%>"
+                    ><img src="../<%=data[j].image[0]%>" alt=""
+                  /></a>
+                </div>
+                <div class="product-content">
+                  <h4>
+                    <%= data[j].name.slice(0, 10) + (data[j].name.length > 10 ?
+                    "..." : "") %>
+                    <br />
+                    <br />
+                    <span class="text-muted">
+                      <%= data[j].category.slice(0, 10) +
+                      (data[j].category.length > 10 ? "..." : "") %>
+                    </span>
+                  </h4>
+                  <h4>
+                    Rs <%=data[j].price%>/- <br />
+                    <br />
+                    <span
+                      class="text-danger addtocart"
+                      style="margin-left: 30px; cursor: pointer"
+                      data-productid="<%=data[j]._id%>"
+                      data-quantity="1"
+                      data-name="<%=data[j].name%>"
+                      data-price="<%=data[j].price%>"
+                      data-discount="<%=data[j].discount%>"
+                      ><i class="fas fa-shopping-cart"></i
+                    ></span>
+                  </h4>
+                </div>
+              </div>
+              <%}%> <%}%>
+            </div>
+          </div>
+        </section>
+        <%}%>
+
+        <!-------- footer section		-----	 -->
+        <%- include("include/_footer") %>
+      </div>
+    </div>
+    <!-- Scripts  -->
+    <%- include("include/_scripts") %>
+
+    <!-- <script>
+      function addToCart(e) {
+        let data = {
+          productId: e.dataset.productid,
+          quantity: parseInt(e.dataset.quantity),
+          name: e.dataset.name,
+          price: parseInt(e.dataset.price),
+          discount: parseInt(e.dataset.discount),
+        };
+        console.log(data);
+
+        let request = {
+          url: `https://trividhaa.herokuapp.com/api/cart`,
+          method: "POST",
+          data: data,
+        };
+        $.ajax(request).done(function (response) {
+          console.log(response);
+          alert("Product add to the cart! Please go to cart..");
+          location.reload();
+        });
+        return false;
+      }
+    </script> -->
+  </body>
+</html>

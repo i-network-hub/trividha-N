@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Dashboard | Trividha|Order Details</title>
+    <%- include("include/_header") %>
+    <link
+      rel="stylesheet"
+      href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      .menu-link i {
+        color: #fff;
+        font-size: 10px;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+
+  <body
+    id="kt_body"
+    class="
+      header-mobile-fixed
+      aside-enabled aside-fixed aside-minimize-hoverable
+    "
+  >
+    <%- include("include/_navbar") %>
+
+    <div class="d-flex flex-column flex-root">
+      <div class="d-flex flex-row flex-column-fluid page">
+        <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+          <div id="kt_header" class="header">
+            <div class="container">
+              <div
+                class="d-flex align-items-center flex-wrap mr-1 mt-5 mt-lg-0"
+              >
+                <div class="d-flex align-items-baseline flex-wrap mr-5">
+                  <h4 class="text-dark font-weight-bold my-1 mr-5">
+                    Dashboard
+                    <small class="text-muted ml-2"
+                      >updates and statistics</small
+                    >
+                  </h4>
+                </div>
+              </div>
+
+              <div class="topbar">
+                <div class="topbar-item mr-2">
+                  <div
+                    class="
+                      btn
+                      btn-icon
+                      btn-bg-white
+                      btn-hover-primary
+                      btn-icon-primary
+                      btn-circle
+                    "
+                    id="kt_quick_search_toggle"
+                  >
+                    <span class="svg-icon svg-icon-lg">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        width="24px"
+                        height="24px"
+                        viewBox="0 0 24 24"
+                        version="1.1"
+                      >
+                        <g
+                          stroke="none"
+                          stroke-width="1"
+                          fill="none"
+                          fill-rule="evenodd"
+                        >
+                          <rect x="0" y="0" width="24" height="24"></rect>
+                          <path
+                            d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z"
+                            fill="#000000"
+                            fill-rule="nonzero"
+                            opacity="0.3"
+                          ></path>
+                          <path
+                            d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z"
+                            fill="#000000"
+                            fill-rule="nonzero"
+                          ></path>
+                        </g>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="content d-flex flex-column flex-column-fluid"
+            id="kt_content"
+          >
+            <div class="d-flex flex-column-fluid">
+              <div class="container">
+                <div class="card card-custom">
+                  <div class="card-header border-0 pt-7">
+                    <h3 class="card-title align-items-start flex-column">
+                      <span
+                        class="
+                          card-label
+                          font-weight-bold font-size-h4
+                          text-dark-75
+                        "
+                        >Order Details</span
+                      >
+                    </h3>
+                    <div class="card-toolbar"></div>
+                  </div>
+
+                  <div class="card-body pt-0 pb-4">
+                    <div class="tab-content mt-2" id="myTabTable5">
+                      <div
+                        class="tab-pane fade show active"
+                        id="kt_tab_table_5_3"
+                        role="tabpanel"
+                        aria-labelledby="kt_tab_table_5_3"
+                      >
+                        <div class="table-responsive">
+                          <table
+                            class="table table-borderless table-vertical-center"
+                          >
+                            <thead>
+                              <tr>
+                                <th>Item Name</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th>Discount</th>
+                                <th>Total Amount</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td class="text-dark-75 font-weight-bolder">
+                                  <%
+                                  orders_details.products.forEach(function(user){
+                                  %> <%=user.name%> <br />
+                                  <%});%>
+                                </td>
+                                <td class="">
+                                  <span
+                                    class="
+                                      text-dark-75
+                                      font-weight-bolder
+                                      d-block
+                                      font-size-lg
+                                    "
+                                  >
+                                    <%=orders_details.products.length%>
+                                  </span>
+                                </td>
+                                <td class="">
+                                  <span
+                                    class="
+                                      text-dark-75
+                                      font-weight-bolder
+                                      d-block
+                                      font-size-lg
+                                    "
+                                  >
+                                    <%=orders_details.products[0].price%>
+                                  </span>
+                                </td>
+                                <td>
+                                  <span
+                                    class="
+                                      text-dark-75
+                                      font-weight-bolder
+                                      d-block
+                                      font-size-lg
+                                    "
+                                  >
+                                    <%=orders_details.products[0].discount%>
+                                  </span>
+                                </td>
+                                <td class="">
+                                  <span
+                                    class="
+                                      text-dark-75
+                                      font-weight-bolder
+                                      d-block
+                                      font-size-lg
+                                    "
+                                  >
+                                    <%=orders_details.totalPrice%>
+                                  </span>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer py-4 d-flex flex-lg-column" id="kt_footer">
+            <div
+              class="
+                container
+                d-flex
+                flex-column flex-md-row
+                align-items-center
+                justify-content-between
+              "
+            >
+              <div class="text-dark order-2 order-md-1">
+                <span class="text-muted font-weight-bold mr-2">2021©</span>
+                <a
+                  href=" "
+                  target="_blank"
+                  class="text-dark-75 text-hover-primary"
+                  >Proudly Powered by Trividha Team</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%- include("include/_kt_quick_search") %> <%-
+    include("include/_kt_scroll_top") %> <%-
+    include("include/_javascripts_srcs") %>
+  </body>
+</html>

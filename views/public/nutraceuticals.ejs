@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Trividha | Nutraceuticals</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <%- include("include/_header") %>
+    <link
+      rel="stylesheet"
+      href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      .affix {
+        top: 0;
+        width: 100%;
+        z-index: 9999 !important;
+      }
+
+      .affix + .container-fluid {
+        padding-top: 70px;
+      }
+      #fp-nav {
+        display: none;
+      }
+      .abt-new p {
+        padding-top: 0px;
+      }
+      .product-text {
+        text-align: justify;
+      }
+      .product-text h4 {
+        font-size: 20px;
+        text-align: center;
+        color: #c87b2b;
+      }
+      .product-text p {
+        padding: 0px;
+      }
+      @media (max-width: 990px) {
+        .heading {
+          margin-top: 0px !important;
+        }
+        .doctr-sec3 {
+          min-height: auto;
+        }
+      }
+      .owl-dots {
+        display: none;
+      }
+      .owl-nav {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Social Links  -->
+      <%- include("include/_social_links") %>
+      <div id="main">
+        <section
+          class="container-fluid header nopadding vertical-scrolling b-img"
+        >
+          <!-- header top-fix navbar  -->
+          <%- include("include/_navbar") %>
+
+          <!-- header top-fix side navbar  -->
+          <%- include("include/_side_navbar") %>
+
+          <div class="doctr-sec3 section-divide">
+            <div class="container">
+              <div class="search-box">
+                <h1>
+                  <span class="search-icon"><i class="fas fa-search"></i></span>
+                </h1>
+                <input
+                  type="text"
+                  class="search-input"
+                  placeholder="Search Products"
+                /><button type="submit" class="theme-btn btn-style-three">
+                  Search
+                </button>
+              </div>
+
+              <div class="row">
+                <h1 class="heading text-center pt-20">Top rated</h1>
+                <div class="owl-carousel owl-theme owl-product">
+                  <div class="item">
+                    <div class="prdct-box">
+                      <img src="/public_img/pro1.png" class="img-responsive" />
+                      <p class="hding1">Udar Nidhi</p>
+
+                      <a href="/product_single" target="_blank">
+                        <button
+                          type="button"
+                          class="btn btn-danger pro-bn"
+                          style="display: none"
+                        >
+                          Shop Now
+                        </button>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="item">
+                    <div class="prdct-box">
+                      <img src="/public_img/pro3.png" class="img-responsive" />
+                      <p class="hding1">K-cough</p>
+
+                      <a href="/product_single" target="_blank">
+                        <button
+                          type="button"
+                          class="btn btn-danger pro-bn"
+                          style="display: none"
+                        >
+                          Shop Now
+                        </button>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="item">
+                    <div class="prdct-box">
+                      <img src="/public_img/pro2.png" class="img-responsive" />
+                      <p class="hding1">Lividha</p>
+
+                      <a href="/product_single" target="_blank">
+                        <button
+                          type="button"
+                          class="btn btn-danger pro-bn"
+                          style="display: none"
+                        >
+                          Shop Now
+                        </button>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="prdct-box">
+                      <img src="/public_img/pro3.png" class="img-responsive" />
+                      <p class="hding1">K-cough</p>
+
+                      <a href="/product_single" target="_blank">
+                        <button
+                          type="button"
+                          class="btn btn-danger pro-bn"
+                          style="display: none"
+                        >
+                          Shop Now
+                        </button>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="prdct-box">
+                      <img src="/public_img/pro1.png" class="img-responsive" />
+                      <p class="hding1">Udar Nidhi</p>
+
+                      <a href="/product_single" target="_blank">
+                        <button
+                          type="button"
+                          class="btn btn-danger pro-bn"
+                          style="display: none"
+                        >
+                          Shop Now
+                        </button>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="prdct-box">
+                      <img src="/public_img/pro3.png" class="img-responsive" />
+                      <p class="hding1">Lividha</p>
+
+                      <a href="/product_single" target="_blank">
+                        <button
+                          type="button"
+                          class="btn btn-danger pro-bn"
+                          style="display: none"
+                        >
+                          Shop Now
+                        </button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="container-fluid abt-new">
+          <div class="row">
+            <div class="col-md-12 colsm-12 col-xs-12">
+              <h1
+                class="abt-txtt"
+                style="
+                  font-family: 'Philosopher', sans-serif;
+                  font-weight: bold;
+                  margin-top: 0px;
+                "
+              >
+                Nutraceuticals
+              </h1>
+
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
+                ipsum suspendisse ultrices gravida. Risus commodo viverra
+                maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit
+                amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Quis ipsum
+                suspendisse ultrices gravida. Risus commodo viverra maecenas
+                accumsan lacus vel facilisis. <br /><br />
+
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
+                ipsum suspendisse ultrices gravida. Risus commodo viverra
+                maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit
+                amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Quis ipsum
+                suspendisse ultrices gravida. Risus commodo viverra maecenas
+                accumsan lacus vel facilisis.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="container-fluid symtom">
+          <h1 class="text-center heading pt-20">Nutraceuticals products</h1>
+          <div class="symptom-section">
+            <div class="col-md-6 col-xs-12">
+              <div class="pr-box">
+                <div class="col-md-3 col-xs-12">
+                  <img
+                    src="/public_img/pro1.png"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">Lividha</h4>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quidem ea incidunt, eum voluptatum molestiae dicta.
+                  </p>
+                  <a href="/product_single" target="_blank">
+                    <button class="btn btn-info">View</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-xs-12">
+              <div class="pr-box">
+                <div class="col-md-3 col-xs-12">
+                  <img
+                    src="/public_img/pro2.png"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">K Cough</h4>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quidem ea incidunt, eum voluptatum molestiae dicta.
+                  </p>
+                  <a href="/product_single" target="_blank">
+                    <button class="btn btn-info">View</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-xs-12">
+              <div class="pr-box">
+                <div class="col-md-3 col-xs-12">
+                  <img
+                    src="/public_img/pro3.png"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">Udar Nidhi</h4>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quidem ea incidunt, eum voluptatum molestiae dicta.
+                  </p>
+                  <a href="/product_single" target="_blank">
+                    <button class="btn btn-info">View</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <div class="pr-box">
+                <div class="col-md-3 col-xs-12">
+                  <img
+                    src="/public_img/pro2.png"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">K Cough</h4>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quidem ea incidunt, eum voluptatum molestiae dicta.
+                  </p>
+                  <a href="/product_single" target="_blank">
+                    <button class="btn btn-info">View</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="container-fluid symtom">
+          <div class="symptom-section mt-40">
+            <div class="col-md-6 col-xs-12">
+              <div class="pr-box">
+                <div class="col-md-3 col-xs-12">
+                  <img
+                    src="/public_img/pro1.png"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">Lividha</h4>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quidem ea incidunt, eum voluptatum molestiae dicta.
+                  </p>
+                  <a href="/product_single" target="_blank">
+                    <button class="btn btn-info">View</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-xs-12">
+              <div class="pr-box">
+                <div class="col-md-3 col-xs-12">
+                  <img
+                    src="/public_img/pro2.png"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">K Cough</h4>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quidem ea incidunt, eum voluptatum molestiae dicta.
+                  </p>
+                  <a href="/product_single" target="_blank">
+                    <button class="btn btn-info">View</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-xs-12">
+              <div class="pr-box">
+                <div class="col-md-3 col-xs-12">
+                  <img
+                    src="/public_img/pro3.png"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">Udar Nidhi</h4>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quidem ea incidunt, eum voluptatum molestiae dicta.
+                  </p>
+                  <a href="/product_single" target="_blank">
+                    <button class="btn btn-info">View</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <div class="pr-box">
+                <div class="col-md-3 col-xs-12">
+                  <img
+                    src="/public_img/pro2.png"
+                    class="img-responsive"
+                    style="display: block; margin: auto"
+                  />
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                  <h4 style="text-transform: uppercase">K Cough</h4>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quidem ea incidunt, eum voluptatum molestiae dicta.
+                  </p>
+                  <a href="/product_single" target="_blank">
+                    <button class="btn btn-info">View</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-------- footer section		-----	 -->
+        <%- include("include/_footer") %>
+      </div>
+    </div>
+    <!-- Scripts  -->
+    <%- include("include/_scripts") %>
+  </body>
+</html>

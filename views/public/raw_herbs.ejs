@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Trividha | Raw Herbs</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <%- include("include/_header") %>
+
+    <link
+      rel="stylesheet"
+      href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      .affix {
+        top: 0;
+        width: 100%;
+        z-index: 9999 !important;
+      }
+
+      .affix + .container-fluid {
+        padding-top: 70px;
+      }
+      #fp-nav {
+        display: none;
+      }
+      .prdct-box {
+        width: 300px;
+        height: 350px;
+        background: #fff;
+        box-shadow: 0px 2px 8px #a7a8a5;
+        text-align: center;
+        display: block;
+        margin-top: 20px;
+        margin-bottom: 50px;
+        -webkit-box-shadow: 0px 25px 36px -9px rgba(105, 102, 105, 0.65);
+        -moz-box-shadow: 0px 25px 36px -9px rgba(105, 102, 105, 0.65);
+        box-shadow: 0px 25px 36px -9px rgba(105, 102, 105, 0.65);
+        cursor: pointer;
+      }
+
+      .prdct-box img {
+        width: 70% !important;
+        display: block;
+        margin-top: 20px;
+        padding-top: 30px;
+      }
+      .owl-carousel,
+      .owl-carousel .owl-item .owl-raw {
+        position: relative;
+      }
+      .owl-theme .owl-nav {
+        font-size: 14px;
+        margin: 5px;
+        padding: 4px 7px;
+        display: inline-block;
+        cursor: pointer;
+        border-radius: 3px;
+      }
+      .owl-carousel .owl-nav button.owl-next {
+        position: absolute;
+        color: #000;
+        border: none;
+        padding: 5px;
+        right: 3%;
+        top: 30%;
+        font-size: 45px !important;
+      }
+      .owl-carousel .owl-nav button.owl-prev {
+        position: absolute;
+        color: #000;
+        border: none;
+        padding: 5px;
+        left: 3%;
+        top: 30%;
+        font-size: 45px !important;
+      }
+      .owl-carousel .owl-nav button.owl-prev,
+      button.owl-prev :hover {
+        color: #c87b2b;
+      }
+      .owl-carousel .owl-nav button.owl-next,
+      button.owl-next :hover {
+        color: #c87b2b;
+      }
+
+      .owl-dots {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- Social Links  -->
+      <%- include("include/_social_links") %>
+      <div id="main">
+        <section
+          class="container-fluid header nopadding vertical-scrolling b-img"
+        >
+          <!-- header top-fix navbar  -->
+          <%- include("include/_navbar") %>
+
+          <!-- header top-fix side navbar  -->
+          <%- include("include/_side_navbar") %>
+          <img
+            src="/public_img/bannerherbs.png"
+            class="img-responsive mt-120"
+          />
+        </section>
+
+        <section class="container-fluid abt-new">
+          <div class="row">
+            <div class="col-md-12 colsm-12 col-xs-12">
+              <h1 class="heading">Raw Herbs</h1>
+
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
+                ipsum suspendisse ultrices gravida. Risus commodo viverra
+                maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit
+                amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Quis ipsum
+                suspendisse ultrices gravida. Risus commodo viverra maecenas
+                accumsan lacus vel facilisis. <br /><br />
+
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
+                ipsum suspendisse ultrices gravida. Risus commodo viverra
+                maecenas accumsan lacus vel facilisis.
+                <a
+                  href="#"
+                  style="color: orange"
+                  data-toggle="modal"
+                  data-target="#content-box"
+                  >Read More</a
+                >
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="container-fluid doctr-sec3">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-1 col-sm-12 colxs-12"></div>
+              <div class="col-md-10 col-sm-12 col-xs-12">
+                <h1 class="text-left" style="font-size: 22px">
+                  Why Trividha as first choice to purchase ?
+                </h1>
+
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
+                  maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit
+                  amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua. Quis ipsum
+                  suspendisse ultrices gravida. Risus commodo viverra maecenas
+                  accumsan lacus vel facilisis. <br /><br />
+
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
+                  maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit
+                  amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua. Quis ipsum
+                  suspendisse ultrices gravida. Risus commodo viverra maecenas
+                  accumsan lacus vel facilisis. Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                  ut labore et dolore magna aliqua. Quis ipsum suspendisse
+                  ultrices gravida. Risus commodo viverra maecenas accumsan
+                  lacus vel facilisis.<a
+                    href="#"
+                    style="color: orange"
+                    data-toggle="modal"
+                    data-target="#content-box"
+                    >Read More</a
+                  >
+                </p>
+              </div>
+
+              <div class="col-md-1 col-sm-12 colxs-12"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="container-fluid abt-new">
+          <div class="row">
+            <div class="col-md-12 colsm-12 col-xs-12">
+              <h1
+                class="abt-txtt"
+                style="
+                  font-family: 'Philosopher', sans-serif;
+                  font-weight: bold;
+                  font-size: 20px;
+                "
+              >
+                Identification and pureness
+              </h1>
+
+              <p style="padding-top: 3%">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
+                ipsum suspendisse ultrices gravida. Risus commodo viverra
+                maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit
+                amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Quis ipsum
+                suspendisse ultrices gravida. Risus commodo viverra maecenas
+                accumsan lacus vel facilisis. <br /><br />
+
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
+                ipsum suspendisse ultrices gravida. Risus commodo viverra
+                maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit
+                amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Quis ipsum
+                suspendisse ultrices gravida. Risus commodo viverra maecenas
+                accumsan lacus vel facilisis.<a
+                  href="#"
+                  style="color: orange"
+                  data-toggle="modal"
+                  data-target="#content-box"
+                  >Read More</a
+                >
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="container-fluid doctr-sec3">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-1 col-sm-12 colxs-12"></div>
+              <div class="col-md-10 col-sm-12 col-xs-12">
+                <h1 class="text-left" style="font-size: 22px">
+                  High Quality natural herbs soucrced from herbal Ranches
+                </h1>
+
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
+                  maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit
+                  amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua. Quis ipsum
+                  suspendisse ultrices gravida. Risus commodo viverra maecenas
+                  accumsan lacus vel facilisis. <br /><br />
+
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
+                  maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit
+                  amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua. Quis ipsum
+                  suspendisse ultrices gravida. Risus commodo viverra maecenas
+                  accumsan lacus vel facilisis. Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                  ut labore et dolore magna aliqua. Quis ipsum suspendisse
+                  ultrices gravida. Risus commodo viverra maecenas accumsan
+                  lacus vel facilisis.<a
+                    href="#"
+                    style="color: orange"
+                    data-toggle="modal"
+                    data-target="#content-box"
+                    >Read More</a
+                  >
+                </p>
+              </div>
+
+              <div class="col-md-1 col-sm-12 colxs-12"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="container-fluid abt-new">
+          <div class="row">
+            <div class="col-md-12 colsm-12 col-xs-12">
+              <h1
+                class="abt-txtt"
+                style="
+                  font-family: 'Philosopher', sans-serif;
+                  font-weight: bold;
+                  font-size: 20px;
+                "
+              >
+                Focussing Rigorously on our Usefullness
+              </h1>
+
+              <p style="padding-top: 3%">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
+                ipsum suspendisse ultrices gravida. Risus commodo viverra
+                maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit
+                amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Quis ipsum
+                suspendisse ultrices gravida. Risus commodo viverra maecenas
+                accumsan lacus vel facilisis. <br /><br />
+
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
+                ipsum suspendisse ultrices gravida. Risus commodo viverra
+                maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit
+                amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Quis ipsum
+                suspendisse ultrices gravida. Risus commodo viverra maecenas
+                accumsan lacus vel facilisis.
+                <a
+                  href="#"
+                  style="color: orange"
+                  data-toggle="modal"
+                  data-target="#content-box"
+                  >Read More</a
+                >
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="container-fluid doctr-sec3">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-1 col-sm-12 colxs-12"></div>
+              <div class="col-md-10 col-sm-12 col-xs-12">
+                <h1 class="text-left" style="font-size: 22px">B2B Solutions</h1>
+
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
+                  maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit
+                  amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua. Quis ipsum
+                  suspendisse ultrices gravida. Risus commodo viverra maecenas
+                  accumsan lacus vel facilisis. <br /><br />
+
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
+                  maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit
+                  amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua. Quis ipsum
+                  suspendisse ultrices gravida. Risus commodo viverra maecenas
+                  accumsan lacus vel facilisis. Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                  ut labore et dolore magna aliqua. Quis ipsum suspendisse
+                  ultrices gravida. Risus commodo viverra maecenas accumsan
+                  lacus vel facilisis.<a
+                    href="#"
+                    style="color: orange"
+                    data-toggle="modal"
+                    data-target="#content-box"
+                    >Read More</a
+                  >
+                </p>
+              </div>
+
+              <div class="col-md-1 col-sm-12 colxs-12"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="container-fluid hrbs-r pt-100">
+          <div class="row">
+            <h1
+              class="abt-txtt text-center"
+              style="
+                font-family: 'Philosopher', sans-serif;
+                font-weight: bold;
+                margin-top: 2%;
+              "
+            >
+              Raw Herbs
+            </h1>
+
+            <div class="row">
+              <div class="owl-carousel owl-theme owl-raw">
+                <%for(let i=0; i < raw_herbs.length; i++){%>
+
+                <div class="item">
+                  <div class="prdct-box">
+                    <img
+                      src="../<%=raw_herbs[i].image[0]%>"
+                      class="img-responsive img-rounded"
+                    />
+                    <p class="hding1">
+                      <%= raw_herbs[i].name.slice(0, 10) +
+                      (raw_herbs[i].name.length > 10 ? "..." : "") %>
+                    </p>
+                    <a href="/raw_herb_product?id=<%=raw_herbs[i]._id%>"
+                      ><p class="hding2">View</p></a
+                    >
+                    <button
+                      type="button"
+                      class="btn btn-danger pro-bn get_quote"
+                      style="display: none"
+                      data-toggle="modal"
+                      data-target="#myModal"
+                      data-herbs="<%=raw_herbs[i].name%>"
+                    >
+                      Get Quote
+                    </button>
+                  </div>
+                </div>
+                <%}%>
+              </div>
+            </div>
+          </div>
+
+          <div class="container-fluid text-center">
+            <div class="row">
+              <div class="col-md-12">
+                <a href="/all_raw_herbs" target="_blank"
+                  ><button
+                    class="btn di-sec4-btf"
+                    style="
+                      padding: 10px;
+                      font-size: 20px;
+                      border-radius: 50px;
+                      background: #c87b2b;
+                    "
+                  >
+                    Explore All
+                  </button></a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!--------request for quote----------->
+        <%- include("include/_get_quote") %>
+
+        <div class="modal fade" id="content-box" role="dialog">
+          <div class="modal-dialog modal-md">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                  &times;
+                </button>
+                <h4 class="modal-title">Heading</h4>
+              </div>
+              <div class="modal-body">
+                <p class="content-box-modal">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Necessitatibus quas numquam soluta eveniet tempore quae
+                  commodi magni ducimus tempora exercitationem perspiciatis
+                  repellendus quia expedita minima nisi totam ipsam hic labore,
+                  ab nam enim mollitia. Amet eaque, adipisci nam blanditiis
+                  inventore autem explicabo. Enim suscipit voluptas impedit
+                  asperiores, quaerat eos quos.
+                </p>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-default"
+                  data-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-------- footer section		-----	 -->
+        <%- include("include/_footer") %>
+      </div>
+    </div>
+    <script>
+      $(".owl-raw").owlCarousel({
+        loop: true,
+        margin: 10,
+        responsiveClass: true,
+        autoplay: true,
+        autoplayHoverPause: true,
+        responsive: {
+          0: {
+            items: 1,
+            nav: true,
+          },
+          600: {
+            items: 1,
+            nav: true,
+          },
+          1000: {
+            items: 3,
+            nav: true,
+            loop: true,
+            margin: 20,
+          },
+        },
+      });
+    </script>
+
+    <!-- Scripts  -->
+    <%- include("include/_scripts") %>
+  </body>
+</html>

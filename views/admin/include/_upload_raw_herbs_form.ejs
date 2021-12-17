@@ -1,0 +1,174 @@
+<style>
+  .img-field {
+    margin-top: 28px;
+    margin-left: -185px !important;
+  }
+</style>
+<div class="card-body pt-0 pb-4">
+  <form
+    action="/api/raw_herbs"
+    method="POST"
+    id="upload_data"
+    enctype="multipart/form-data"
+  >
+    <div class="tab-content mt-2" id="myTabTable5">
+      <div
+        class="tab-pane fade show active"
+        id="kt_tab_table_5_3"
+        role="tabpanel"
+        aria-labelledby="kt_tab_table_5_3"
+      >
+        <div class="card-body">
+          <div class="form-group row">
+            <div class="col-lg-3">
+              <label class="text-dark font-weight-bolder">Name</label> <br />
+              <input type="text" name="name" required />
+            </div>
+            <div class="col-lg-3">
+              <label class="text-dark font-weight-bolder">Content</label>
+              <br />
+              <textarea
+                name="content"
+                id=""
+                cols="25"
+                rows="1"
+                required
+              ></textarea>
+            </div>
+            <div class="col-lg-3">
+              <label class="text-dark font-weight-bolder" required
+                >Especialities</label
+              >
+              <br />
+              <textarea
+                name="especialities"
+                id=""
+                cols="25"
+                rows="1"
+                required
+              ></textarea>
+            </div>
+            <div class="col-lg-3">
+              <label class="text-dark font-weight-bolder">Benefits</label>
+              <br />
+              <textarea
+                name="benefits"
+                id=""
+                cols="25"
+                rows="1"
+                required
+              ></textarea>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-lg-3">
+              <label class="text-dark font-weight-bolder">Botanical Name</label>
+              <br />
+              <input type="text" name="botanicalName" required />
+            </div>
+            <div class="col-lg-3">
+              <label class="text-dark font-weight-bolder">Family Name</label>
+              <br />
+              <input type="text" name="familyName" required />
+            </div>
+            <div class="col-lg-3">
+              <label class="text-dark font-weight-bolder">Common Name</label>
+              <br />
+              <input type="text" name="commonName" required />
+            </div>
+            <div class="col-lg-3">
+              <label class="text-dark font-weight-bolder">Part Used</label>
+              <br />
+              <input type="text" name="partUsed" required />
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-lg-3">
+              <label class="text-dark font-weight-bolder">Why Special</label>
+              <br />
+              <input type="text" name="whySpecial" required />
+            </div>
+            <div class="col-lg-3">
+              <label class="text-dark font-weight-bolder">Habitat</label>
+              <br />
+              <input type="text" name="habitat" required />
+            </div>
+            <div class="col-lg-3">
+              <label class="text-dark font-weight-bolder"
+                >Curing Diseases</label
+              >
+              <br />
+              <div class="row" id="room_fileds1">
+                <div class="col-8">
+                  <textarea
+                    name="curingDiseases"
+                    id=""
+                    cols="25"
+                    rows="1"
+                    required
+                  ></textarea>
+                </div>
+                <div class="col-4">
+                  <i
+                    class="ml-10 fas fa-plus-circle"
+                    id="more_fields"
+                    onclick="add_fields1();"
+                    value="Add More"
+                    aria-hidden="true"
+                  >
+                  </i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <label class="text-dark font-weight-bolder">Image </label>
+              <br />
+              <div class="row" id="room_fileds">
+                <div class="col-8 py-1">
+                  <input type="file" name="image" />
+                </div>
+                <div class="col-4">
+                  <i
+                    class="ml-10 fas fa-plus-circle"
+                    id="more_fields"
+                    onclick="add_fields();"
+                    value="Add More"
+                    aria-hidden="true"
+                  >
+                  </i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <button type="submit" class="btn btn-warning mr-2">Submit</button>
+      <button type="reset" class="btn btn-secondary">Cancel</button>
+    </div>
+  </form>
+</div>
+
+<script>
+  var room = 1;
+  function add_fields() {
+    room++;
+    var objTo = document.getElementById("room_fileds");
+    var divtest = document.createElement("div");
+    divtest.innerHTML =
+      '<div class="col-8 py-1"><input type="file" name="image"></div>';
+
+    objTo.appendChild(divtest);
+  }
+  var room = 1;
+  function add_fields1() {
+    room++;
+    var objTo = document.getElementById("room_fileds1");
+    var divtest = document.createElement("div");
+    divtest.innerHTML =
+      '<div class="col-8"><textarea name="curingDiseases" id="" cols="25" rows="1"></textarea></div>';
+
+    objTo.appendChild(divtest);
+  }
+</script>
